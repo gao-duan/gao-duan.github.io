@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Change the font size of your document - 10pt, 12.1pt, etc.
+\documentclass[letterpaper,11pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+\defaultfontfeatures{Mapping=tex-text}
+\setCJKmainfont{宋体}
+\setmainfont{Latin Modern Roman}
+
+\usepackage{graphicx}
+\graphicspath{ {images/}} %upload your signature to this file
+%Change the margins to fit your CV/resume content
+\usepackage[left=1in, right=1in, bottom=1.25in, top=1.25in]{geometry}
+
+%Skype information - include your Skype name for a link to add you on Skype
+\newcommand*{\Skype}{\href{skype:john.smith?add}{john.smith}} 
+\newcommand{\Absender}[1][\normalsize]{\Skype} 
+
+%Changes the page numbers - {arabic}=arabic numerals, {gobble}=no page numbers, {roman}=Roman numerals
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%% NAME OF APPLICANT %%%%%%%%%%%%%%%%%%%
+
+\noindent  \LARGE{\textbf{Duan Gao (高端)}}  \\
+\vspace{-2ex}
+\hrulefill  
+\normalsize
+
+%%%%%%%%%%%%%%%%% CONTACT INFORMATION %%%%%%%%%%%%%%%%%
+% Your email address, website, and Skype name are links to send email, open your website and add you on Skype. 
+
+\begin{center}
+\begin{tabular}{l l l}
+ Tsinghua University    &  \hspace{0.5in} Born: 06/03/1995 \\
+ 
+  Department of Computer Science and Technology    & \hspace{0.5in} Website: \href{gao-duan.github.io}{gao-duan.github.io}   \\
+   
+   30 Shuangqing Rd &  \hspace{0.5in} Email: \href{mailto:gao-d17@mails.tsinghua.edu.cn}{gao-d17@mails.tsinghua.edu.cn} \\
+    Beijing, P.R. China  & \hspace{0.5in} Phone: +86 15811021901 \\
+
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+%%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
+
+\noindent \begin{tabular}{@{} l l}
+ \Large{Education}    & \textbf{Tsinghua University} \\
+     & Ph.D. Student, Computer Science, 2017.9 - now \\
+     & Fields:  Computer Graphics\\
+      & \parbox{5.0in}{ Research interests: Appearance modeling, physically-based rendering and real-time rendering.} \\
+     & \\
+     & \textbf{Nanjing University} \\
+     & B.A., Computer Science, 2012.9 - 2017.7. \\
+     & \\
+     & \\
+ \Large{Experience}    & \textbf{Research intern@Microsoft Research Asia, Internet Graphics Group} \\
+    & \parbox{5.0in}{ 2018.8 - 2019.5, Appearance modeling research with Dr. Yue Dong and Dr. Xin Tong.}\\
+    & \\
+    & \textbf{Research intern@Megvii(Face++)} \\
+    & \parbox{5.0in}{2017.7 - 2017.9, Facial recovery and rendering research with Dr. Liqian Ma.}\\
+    & \\
+     & \\
+ \Large{Publications} 
+     & \parbox{5.0in}{\textbf{Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images}} \\
+     & \parbox{5.0in}{SIGGRAPH 2019} \\
+     & \parbox{5.0in}{Duan Gao, Xiao Li, Yue Dong, Pieter Peers, Kun Xu, Xin Tong} \\
+     & \\
+  & \\
+
+\Large{Projects}   & \textbf{Elegans Renderer}\\
+   & \parbox{5.0in}{Physically based renderer. \hfill \href{https://github.com/gao-duan/Elegans}{\underline{Link}}} \\
+   & \\
+   & \textbf{Smoke Simulation}\\
+   & \parbox{5.0in}{Smoke simulation based on the paper ``Visual Simulation of Smoke`` \hfill \href{https://github.com/gao-duan/SmokeSimulation}{\underline{Link}}} \\
+   & \\
+   & \\
+    
+
+\Large{Technical skills} & \textbf{Main skills \hspace{0.2em}}:  Computer graphics  \\
+                         & \textbf{Lanuages   \hspace{0.7em} }:  C/C++, Python, Java, OpenGL \\
+                         & \textbf{Software  \hspace{1em} }:  Git, LaTex, TensorFlow \\
+ & \\  
+  & \\  
+\Large{Languages}   & \textbf{Chinese} (native), \textbf{English} (Working knowledges.) \\
+    
+          
+\end{tabular}
+
+
+\end{document}
+
