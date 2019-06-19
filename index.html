@@ -5,168 +5,203 @@
 	<meta name="google-site-verification" content="h3O_rO2FC1pywQ4aSji1A7UBwEntNXrQY5D3EpdDakY" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main_style.css" />
+	<!-- <link rel="stylesheet" href="assets/css/main_style.css" />  -->
+	<link rel="stylesheet" href="assets/css/bootstrap.css" />
+	<link href="assets/css/all.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<style>
+		.text-large-1 {
+  			font-size: 110%;
+		}
+		.text-large-2 {
+  			font-size: 125%;
+		}
+		.text-large-3 {
+  			font-size: 150%;
+		}
+
+		.block-with-text {
+			/* hide text if it more than N lines  */
+			overflow: hidden;
+			/* for set '...' in absolute position */
+			position: relative; 
+			/* use this value to count block height */
+			line-height: 1.5em;
+			/* max-height = line-height (1.2) * lines max number (3)  */
+			max-height: 9.0em;
+			/* fix problem when last visible word doesn't adjoin right side  */
+			text-align: justify;  
+			/* place for '...' */
+			margin-right: -1em;
+			padding-right: 1em;
+		}
+		/* create the ... */
+		.block-with-text:before {
+			content: '...';
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		/* hide ... if we have text, which is less than or equal to max lines */
+		.block-with-text:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			width: 1em;
+			height: 1em;
+			margin-top: 0.2em;
+			background: white;
+		}
+		.btn.myicon {
+			
+			border-color: #49bf9d;
+			color: #49bf9d !important;
+		
+		}
+		a{
+			color:#49bf9d;
+		}
+	</style>
 </head>
+
 <body class="is-preload">
 	<!-- Main -->
-	<div id="main">
-		<!-- info -->
-		<section id="info">
-			<div class="row">
-				<article class="col-3  work-item">
-					<div class="row">
-						<div>
-							<img class="image portrait" style="padding:0;margin:0.5em;" src="images/fulls/me.jpg" />
+	<div class="container mt-4">
+	
+			<!-- info -->
+			<div class="row" id="info">
+				<div class="col-md-3">
+					
+					<img class="img-fluid rounded-circle"  src="images/me.jpg" />
 
-							<ul class="icons" style="text-align:center;">
-								<li><a href="https://github.com/gao-duan" class="icon fa-github big-icon"><span
-											class="label"></span></a></li>
-								<li><a href="mailto:gao-d17@mails.tsinghua.edu.cn"
-										class="icon fa-envelope big-icon"><span class="label"></span></a></li>
-								<li><a href="files/CV_duangao.pdf" class="icon fa-user big-icon"><span
-											class="label"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="col-1  work-item"></article>
-				<article class="col-8  work-item">
-
-					<div class="row">
-						<div class="col-12 ">
-							<header class="major col-7">
-								<h2 style="margin:0 0 0.5em 0">Duan Gao (高端)</h2>
-							</header>
-
-							<h3>I am a second-year Ph.D. student at Tsinghua University, advised by <a
-									href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>.
-								I received my bachelor degree from Department of Computer Science and Technology,
-								Nanjing University in 2017. </h3>
-							<h3> My research interests include:
-								appearance modeling, physically-based rendering and real-time rendering.</h3>
-						</div>
-						<div>
-				</article>
+				</div>
+			
+				<div class="col-md-8">
+					<h3 class="mt-2">Duan Gao (高端)</h3>
+					<p class="my-3 text-large-2"> I am a second-year Ph.D. student at Tsinghua University, advised by <a
+						href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>.
+					I received my bachelor degree from Department of Computer Science and Technology,
+					Nanjing University in 2017.  </p>	
+					<p class="my-3 text-large-2">My research interests include:
+						appearance modeling, physically-based rendering and real-time rendering.</p>
+					
+					<p >
+						<a style="color:#000000" href="https://github.com/gao-duan"><i class="mr-2 fab fa-github fa-2x"> </i></a>
+						<a style="color:#000000" href="mailto:gao-d17@mails.tsinghua.edu.cn"><i class="mx-2 far fa-envelope fa-2x"> </i></a>
+						<a style="color:#000000" href="cv/CV_duangao.pdf"><i class="mx-2 far fa-user fa-2x"> </i></a>
+					</p>
+				</div>
 			</div>
 
+			<!-- Publications -->
 
-
-		</section>
-		<hr>
-		<!-- Publications -->
-		<section id="Publications">
-			<a name="publications"></a>
-
-			<h2>Publications</h2>
-			<div class="row">
-					<div class="col-4 icon">
-						<img src="./publications/mvsvbrdf/mvsvbrdf.jpg" class="image fit" alt="" />
+			<h3 class="my-4">Publications</h3>
+			<div id="Publications" class="row vert-offset-top-1 vert-offset-bottom-1">
+			
+					<div class="col-md-4">
+						<img src="./publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail center-block" alt="" style="max-width:90%"/>
 					</div>
-					<div class="col-8">
+					<div class="col-md-8">
+						<h4 >Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</h4>
 						
-						<p>
-							<b>Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</b>
-							<br>
+						<p >
 							Duan Gao*, <a href="https://pableeto.github.io/">Xiao Li*</a>, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, <a href="http://www.xtong.info/">Xin Tong</a> (<i>* Equal contribution</i>)
 							<br>
 							<i>ACM Transactions on Graphics (Proceedings of SIGGRAPH 2019)</i>
 						</p>
-						<p>
+
+						<!-- <p class="text-large-1">
 								Keywords: Reﬂectance modeling, Material Capture, SVBRDF, Deep Learning, Auto-encoder.
+						</p> -->
+						<p class="block-with-text">	
+							In this paper we present a unifed deep inverse rendering framework for
+							estimating the spatially-varying appearance properties of a planar exemplar
+							from an arbitrary number of input photographs, ranging from just a single
+							photograph to many photographs. The precision of the estimated appearance
+							scales from plausible when the input photographs fails to capture all the
+							reﬂectance information, to accurate for large input sets. A key distinguishing
+							feature of our framework is that it directly optimizes for the appearance
+							parameters in a latent embedded space of spatially-varying appearance, such
+							that no handcrafted heuristics are needed to regularize the optimization.
+							This latent embedding is learned through a fully convolutional auto-encoder
+							that has been designed to regularize the optimization. Our framework not
+							only supports an arbitrary number of input photographs, but also at high
+							resolution. We demonstrate and evaluate our deep inverse rendering solution
+							on a wide variety of publicly available datasets. 
 						</p>
-						<a href="./publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf" class="button icons small">Paper(low)</a> 
-						<a href="https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w" class="button icons small">Paper(high)</a> 
-						<a href="https://drive.google.com/open?id=10LncNnPI5nRS-8HIgSjPea3FTNawYLWL" class="button icons small">Supplementary</a> 
-						<a href="https://drive.google.com/open?id=1tr3U-RaOJlhfKU4bm5cbUv11pTdN7ta3" class="button icons small">Video</a> 
-						<a href="https://github.com/gao-duan/DeepInverseRendering" class="button icons small">Code (coming soon) </a> 
-			
+						
+						<p>
+						<a href="./publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf" target="_blank" class="btn myicon vert-offset-top-1" role="button">Paper(low)</a> 
+						<a href="https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w" target="_blank" class="btn myicon vert-offset-top-1" role="button">Paper(high)</a> 
+						<a href="https://drive.google.com/open?id=10LncNnPI5nRS-8HIgSjPea3FTNawYLWL" target="_blank" class="btn myicon vert-offset-top-1" role="button">Supplementary</a> 
+						<a href="https://drive.google.com/open?id=1tr3U-RaOJlhfKU4bm5cbUv11pTdN7ta3" target="_blank" class="btn myicon vert-offset-top-1" role="button">Video</a> 
+						<a href="https://github.com/gao-duan/DeepInverseRendering" target="_blank" class="btn myicon vert-offset-top-1" role="button">Code (coming soon) </a> 
+							</p>
 					</div>
-			
-
 			</div>
 
-		</section>
-		<hr>
+
 		<!-- Experience -->
-		<section id="Experience">
-			<a name="experience"></a>
-
-			<h2>Experience</h2>
-			<div class="row">
-				<article class="col-9 work-item">
-					<h3> <strong>Research intern@Microsoft Research Asia, Internet Graphics Group 2018.8- </strong></h3>
-					<p>Appearance modeling research with Dr. Yue Dong and Dr. Xin Tong. </p>
-				</article>
-				<div class="col-2 icon"><img class="image fit" src="images/fulls/microsoft.png" /></div>
+		<h3 class="my-4">Experience</h3>
+		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
+			<div class="mx-3 col-md-8">
+				<h5 >Research intern@Microsoft Research Asia, Internet Graphics Group 2018.8-2019.5 </h5>
+				<p >Appearance modeling research with Dr. Yue Dong and Dr. Xin Tong. </p>
 			</div>
-
-			<div class="row">
-				<article class="col-9 work-item">
-					<h3> <strong>Research intern@Megvii(Face++) 2017.7-2017.9 </strong></h3>
-					<p>Facial recovery and rendering research with Dr. Liqian Ma. </p>
-				</article>
-				<div class="col-2 icon"><img class="image fit" src="images/fulls/face++.png" /></div>
-
+			<div class="col-md-2 mx-3">
+				<img class="center-block img-thumbnail " src="images/microsoft.png" />
+			</div>	
+		</div>
+		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
+			<div class="col-md-8 mx-3">
+				<h5>Research intern@Megvii(Face++) 2017.7-2017.9</h5>
+				<p>Facial recovery and rendering research with Dr. Liqian Ma. </p>
 			</div>
-			<hr>
+			<div class="col-md-2 mx-3">
+				<img class=" center-block img-thumbnail " src="images/face++.png" />
+			</div>	
 
-			<!-- Experience -->
-			<section id="Projects">
-				<a name="projects"></a>
+		</div>
 
-				<h2>Projects</h2>
-				<div class="row">
-					<article class="col-6  work-item">
-						<div class="row">
-							<div style="width: 78.86%"><a href="https://github.com/gao-duan/Elegans"
-									class="image fit thumb"><img src="images/fulls/elegans.jpg" alt="" /></a></div>
-						</div>
-						<h3> <strong> <a href="https://github.com/gao-duan/Elegans">Elegans Renderer </a></strong> </h3>
-						<p>Physically based renderer.</p>
-					</article>
-					<article class="col-6  work-item" height="200px">
-						<div class="row">
-							<div class="col-6"><a href="https://github.com/gao-duan/SmokeSimulation"
-									class="image fit thumb"><img src="images/fulls/smoke.gif" alt="" /></a></div>
-							<div class="col-6"><a href="https://github.com/gao-duan/SmokeSimulation"
-									class="image fit thumb"><img src="images/fulls/smoke2.png" alt="" /></a> </div>
-						</div>
-						<h3> <strong> <a href="https://github.com/gao-duan/SmokeSimulation"> Smoke Simulation </a> </strong> </h3>
-						<p> Smoke simulation based on the paper “Visual Simulation of Smoke“</p>
-					</article>
+		<!-- Projects -->
+		<h3 class="my-4">Projects</h3>
+		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
+				<div class=" mx-3 col-md-4">
+					<img src="images/elegans.jpg" class="img-thumbnail center-block" alt="" style="max-width:90%"/>
+					
+					<h4 class="text-center"> <a href="https://github.com/gao-duan/Elegans">Elegans Renderer</a> </h4>
+					<p class="mx-2">Physically based renderer. Supports multiple BRDF model and lighting models.</p>
 				</div>
-				<div class="row">
+				<div class=" mx-3 col-md-4">
+					<img src="images/smoke.gif" class="img-thumbnail center-block" alt="" style="max-width:90%"/>
+					<h4 class="text-center"><a href="https://github.com/gao-duan/SmokeSimulation">Smoke Simulation</a> </h4>
+					<p class="mx-2">Smoke simulation based on the paper “Visual Simulation of Smoke“</p>
 				</div>
-				<hr>
+				<div class=" mx-3 col-md-3">
+				</div>
+		</div>
 
-				<!-- Others -->
-				<section id="Others">
-					<a name="others"></a>
 
-					<h2>Others</h2>
-					<div class="row">
-						<article class="col-10 work-item">
-							<p> Program languages : C/C++, Python, Java, OpenGL</p>
-							<p> Software : Git, LaTex, TensorFlow</p>
-							<p> Hobbies: : Reading, playing badminton</p>
-						</article> 
+		<!-- Others -->
+		<h3 class="my-4">Others</h3>
+		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
+			<div class="mx-3 col-10 text-large-2">
+				<p> Program languages : C/C++, Python, Java, OpenGL</p>
+				<p> Software : Git, LaTex, TensorFlow</p>
+				<p> Hobbies: : Reading, playing badminton</p>
+			</div> 
 
-					</div>
-					<hr>
+		</div>	
 
-					<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright"> @ 2019 · Duan Gao</p>
-					</footer>
-
-					<!-- Scripts -->
-					<script src="assets/js/jquery.min.js"></script>
-					<script src="assets/js/jquery.poptrox.min.js"></script>
-					<script src="assets/js/browser.min.js"></script>
-					<script src="assets/js/breakpoints.min.js"></script>
-					<script src="assets/js/util.js"></script>
-					<script src="assets/js/main.js"></script>
-
+		<!-- Footer -->
+		<hr>
+		<footer class="">
+			
+				  <p class="p-5 text-center">Copyright @ Duan Gao 2019</p>
+			
+		</footer>
+		
+</div>
 </body>
-</html>
+			
+		
