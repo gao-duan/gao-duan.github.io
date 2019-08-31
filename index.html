@@ -20,38 +20,7 @@
   			font-size: 150%;
 		}
 
-		.block-with-text {
-			/* hide text if it more than N lines  */
-			overflow: hidden;
-			/* for set '...' in absolute position */
-			position: relative; 
-			/* use this value to count block height */
-			line-height: 1.5em;
-			/* max-height = line-height (1.2) * lines max number (3)  */
-			max-height: 9.0em;
-			/* fix problem when last visible word doesn't adjoin right side  */
-			text-align: justify;  
-			/* place for '...' */
-			margin-right: -1em;
-			padding-right: 1em;
-		}
-		/* create the ... */
-		.block-with-text:before {
-			content: '...';
-			position: absolute;
-			right: 0;
-			bottom: 0;
-		}
-		/* hide ... if we have text, which is less than or equal to max lines */
-		.block-with-text:after {
-			content: '';
-			position: absolute;
-			right: 0;
-			width: 1em;
-			height: 1em;
-			margin-top: 0.2em;
-			background: white;
-		}
+		
 		.btn.myicon {
 			
 			border-color: #49bf9d;
@@ -60,6 +29,12 @@
 		}
 		a{
 			color:#49bf9d;
+		}
+		.truncate_text .toggle:before {
+			content: 'Show more';
+		}
+		.truncate_text > .full-story .toggle:before {
+			content: 'Show less';
 		}
 	</style>
 </head>
@@ -96,42 +71,45 @@
 			<!-- Publications -->
 
 			<h3 class="my-4">Publications</h3>
-			<div id="Publications" class="row vert-offset-top-1 vert-offset-bottom-1">
+			<div id="Publications_mvsvbrdf" class="row vert-offset-top-1 vert-offset-bottom-1 mb-8">
 			
 					<div class="col-md-4">
-						<img src="./publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail center-block" alt="" style="max-width:90%"/>
+						<img src="./publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail center-block" alt="" style="max-width:90%" id="mvsvbrdf"/>
 					</div>
 					
 					<div class="col-md-8">
-						<h4 >Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</h4>
+						<h4 id = "mvsvbrdf_title">Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</h4>
 						
-						<p >
-							Duan Gao*, <a href="https://pableeto.github.io/">Xiao Li*</a>, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, <a href="http://www.xtong.info/">Xin Tong</a> (<i>* Equal contribution</i>)
+						<p id = "mvsvbrdf_author">
+							<b>Duan Gao</b>*, <a href="https://pableeto.github.io/">Xiao Li*</a>, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, <a href="http://www.xtong.info/">Xin Tong</a> (<i>* Equal contribution</i>)
 							<br>
 							<i>ACM Transactions on Graphics (Proceedings of SIGGRAPH 2019)</i>
 						</p>
 
-						<!-- <p class="text-large-1">
-								Keywords: Reﬂectance modeling, Material Capture, SVBRDF, Deep Learning, Auto-encoder.
-						</p> -->
-						<p class="block-with-text">	
-							In this paper we present a unifed deep inverse rendering framework for
-							estimating the spatially-varying appearance properties of a planar exemplar
-							from an arbitrary number of input photographs, ranging from just a single
-							photograph to many photographs. The precision of the estimated appearance
-							scales from plausible when the input photographs fails to capture all the
-							reﬂectance information, to accurate for large input sets. A key distinguishing
-							feature of our framework is that it directly optimizes for the appearance
-							parameters in a latent embedded space of spatially-varying appearance, such
-							that no handcrafted heuristics are needed to regularize the optimization.
-							This latent embedding is learned through a fully convolutional auto-encoder
-							that has been designed to regularize the optimization. Our framework not
-							only supports an arbitrary number of input photographs, but also at high
-							resolution. We demonstrate and evaluate our deep inverse rendering solution
-							on a wide variety of publicly available datasets. 
-						</p>
+						<div class="truncate_text">
+							<div class="element-to-truncate mb-1" >
+							
+								In this paper we present a unifed deep inverse rendering framework for
+								estimating the spatially-varying appearance properties of a planar exemplar
+								from an arbitrary number of input photographs, ranging from just a single
+								photograph to many photographs. The precision of the estimated appearance
+								scales from plausible when the input photographs fails to capture all the
+								reﬂectance information, to accurate for large input sets. A key distinguishing
+								feature of our framework is that it directly optimizes for the appearance
+								parameters in a latent embedded space of spatially-varying appearance, such
+								that no handcrafted heuristics are needed to regularize the optimization.
+								This latent embedding is learned through a fully convolutional auto-encoder
+								that has been designed to regularize the optimization. Our framework not
+								only supports an arbitrary number of input photographs, but also at high
+								resolution. We demonstrate and evaluate our deep inverse rendering solution
+								on a wide variety of publicly available datasets. 
+								<a class="toggle" href="#"></a>
+							
+								
+							</div>
+						</div>
 						
-						<p>
+						<p id="mvsvbrdf_links">
 						<a href="./publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf" target="_blank" class="btn myicon vert-offset-top-1" role="button">Paper(low)</a> 
 						<a href="https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w" target="_blank" class="btn myicon vert-offset-top-1" role="button">Paper(high)</a> 
 						<a href="https://drive.google.com/open?id=10LncNnPI5nRS-8HIgSjPea3FTNawYLWL" target="_blank" class="btn myicon vert-offset-top-1" role="button">Supplementary</a> 
@@ -141,41 +119,41 @@
 						</p>
 					</div>
 			</div>
-
+		
 
 		<!-- Experience -->
 		<h3 class="my-4">Experience</h3>
 		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
-			<div class="mx-3 col-md-8">
-				<h5 >Research intern@Tecent AI Lab, 2019.7-2019.8 </h5>
+			<div class="col-md-8">
+				<h5 >- Research intern@Tecent AI Lab, 2019.7-2019.8 </h5>
 				<p> 3D face related research with Dr. Haozhi Huang </p>
 			</div>
-			<div class="col-md-2 mx-3">
+			<div class="col-md-2">
 				<img class="center-block img-thumbnail " src="images/tencent_ailab.png" />
 			</div>	
 		</div>
 		</br>
 		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
-			<div class="mx-3 col-md-8">
-				<h5 >Research intern@Microsoft Research Asia, Internet Graphics Group 2018.8-2019.5 </h5>
+			<div class="col-md-8">
+				<h5 >- Research intern@Microsoft Research Asia, Internet Graphics Group 2018.8-2019.5 </h5>
 				<p >Appearance modeling research with Dr. Yue Dong and Dr. Xin Tong. </p>
 			</div>
-			<div class="col-md-2 mx-3">
+			<div class="col-md-2">
 				<img class="center-block img-thumbnail " src="images/msra.png" />
 			</div>	
 		</div>
 		</br>
 		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
-			<div class="col-md-8 mx-3">
-				<h5>Research intern@Megvii(Face++) 2017.7-2017.9</h5>
+			<div class="col-md-8">
+				<h5>- Research intern@Megvii(Face++) 2017.7-2017.9</h5>
 				<p>Facial recovery and rendering research with Dr. Liqian Ma. </p>
 			</div>
-			<div class="col-md-2 mx-3">
+			<div class="col-md-2">
 				<img class=" center-block img-thumbnail " src="images/face++.png" />
 			</div>	
-
+			
 		</div>
-
+		
 		<!-- Projects -->
 		<h3 class="my-4">Projects</h3>
 		<div class="row vert-offset-top-1 vert-offset-bottom-1">
@@ -217,7 +195,49 @@
 				  <p class="p-5 text-center">Copyright @ Duan Gao 2019</p>
 			
 		</footer>
+		<script src="./assets/js/dotdotdot.js"</script></script>
+		<script src="./assets/js/jquery.min.js"></script>
+		<script>
+			let height_all = $('#mvsvbrdf').outerHeight(true);
+			let height_title = $('#mvsvbrdf_title').outerHeight(true); // 64
+			let height_author = $('#mvsvbrdf_author').outerHeight(true); // 64
+			let height_links = $('#mvsvbrdf_links').outerHeight(false); // 38
+
+			let height_desire = ( height_all - height_title - height_author - height_links );
+			let options = {
+				height: height_desire,
+				keep: '.toggle',
+			};
+			let wrappers = document.querySelectorAll( ".element-to-truncate" );
+			
+			document.addEventListener( "DOMContentLoaded", () => {	
+				for(var i=0;i< wrappers.length;++i){
+					let wrapper = wrappers[i];
+					let dot = new Dotdotdot( wrapper, options );
+					let api = dot.API;
+
+					wrapper.addEventListener( 'click', ( evnt ) => {
+						if ( evnt.target.closest( '.toggle' ) ) {
+							evnt.preventDefault();
+							//	When truncated, restore
+							if ( wrapper.matches( '.ddd-truncated' ) )
+							{
+								api.restore();
+								wrapper.classList.add( 'full-story' );
+							}
+							//	Not truncated, truncate
+							else
+							{
+								wrapper.classList.remove( 'full-story' );
+								api.truncate();
+								api.watch();
+							}
+						}
+					});
+				}
+			});
 		
+		</script>
 </div>
 </body>
 			
