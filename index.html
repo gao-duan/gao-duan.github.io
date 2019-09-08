@@ -8,42 +8,55 @@
 	<!-- <link rel="stylesheet" href="assets/css/main_style.css" />  -->
 	<link rel="stylesheet" href="assets/css/bootstrap.css" />
 	<link href="assets/css/all.css" rel="stylesheet">
+	<link href="assets/css/custom.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-	<style>
-		.text-large-1 {
-  			font-size: 110%;
-		}
-		.text-large-2 {
-  			font-size: 125%;
-		}
-		.text-large-3 {
-  			font-size: 150%;
-		}
-
-		
-		.btn.myicon {
-			
-			border-color: #49bf9d;
-			color: #49bf9d !important;
-		
-		}
-		a{
-			color:#49bf9d;
-		}
-		.truncate_text .toggle:before {
-			content: 'Show more';
-		}
-		.truncate_text > .full-story .toggle:before {
-			content: 'Show less';
-		}
-	</style>
+	<title>Duan Gao - Homepage</title>
+	
 </head>
 
-<body class="is-preload">
+<body >
+	<nav class="navbar navbar-dark navbar-expand-lg fixed-top" style="background-color: #49bf9d;">
+			<div class="container">
+				  <a class="navbar-brand" href="#">Homepage of Duan Gao (Tsinghua University)</a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+					  <li class="nav-item active">
+						<a class="nav-link" href="#">Home
+						  <span class="sr-only">(current)</span>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#bio">Bio</a>
+					  </li>
+					  <li class="nav-item">
+							<a class="nav-link" href="#publications">Publications</a>
+						</li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#experience">Experience</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#projects">Projects</a>
+					  </li>
+					 
+					  <li class="nav-item">
+						<a class="nav-link" href="#misc">Misc</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="./blogs/blog.html"> >Blog</a>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+	</nav>
+
 	<!-- Main -->
 	<div class="container mt-4">
 	
 			<!-- info -->
+			<a class="anchor" name="bio"></a>
 			<div class="row" id="info">
 				<div class="col-md-3">
 					
@@ -69,8 +82,8 @@
 			</div>
 
 			<!-- Publications -->
-
-			<h3 class="my-4">Publications</h3>
+			<a class="anchor" name="publications"></a>
+			<h3 class="my-4" id="title_h3">Publications</h3>
 			<div id="Publications_mvsvbrdf" class="row vert-offset-top-1 vert-offset-bottom-1 mb-8">
 			
 					<div class="col-md-4">
@@ -122,6 +135,7 @@
 		
 
 		<!-- Experience -->
+		<a class="anchor" name="experience"></a>
 		<h3 class="my-4">Experience</h3>
 		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
 			<div class="col-md-8">
@@ -155,6 +169,7 @@
 		</div>
 		
 		<!-- Projects -->
+		<a class="anchor" name="projects"></a>
 		<h3 class="my-4">Projects</h3>
 		<div class="row vert-offset-top-1 vert-offset-bottom-1">
 				<div class=" col-md-4">
@@ -184,7 +199,8 @@
 
 
 		<!-- Others -->
-		<h3 class="my-4">Others</h3>
+		<a class="anchor" name = "misc"></a>
+		<h3 class="my-4">Misc</h3>
 		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
 			<div class="mx-3 col-10 text-large-2">
 				<p> Program languages : C/C++, Python, Java, OpenGL</p>
@@ -197,54 +213,17 @@
 		<!-- Footer -->
 		<hr>
 		<footer class="">
-			
+				<div class="container">
 				  <p class="p-5 text-center">Copyright @ Duan Gao 2019</p>
-			
+				</div>
 		</footer>
 		<script src="./assets/js/dotdotdot.js"</script></script>
 		<script src="./assets/js/jquery.min.js"></script>
-		<script>
-			let height_all = $('#mvsvbrdf').outerHeight(true);
-			let height_title = $('#mvsvbrdf_title').outerHeight(true); // 64
-			let height_author = $('#mvsvbrdf_author').outerHeight(true); // 64
-			let height_links = $('#mvsvbrdf_links').outerHeight(false); // 38
-
-			let height_desire = ( height_all - height_title - height_author - height_links );
-			let options = {
-				height: height_desire,
-				keep: '.toggle',
-			};
-			let wrappers = document.querySelectorAll( ".element-to-truncate" );
-			
-			document.addEventListener( "DOMContentLoaded", () => {	
-				for(var i=0;i< wrappers.length;++i){
-					let wrapper = wrappers[i];
-					let dot = new Dotdotdot( wrapper, options );
-					let api = dot.API;
-
-					wrapper.addEventListener( 'click', ( evnt ) => {
-						if ( evnt.target.closest( '.toggle' ) ) {
-							evnt.preventDefault();
-							//	When truncated, restore
-							if ( wrapper.matches( '.ddd-truncated' ) )
-							{
-								api.restore();
-								wrapper.classList.add( 'full-story' );
-							}
-							//	Not truncated, truncate
-							else
-							{
-								wrapper.classList.remove( 'full-story' );
-								api.truncate();
-								api.watch();
-							}
-						}
-					});
-				}
-			});
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<script src="./assets/js/custom.js"></script>
 		
-		</script>
 </div>
 </body>
+</html>
 			
 		

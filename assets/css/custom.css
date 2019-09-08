@@ -1,0 +1,34 @@
+.text-large-1 {
+	font-size: 110%;
+}
+.text-large-2 {
+	font-size: 125%;
+}
+.text-large-3 {
+	font-size: 150%;
+}
+
+.btn.myicon {
+	
+	border-color: #49bf9d;
+	color: #49bf9d !important;
+
+}
+a{
+	color:#49bf9d;
+}
+.truncate_text .toggle:before {
+	content: 'Show more';
+}
+.truncate_text > .full-story .toggle:before {
+	content: 'Show less';
+}
+body {
+	padding-top: 54px;
+}
+a.anchor {
+	display: block;
+	position: relative;
+	top: -50px;
+	visibility: hidden;
+}
