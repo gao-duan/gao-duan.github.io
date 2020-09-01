@@ -66,7 +66,7 @@
 			
 				<div class="col-md-8">
 					<h3 class="mt-2">Duan Gao (高端)</h3>
-					<p class="my-3 text-large-2"> I am a second-year Ph.D. student at Tsinghua University, advised by <a
+					<p class="my-3 text-large-2"> I am a fourth-year Ph.D. student at Tsinghua University, advised by <a
 						href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>.
 					I received my bachelor degree from Department of Computer Science and Technology,
 					Nanjing University in 2017.  </p>	
@@ -84,44 +84,58 @@
 			<!-- Publications -->
 			<a class="anchor" name="publications"></a>
 			<h3 class="my-4" id="title_h3">Publications</h3>
-			<div id="Publications_mvsvbrdf" class="row vert-offset-top-1 vert-offset-bottom-1 mb-8">
-			
-					<div class="col-md-4">
-						<img src="./publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail center-block" alt="" style="max-width:90%" id="mvsvbrdf"/>
+			<div id="Publications_neuralrelighting" class="row vert-offset-top-1 vert-offset-bottom-1 mb-4">
+				<div class="col-md-3">
+					<img src="./publications/neuralrelighting/neuralrelighting.png" class="img-thumbnail center-block" alt="" style="max-width:80%" id="neuralrelighting"/>
+				</div>
+				<div class="col-md-8">
+					<div class = "row mb-3">
+						<h4 id = "neuralrelighting_title">Deferred Neural Lighting: Free-viewpoint Relighting from Unstructured Photographs</h4>
+					</div>
+					<div class = "row mb-2">
+						<p id = "neuralrelighting_author">
+							<b>Duan Gao</b>,  &nbsp
+							<a href="https://www.microsoft.com/en-us/research/people/guoch/">Guojun Chen</a>,  &nbsp
+							<a href="http://yuedong.shading.me/">Yue Dong</a>, &nbsp
+							<a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>,  &nbsp
+							<a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>,  &nbsp
+							<a href="http://www.xtong.info/">Xin Tong</a>
+							<br>
+							<i>ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia 2020)</i>
+						</p>
 					</div>
 					
-					<div class="col-md-8">
+					<div class = "row mb-2">
+						<p id="neuralrelighting_links">
+						<a href="" target="_blank" class="btn myicon vert-offset-top-1 disabled" role="button" >Paper(comming soon)</a> 
+						<a href="" target="_blank" class="btn myicon vert-offset-top-1 disabled" role="button" >Code(comming soon)</a> 
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="Publications_mvsvbrdf" class="row vert-offset-top-1 vert-offset-bottom-1 mb-4">
+				<div class="col-md-3">
+					<img src="./publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail center-block" alt="" style="max-width:80%" id="mvsvbrdf"/>
+				</div>
+				<div class="col-md-8">
+					<div class = "row mb-3">
 						<h4 id = "mvsvbrdf_title">Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</h4>
-						
+					</div>
+					<div class = "row mb-2">
 						<p id = "mvsvbrdf_author">
-							<b>Duan Gao</b>*, <a href="https://pableeto.github.io/">Xiao Li*</a>, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, <a href="http://www.xtong.info/">Xin Tong</a> (<i>* Equal contribution</i>)
+							<b>Duan Gao</b>*, &nbsp
+							<a href="https://pableeto.github.io/">Xiao Li*</a>, &nbsp
+							<a href="http://yuedong.shading.me/">Yue Dong</a>, &nbsp
+							<a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, &nbsp
+							<a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, &nbsp
+							<a href="http://www.xtong.info/">Xin Tong</a> (<i>* Equal contribution</i>)
 							<br>
 							<i>ACM Transactions on Graphics (Proceedings of SIGGRAPH 2019)</i>
 						</p>
-
-						<div class="truncate_text">
-							<div class="element-to-truncate mb-1" >
-							
-								In this paper we present a unifed deep inverse rendering framework for
-								estimating the spatially-varying appearance properties of a planar exemplar
-								from an arbitrary number of input photographs, ranging from just a single
-								photograph to many photographs. The precision of the estimated appearance
-								scales from plausible when the input photographs fails to capture all the
-								reﬂectance information, to accurate for large input sets. A key distinguishing
-								feature of our framework is that it directly optimizes for the appearance
-								parameters in a latent embedded space of spatially-varying appearance, such
-								that no handcrafted heuristics are needed to regularize the optimization.
-								This latent embedding is learned through a fully convolutional auto-encoder
-								that has been designed to regularize the optimization. Our framework not
-								only supports an arbitrary number of input photographs, but also at high
-								resolution. We demonstrate and evaluate our deep inverse rendering solution
-								on a wide variety of publicly available datasets. 
-								<a class="toggle" href="#"></a>
-							
-								
-							</div>
-						</div>
-						
+					</div>
+					
+					<div class = "row mb-2">
 						<p id="mvsvbrdf_links">
 						<a href="./publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf" target="_blank" class="btn myicon vert-offset-top-1" role="button">Paper(low)</a> 
 						<a href="https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w" target="_blank" class="btn myicon vert-offset-top-1" role="button">Paper(high)</a> 
@@ -131,12 +145,26 @@
 						<a href="https://github.com/msraig/DeepInverseRendering" target="_blank" class="btn myicon vert-offset-top-1" role="button">Code</a> 
 						</p>
 					</div>
+				</div>
+			
 			</div>
+
+		
 		
 
 		<!-- Experience -->
 		<a class="anchor" name="experience"></a>
 		<h3 class="my-4">Experience</h3>
+		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
+			<div class="col-md-8">
+				<h5 >- Research intern@Microsoft Research Asia, Internet Graphics Group 2019.10-2020.5 </h5>
+				<p >Neural relighting research with Dr. Guojun Chen, Dr. Yue Dong and Dr. Xin Tong. </p>
+			</div>
+			<div class="col-md-2">
+				<img class="center-block img-thumbnail " src="images/msra.png" />
+			</div>	
+		</div>
+		</br>
 		<div  class="row vert-offset-top-1 vert-offset-bottom-1">
 			<div class="col-md-8">
 				<h5 >- Research intern@Tecent AI Lab, 2019.7-2019.8 </h5>
