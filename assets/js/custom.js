@@ -36,6 +36,14 @@ document.addEventListener( "DOMContentLoaded", () => {
 });
 
 
+function lastModified() {
+    var modiDate = new Date(document.lastModified);
+    var showAs = modiDate.getDate() + "-" + (modiDate.getMonth() + 1) + "-" + modiDate.getFullYear();
+    return showAs
+}
+
+$(document).ready(function () {$("#lastModified").text('Last modified on ' + document.lastModified);});
+
 // // for nav jump
 // var height_h3 = $('#title_h3').outerHeight(true) * 0.9;
 // var shiftWindow = function() { scrollBy(0, -height_h3); };
