@@ -4,9 +4,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
 \usepackage{hyperref}
+
+\usepackage{fontspec}
 \usepackage{xeCJK}
+
 \defaultfontfeatures{Mapping=tex-text}
-\setCJKmainfont{宋体}
+\setCJKmainfont{FandolSong}
 \setmainfont{Latin Modern Roman}
 
 \usepackage{graphicx}
@@ -52,16 +55,30 @@
 %%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The main body is contained in a tabular environment. To move sections onto the next page, simply end the tabular environment and begin a new tabular environment.
 % Page 1
+\renewcommand{\arraystretch}{1.0}
 \noindent \begin{tabular}{@{} l l}
  \Large{Education}    & \textbf{Tsinghua University} \\
      & Ph.D. Student, Computer Science, 2017.9 - now \\
      & Fields:  Computer Graphics\\
-      & \parbox{5.0in}{ Research interests: Appearance modeling, physically-based rendering and real-time rendering.} \\
+      & \parbox{5.0in}{ Research interests: Appearance modeling, physically-based rendering and neural rendering.} \\
      & \\
      & \textbf{Nanjing University} \\
      & B.A., Computer Science, 2012.9 - 2017.7. \\
      & \\
      & \\
+     
+ \Large{Publications} 
+ 	 & \parbox{5.0in}{\textbf{Deferred Neural Lighting: Free-viewpoint Relighting from Unstructured Photographs}} \\
+ 	 & \parbox{5.0in}{\textbf{SIGGRAPH Asia 2020}} \\ 
+ 	  \vspace{3pt}
+ 	 & \parbox{5.0in}{Duan Gao, Guojun Chen, Yue Dong, Pieter Peers, Kun Xu, Xin Tong} \\
+ 	 & \\
+     & \parbox{5.0in}{\textbf{Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images}} \\
+     & \parbox{5.0in}{\textbf{SIGGRAPH 2019}} \\
+     & \parbox{5.0in}{Duan Gao, Xiao Li, Yue Dong, Pieter Peers, Kun Xu, Xin Tong} \\
+     & \\
+	 & \\
+	 
  \Large{Experience}
  	& \textbf{Research intern@Microsoft Research Asia, Internet Graphics Group} \\
  	& \parbox{5.0in}{ 2019.10 - 2020.5, Neural relighting research with Dr. Guojun Chen, Dr. Yue Dong and Dr. Xin Tong.}\\
@@ -76,17 +93,7 @@
     & \parbox{5.0in}{2017.7 - 2017.9, Facial recovery and rendering research with Dr. Liqian Ma.}\\
     & \\
      & \\
-     
- \Large{Publications} 
- 	 & \parbox{5.0in}{\textbf{Deferred Neural Lighting: Free-viewpoint Relighting from Unstructured Photographs}} \\
- 	 & \parbox{5.0in}{SIGGRAPH Asia 2020} \\
- 	 & \parbox{5.0in}{Duan Gao, Xiao Li, Yue Dong, Pieter Peers, Kun Xu, Xin Tong} \\
- 	 & \\
-     & \parbox{5.0in}{\textbf{Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images}} \\
-     & \parbox{5.0in}{SIGGRAPH 2019} \\
-     & \parbox{5.0in}{Duan Gao, Xiao Li, Yue Dong, Pieter Peers, Kun Xu, Xin Tong} \\
-     & \\
-	 & \\
+
 
 \end{tabular}
 
@@ -123,4 +130,3 @@
 \end{tabular}    
 
 \end{document}
-
