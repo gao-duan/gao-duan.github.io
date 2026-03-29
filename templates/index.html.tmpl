@@ -30,9 +30,10 @@ $NAV_ITEMS
     </div>
   </nav>
 
-  <main class="container mt-4" id="top">
+  <main class="container site-main mt-4" id="top">
     <section class="page-section page-section--profile" id="bio">
-      <div class="hero-shell" id="info">
+      <div class="section-content section-content--hero">
+        <div class="hero-shell" id="info">
         <div class="hero-shell__portrait">
           <div class="profile-panel">
             <img class="img-fluid rounded-circle profile-photo" src="$PROFILE_IMAGE_SRC" alt="$PROFILE_IMAGE_ALT">
@@ -50,39 +51,50 @@ $BIO_PARAGRAPHS
               <p class="research-panel__label">Research interests</p>
               <p class="research-panel__body">$RESEARCH_INTERESTS</p>
             </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="page-section" id="misc">
+    <section class="page-section page-section--stack" id="misc">
       <h2 class="section-title">Services &amp; Awards</h2>
-      <div class="services-grid">
+      <div class="section-content section-content--services">
+        <div class="services-grid">
 $MISC_ITEMS
+        </div>
       </div>
     </section>
 
-    <section class="page-section" id="publications">
+    <section class="page-section page-section--stack" id="publications">
       <h2 class="section-title">Publications</h2>
+      <div class="section-content section-content--stack">
 $PUBLICATIONS
+      </div>
     </section>
 
-    <section class="page-section" id="thesis">
+    <section class="page-section page-section--stack" id="thesis">
       <h2 class="section-title">Thesis</h2>
+      <div class="section-content section-content--stack">
 $THESES
+      </div>
     </section>
 
-    <section class="page-section" id="experience">
+    <section class="page-section page-section--stack" id="experience">
       <h2 class="section-title">Experience</h2>
-      <ul class="timeline">
+      <div class="section-content section-content--stack">
+        <ul class="timeline">
 $EXPERIENCE
-      </ul>
+        </ul>
+      </div>
     </section>
 
-    <section class="page-section" id="projects">
+    <section class="page-section page-section--projects" id="projects">
       <h2 class="section-title">Projects</h2>
-      <div class="row">
+      <div class="section-content section-content--projects">
+        <div class="row">
 $PROJECTS
+        </div>
       </div>
     </section>
 

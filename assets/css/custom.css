@@ -17,6 +17,11 @@ body {
     linear-gradient(180deg, #f9fcfb 0%, #ffffff 28%);
 }
 
+.site-main {
+  max-width: 1140px;
+  padding-bottom: 3.5rem;
+}
+
 a {
   color: var(--accent-color-dark);
 }
@@ -31,18 +36,46 @@ a:hover {
 }
 
 .page-section {
-  margin-bottom: 3rem;
-  scroll-margin-top: 88px;
+  margin-bottom: 4.5rem;
+  scroll-margin-top: 92px;
 }
 
 .page-section--profile {
   padding-top: 0.5rem;
 }
 
+.page-section:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.section-content {
+  width: 100%;
+}
+
+.section-content--hero {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-content--services {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.section-content--stack {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.section-content--projects {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
 .hero-shell {
   display: grid;
   grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
-  gap: 2rem;
+  gap: 2.25rem;
   align-items: stretch;
 }
 
@@ -87,8 +120,20 @@ a:hover {
 }
 
 .section-title {
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto 1.75rem;
+  max-width: 1040px;
+  font-size: 1.85rem;
+  line-height: 1.1;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(73, 191, 157, 0.26), rgba(73, 191, 157, 0));
 }
 
 .text-large-1 {
@@ -270,7 +315,7 @@ a:hover {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 1.4rem;
 }
 
 .misc-group__title {
@@ -302,6 +347,10 @@ a:hover {
 
 .project-card {
   margin-bottom: 1.25rem;
+}
+
+.page-section--projects .row {
+  margin-bottom: -1.25rem;
 }
 
 .project-card__inner {
@@ -418,6 +467,10 @@ a:hover {
   padding-left: 3.5rem;
 }
 
+.timeline > li:last-child {
+  margin-bottom: 0;
+}
+
 .timeline > li::before {
   content: "";
   position: absolute;
@@ -452,13 +505,26 @@ a:hover {
     padding-top: 68px;
   }
 
-  .section-title--profile {
-    margin-top: 1.25rem;
+  .site-main {
+    padding-bottom: 2.5rem;
   }
 
   .hero-shell {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .page-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    margin-bottom: 1.35rem;
+    font-size: 1.6rem;
+  }
+
+  .section-title::after {
+    display: none;
   }
 
   .hero-copy-card,

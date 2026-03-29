@@ -35,9 +35,10 @@
     </div>
   </nav>
 
-  <main class="container mt-4" id="top">
+  <main class="container site-main mt-4" id="top">
     <section class="page-section page-section--profile" id="bio">
-      <div class="hero-shell" id="info">
+      <div class="section-content section-content--hero">
+        <div class="hero-shell" id="info">
         <div class="hero-shell__portrait">
           <div class="profile-panel">
             <img class="img-fluid rounded-circle profile-photo" src="images/me3_1k.jpg" alt="Portrait of Duan Gao">
@@ -59,14 +60,16 @@
               <p class="research-panel__label">Research interests</p>
               <p class="research-panel__body">Appearance modeling, Physically based rendering, Neural rendering, Differentiable rendering, 3D generative modeling</p>
             </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="page-section" id="misc">
+    <section class="page-section page-section--stack" id="misc">
       <h2 class="section-title">Services &amp; Awards</h2>
-      <div class="services-grid">
+      <div class="section-content section-content--services">
+        <div class="services-grid">
       <section class="misc-group">
         <h3 class="misc-group__title">Academic Services</h3>
         <p class="misc-inline">Reviewer for SIGGRAPH 2022/2025, SIGGRAPH Asia 2023/2025, Eurographics, Pacific Graphics, The Visual Computer, Journal of Computer-Aided Design &amp; Computer Graphics</p>
@@ -81,11 +84,13 @@
           <li>2019, Star of Tomorrow Intern Award at Microsoft Research Asia</li>
         </ul>
       </section>
+        </div>
       </div>
     </section>
 
-    <section class="page-section" id="publications">
+    <section class="page-section page-section--stack" id="publications">
       <h2 class="section-title">Publications</h2>
+      <div class="section-content section-content--stack">
       <article class="row publication-card" id="publication-controlface">
         <div class="col-md-3 publication-card__media">
           <img src="publications/controlface/controlface.png" class="img-thumbnail-custom publication-thumb" alt="ControlFace publication thumbnail">
@@ -190,10 +195,12 @@
           </p>
         </div>
       </article>
+      </div>
     </section>
 
-    <section class="page-section" id="thesis">
+    <section class="page-section page-section--stack" id="thesis">
       <h2 class="section-title">Thesis</h2>
+      <div class="section-content section-content--stack">
       <article class="row publication-card" id="thesis-phd-thesis">
         <div class="col-md-3">
           <img src="publications/thesis_phd/thu.png" class="img-thumbnail-logo thesis-thumb" alt="Tsinghua University logo for Ph.D. thesis">
@@ -224,11 +231,13 @@
           </p>
         </div>
       </article>
+      </div>
     </section>
 
-    <section class="page-section" id="experience">
+    <section class="page-section page-section--stack" id="experience">
       <h2 class="section-title">Experience</h2>
-      <ul class="timeline">
+      <div class="section-content section-content--stack">
+        <ul class="timeline">
         <li id="experience-x2robot">
           <p class="timeline-period">2025-Present</p>
           <div class="row align-items-center experience-entry">
@@ -295,12 +304,14 @@
             <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/face_plus_plus.png" alt="Megvii Face++ logo"></div>
           </div>
         </li>
-      </ul>
+        </ul>
+      </div>
     </section>
 
-    <section class="page-section" id="projects">
+    <section class="page-section page-section--projects" id="projects">
       <h2 class="section-title">Projects</h2>
-      <div class="row">
+      <div class="section-content section-content--projects">
+        <div class="row">
         <article class="col-sm-6 col-lg-4 project-card" id="project-elegans-renderer">
           <div class="project-card__inner">
             <img src="images/elegans_logo.png" class="img-thumbnail-custom project-thumb" alt="Elegans Renderer logo">
@@ -336,6 +347,7 @@
             <p class="project-description">Toy project: knitting by code.</p>
           </div>
         </article>
+        </div>
       </div>
     </section>
 
