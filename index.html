@@ -37,20 +37,28 @@
 
   <main class="container mt-4" id="top">
     <section class="page-section page-section--profile" id="bio">
-      <div class="row align-items-center" id="info">
-        <div class="col-md-3">
-          <img class="img-fluid rounded-circle profile-photo" src="images/me3_1k.jpg" alt="Portrait of Duan Gao">
-        </div>
-        <div class="col-md-8">
-          <h1 class="section-title section-title--profile">Duan Gao (高端)</h1>
-          <p class="my-3 text-large-2">I am a computer graphics researcher. I received my Ph.D. in Computer Science from Tsinghua University in 2022, advised by <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>, and my bachelor's degree in Computer Science from Nanjing University in 2017.</p>
-          <p class="my-3 text-large-2">Previously, I was a Principal Engineer in the Top Minds Program at <a href="https://www.huaweicloud.com/lab/multimedia/home.html">Huawei Cloud Media Innovation Lab</a>, where I worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering. I am currently a 3D Generation Algorithm Engineer at X Square Robot.</p>
-          <p class="my-3 text-large-2"><strong>Research interests:</strong> Appearance modeling, Physically based rendering, Neural rendering, Differentiable rendering, 3D generative modeling</p>
-          <div class="contact-links" aria-label="Primary links">
+      <div class="hero-shell" id="info">
+        <div class="hero-shell__portrait">
+          <div class="profile-panel">
+            <img class="img-fluid rounded-circle profile-photo" src="images/me3_1k.jpg" alt="Portrait of Duan Gao">
+            <h1 class="profile-panel__name">Duan Gao (高端)</h1>
+            <p class="profile-panel__role">Computer Graphics Researcher</p>
+            <div class="contact-links contact-links--portrait" aria-label="Primary links">
             <a href="https://github.com/gao-duan" class="contact-link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
             <a href="mailto:gaoduan0306@gmail.com" class="contact-link" aria-label="Email Duan Gao"><i class="far fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a>
             <a href="cv/CV_duangao_2025.pdf" class="contact-link" aria-label="Curriculum vitae (2025)"><i class="ai ai-cv" aria-hidden="true"></i><span class="sr-only">CV 2025</span></a>
             <a href="https://scholar.google.com/citations?user=uxqdU3AAAAAJ&amp;hl=en" class="contact-link" aria-label="Google Scholar profile" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="sr-only">Google Scholar</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-shell__content">
+          <div class="hero-copy-card">
+          <p class="my-3 text-large-2">I am a computer graphics researcher. I received my Ph.D. in Computer Science from Tsinghua University in 2022, advised by <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>, and my bachelor's degree in Computer Science from Nanjing University in 2017.</p>
+          <p class="my-3 text-large-2">Previously, I was a Principal Engineer in the Top Minds Program at <a href="https://www.huaweicloud.com/lab/multimedia/home.html">Huawei Cloud Media Innovation Lab</a>, where I worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering. I am currently a 3D Generation Algorithm Engineer at X Square Robot.</p>
+            <div class="research-panel">
+              <p class="research-panel__label">Research interests</p>
+              <p class="research-panel__body">Appearance modeling, Physically based rendering, Neural rendering, Differentiable rendering, 3D generative modeling</p>
+            </div>
           </div>
         </div>
       </div>
@@ -58,6 +66,7 @@
 
     <section class="page-section" id="misc">
       <h2 class="section-title">Services &amp; Awards</h2>
+      <div class="services-grid">
       <section class="misc-group">
         <h3 class="misc-group__title">Academic Services</h3>
         <p class="misc-inline">Reviewer for SIGGRAPH 2022/2025, SIGGRAPH Asia 2023/2025, Eurographics, Pacific Graphics, The Visual Computer, Journal of Computer-Aided Design &amp; Computer Graphics</p>
@@ -72,6 +81,7 @@
           <li>2019, Star of Tomorrow Intern Award at Microsoft Research Asia</li>
         </ul>
       </section>
+      </div>
     </section>
 
     <section class="page-section" id="publications">

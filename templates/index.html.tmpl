@@ -32,16 +32,24 @@ $NAV_ITEMS
 
   <main class="container mt-4" id="top">
     <section class="page-section page-section--profile" id="bio">
-      <div class="row align-items-center" id="info">
-        <div class="col-md-3">
-          <img class="img-fluid rounded-circle profile-photo" src="$PROFILE_IMAGE_SRC" alt="$PROFILE_IMAGE_ALT">
-        </div>
-        <div class="col-md-8">
-          <h1 class="section-title section-title--profile">$PROFILE_NAME</h1>
-$BIO_PARAGRAPHS
-          <p class="my-3 text-large-2"><strong>Research interests:</strong> $RESEARCH_INTERESTS</p>
-          <div class="contact-links" aria-label="Primary links">
+      <div class="hero-shell" id="info">
+        <div class="hero-shell__portrait">
+          <div class="profile-panel">
+            <img class="img-fluid rounded-circle profile-photo" src="$PROFILE_IMAGE_SRC" alt="$PROFILE_IMAGE_ALT">
+            <h1 class="profile-panel__name">$PROFILE_NAME</h1>
+            <p class="profile-panel__role">Computer Graphics Researcher</p>
+            <div class="contact-links contact-links--portrait" aria-label="Primary links">
 $CONTACT_LINKS
+            </div>
+          </div>
+        </div>
+        <div class="hero-shell__content">
+          <div class="hero-copy-card">
+$BIO_PARAGRAPHS
+            <div class="research-panel">
+              <p class="research-panel__label">Research interests</p>
+              <p class="research-panel__body">$RESEARCH_INTERESTS</p>
+            </div>
           </div>
         </div>
       </div>
@@ -49,7 +57,9 @@ $CONTACT_LINKS
 
     <section class="page-section" id="misc">
       <h2 class="section-title">Services &amp; Awards</h2>
+      <div class="services-grid">
 $MISC_ITEMS
+      </div>
     </section>
 
     <section class="page-section" id="publications">
