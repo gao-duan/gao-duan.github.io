@@ -96,6 +96,11 @@ a:hover {
   font-size: 1.45rem;
 }
 
+.nav-link-external-indicator {
+  margin-left: 0.2rem;
+  font-size: 0.95em;
+}
+
 .btn.myicon {
   margin: 0 0.5rem 0.5rem 0;
   border-color: var(--accent-color);
@@ -133,9 +138,32 @@ a:hover {
 .publication-subtitle,
 .publication-venue,
 .experience-description,
-.project-description,
-.misc-line {
+.project-description {
   color: var(--muted-color);
+}
+
+.misc-group {
+  margin-bottom: 1.5rem;
+}
+
+.misc-group__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.misc-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted-color);
+}
+
+.misc-inline {
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.misc-list li {
+  margin-bottom: 0.4rem;
 }
 
 .publication-links {

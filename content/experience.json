@@ -15,7 +15,7 @@
     "period": "2022-2025",
     "role": "Principal Engineer, Top Minds (天才少年)",
     "organization_html": "<a href=\"https://www.huaweicloud.com/lab/multimedia/about.html#section-5\">Huawei Cloud, Media Innovation Lab</a>",
-    "description": "Generative 3D digital humans, diffusion-based physically based material generation, AIGC-3D, and differentiable rendering.",
+    "description": "Worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering.",
     "logo": {
       "src": "images/huawei.png",
       "alt": "Huawei logo"
@@ -26,7 +26,7 @@
     "period": "2019.10-2020.5",
     "role": "Research Intern",
     "organization_html": "Microsoft Research Asia, Internet Graphics Group",
-    "description": "Neural relighting research with Dr. Guojun Chen, Dr. Yue Dong, and Dr. Xin Tong.",
+    "description": "Conducted research on neural relighting with Dr. Guojun Chen, Dr. Yue Dong, and Dr. Xin Tong.",
     "logo": {
       "src": "images/msra.png",
       "alt": "Microsoft Research Asia logo"
@@ -37,7 +37,7 @@
     "period": "2019.7-2019.8",
     "role": "Research Intern",
     "organization_html": "Tencent AI Lab",
-    "description": "3D face related research with Dr. Haozhi Huang.",
+    "description": "Conducted research on 3D face reconstruction with Dr. Haozhi Huang.",
     "logo": {
       "src": "images/tencent_ailab.png",
       "alt": "Tencent AI Lab logo"
@@ -48,7 +48,7 @@
     "period": "2018.8-2019.5",
     "role": "Research Intern",
     "organization_html": "Microsoft Research Asia, Internet Graphics Group",
-    "description": "Appearance modeling research with Dr. Yue Dong and Dr. Xin Tong.",
+    "description": "Conducted research on appearance modeling with Dr. Yue Dong and Dr. Xin Tong.",
     "logo": {
       "src": "images/msra.png",
       "alt": "Microsoft Research Asia logo"
@@ -59,7 +59,7 @@
     "period": "2017.7-2017.9",
     "role": "Research Intern",
     "organization_html": "Megvii (Face++)",
-    "description": "Facial recovery and rendering research with Dr. Liqian Ma.",
+    "description": "Conducted research on facial recovery and rendering with Dr. Liqian Ma.",
     "logo": {
       "src": "images/face_plus_plus.png",
       "alt": "Megvii Face++ logo"

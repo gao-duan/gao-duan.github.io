@@ -77,9 +77,22 @@ def render_link(link: dict[str, Any], class_name: str = "btn myicon") -> str:
 def render_nav(site: dict[str, Any]) -> str:
     items = []
     for item in site["navigation"]:
+        href = str(item["href"])
+        is_external_link = is_external(href)
+        link_attrs = {
+            "class": "nav-link",
+            "href": href,
+        }
+        if is_external_link:
+            link_attrs["target"] = "_blank"
+            link_attrs["rel"] = "noopener noreferrer"
+            link_attrs["aria-label"] = f"{item['label']} (external link)"
+        label_html = escape(item["label"])
+        if is_external_link:
+            label_html += ' <span class="nav-link-external-indicator" aria-hidden="true">&#8599;</span>'
         items.append(
             "          <li class=\"nav-item\">"
-            f"<a class=\"nav-link\" href=\"{escape(item['href'], quote=True)}\">{escape(item['label'])}</a>"
+            f"<a {attrs_to_html(link_attrs)}>{label_html}</a>"
             "</li>"
         )
     return "\n".join(items)
@@ -222,9 +235,25 @@ def render_projects(items: list[dict[str, Any]]) -> str:
 def render_misc(home: dict[str, Any]) -> str:
     chunks = []
     for heading, values in home["misc"].items():
-        line = ", ".join(escape(value) for value in values)
+        if heading == "Academic Services":
+            line = ", ".join(escape(value) for value in values)
+            chunks.append(
+                f"""      <section class="misc-group">
+        <h3 class="misc-group__title">{escape(heading)}</h3>
+        <p class="misc-inline">{line}</p>
+      </section>"""
+            )
+            continue
+        items_html = "\n".join(
+            f"          <li>{escape(value)}</li>" for value in values
+        )
         chunks.append(
-            f'      <p class="text-large-2 misc-line"><strong>{escape(heading)}:</strong> {line}</p>'
+            f"""      <section class="misc-group">
+        <h3 class="misc-group__title">{escape(heading)}</h3>
+        <ul class="misc-list">
+{items_html}
+        </ul>
+      </section>"""
         )
     return "\n".join(chunks)
 

@@ -6,13 +6,15 @@
       "alt": "Portrait of Duan Gao"
     },
     "intro_paragraphs": [
-      "I am a Principal Engineer at Huawei Cloud <a href=\"https://www.huaweicloud.com/lab/multimedia/home.html\">Media Innovation Lab</a>. I received my Ph.D. in computer science from Tsinghua University in 2022, advised by <a href=\"https://cg.cs.tsinghua.edu.cn/people/~kun/\">Prof. Kun Xu</a>.",
-      "I received my bachelor's degree from the Department of Computer Science and Technology, Nanjing University, in 2017."
+      "I am a computer graphics researcher. I received my Ph.D. in Computer Science from Tsinghua University in 2022, advised by <a href=\"https://cg.cs.tsinghua.edu.cn/people/~kun/\">Prof. Kun Xu</a>, and my bachelor's degree in Computer Science from Nanjing University in 2017.",
+      "Previously, I was a Principal Engineer in the Top Minds Program at <a href=\"https://www.huaweicloud.com/lab/multimedia/home.html\">Huawei Cloud Media Innovation Lab</a>, where I worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering. I am currently a 3D Generation Algorithm Engineer at X Square Robot."
     ],
     "research_interests": [
       "Appearance modeling",
       "Physically based rendering",
-      "Real-time rendering"
+      "Neural rendering",
+      "Differentiable rendering",
+      "3D generative modeling"
     ]
   },
   "contact_links": [
@@ -39,20 +41,20 @@
     }
   ],
   "misc": {
-    "Programming Languages": [
-      "C/C++",
-      "Python",
-      "Java",
-      "OpenGL"
+    "Academic Services": [
+      "Reviewer for SIGGRAPH 2022/2025",
+      "SIGGRAPH Asia 2023/2025",
+      "Eurographics",
+      "Pacific Graphics",
+      "The Visual Computer",
+      "Journal of Computer-Aided Design & Computer Graphics"
     ],
-    "Software": [
-      "Git",
-      "LaTeX",
-      "TensorFlow"
-    ],
-    "Hobbies": [
-      "Reading",
-      "Playing badminton"
+    "Selected Awards": [
+      "2022, Huawei Top Minds Program",
+      "2022, Outstanding Graduate of Beijing",
+      "2022, Outstanding Doctoral Graduate at Tsinghua University",
+      "2021, Style3D Graduate Fellowship",
+      "2019, Star of Tomorrow Intern Award at Microsoft Research Asia"
     ]
   }
 }
