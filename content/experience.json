@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "x2robot",
+    "period": "2025-Present",
+    "role": "3D Generation Algorithm Engineer",
+    "organization_html": "<a href=\"https://www.x2robot.com/en/about\">X Square Robot</a>",
+    "description": "3D generation algorithm engineering and system development for embodied robotics applications.",
+    "logo": {
+      "src": "images/x2robot.svg",
+      "alt": "X Square Robot logo"
+    }
+  },
+  {
+    "slug": "huawei-cloud",
+    "period": "2022-2025",
+    "role": "Principal Engineer, Top Minds (天才少年)",
+    "organization_html": "<a href=\"https://www.huaweicloud.com/lab/multimedia/about.html#section-5\">Huawei Cloud, Media Innovation Lab</a>",
+    "description": "Generative 3D digital humans, diffusion-based physically based material generation, AIGC-3D, and differentiable rendering.",
+    "logo": {
+      "src": "images/huawei.png",
+      "alt": "Huawei logo"
+    }
+  },
+  {
+    "slug": "msra-neural-relighting",
+    "period": "2019.10-2020.5",
+    "role": "Research Intern",
+    "organization_html": "Microsoft Research Asia, Internet Graphics Group",
+    "description": "Neural relighting research with Dr. Guojun Chen, Dr. Yue Dong, and Dr. Xin Tong.",
+    "logo": {
+      "src": "images/msra.png",
+      "alt": "Microsoft Research Asia logo"
+    }
+  },
+  {
+    "slug": "tencent-ai-lab",
+    "period": "2019.7-2019.8",
+    "role": "Research Intern",
+    "organization_html": "Tencent AI Lab",
+    "description": "3D face related research with Dr. Haozhi Huang.",
+    "logo": {
+      "src": "images/tencent_ailab.png",
+      "alt": "Tencent AI Lab logo"
+    }
+  },
+  {
+    "slug": "msra-appearance-modeling",
+    "period": "2018.8-2019.5",
+    "role": "Research Intern",
+    "organization_html": "Microsoft Research Asia, Internet Graphics Group",
+    "description": "Appearance modeling research with Dr. Yue Dong and Dr. Xin Tong.",
+    "logo": {
+      "src": "images/msra.png",
+      "alt": "Microsoft Research Asia logo"
+    }
+  },
+  {
+    "slug": "megvii-facepp",
+    "period": "2017.7-2017.9",
+    "role": "Research Intern",
+    "organization_html": "Megvii (Face++)",
+    "description": "Facial recovery and rendering research with Dr. Liqian Ma.",
+    "logo": {
+      "src": "images/face_plus_plus.png",
+      "alt": "Megvii Face++ logo"
+    }
+  }
+]

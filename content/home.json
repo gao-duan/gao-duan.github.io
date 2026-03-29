@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "name": "Duan Gao (高端)",
+    "image": {
+      "src": "images/me3_1k.jpg",
+      "alt": "Portrait of Duan Gao"
+    },
+    "intro_paragraphs": [
+      "I am a Principal Engineer at Huawei Cloud <a href=\"https://www.huaweicloud.com/lab/multimedia/home.html\">Media Innovation Lab</a>. I received my Ph.D. in computer science from Tsinghua University in 2022, advised by <a href=\"https://cg.cs.tsinghua.edu.cn/people/~kun/\">Prof. Kun Xu</a>.",
+      "I received my bachelor's degree from the Department of Computer Science and Technology, Nanjing University, in 2017."
+    ],
+    "research_interests": [
+      "Appearance modeling",
+      "Physically based rendering",
+      "Real-time rendering"
+    ]
+  },
+  "contact_links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gao-duan",
+      "icon_class": "fab fa-github",
+      "aria_label": "GitHub profile",
+      "external": true
+    },
+    {
+      "label": "Email",
+      "href": "mailto:gaoduan0306@gmail.com",
+      "icon_class": "far fa-envelope",
+      "aria_label": "Email Duan Gao",
+      "external": false
+    },
+    {
+      "label": "Google Scholar",
+      "href": "https://scholar.google.com/citations?user=uxqdU3AAAAAJ&hl=en",
+      "icon_class": "ai ai-google-scholar",
+      "aria_label": "Google Scholar profile",
+      "external": true
+    }
+  ],
+  "misc": {
+    "Programming Languages": [
+      "C/C++",
+      "Python",
+      "Java",
+      "OpenGL"
+    ],
+    "Software": [
+      "Git",
+      "LaTeX",
+      "TensorFlow"
+    ],
+    "Hobbies": [
+      "Reading",
+      "Playing badminton"
+    ]
+  }
+}

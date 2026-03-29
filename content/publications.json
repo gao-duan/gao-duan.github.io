@@ -1,0 +1,215 @@
+[
+  {
+    "slug": "controlface",
+    "title": "ControlFace: Few-Shot 3D Face Generation via a Controllable Diffusion Model Guided by Text and Images",
+    "thumbnail": {
+      "src": "publications/controlface/controlface.png",
+      "alt": "ControlFace publication thumbnail"
+    },
+    "authors_html": "Jinfu Wei, Zheng Zhang, Qinchuan Zhang, Ran Liao, and <strong>Duan Gao</strong>",
+    "venue": "IEEE International Conference on Multimedia & Expo (ICME)",
+    "year": 2025,
+    "links": [
+      {
+        "label": "Author PDF",
+        "href": "publications/controlface/controlface.pdf",
+        "external": false
+      },
+      {
+        "label": "Supplementary",
+        "href": "publications/controlface/supplementary_material/suppl.pdf",
+        "external": false
+      },
+      {
+        "label": "Video",
+        "href": "publications/controlface/supplementary_material/rotation_relight.mp4",
+        "external": false
+      }
+    ]
+  },
+  {
+    "slug": "dreampbr",
+    "title": "DreamPBR: Text-driven Generation of High-resolution SVBRDF with Multi-modal Guidance",
+    "thumbnail": {
+      "src": "publications/dreampbr/dreampbr.png",
+      "alt": "DreamPBR publication thumbnail"
+    },
+    "authors_html": "Linxuan Xin, Zheng Zhang, Zhiyi Pan, Jinfu Wei, <strong>Duan Gao</strong>, and Wei Gao",
+    "venue": "IEEE International Conference on Multimedia & Expo (ICME)",
+    "year": 2025,
+    "links": [
+      {
+        "label": "ArXiv",
+        "href": "https://arxiv.org/abs/2404.14676",
+        "external": true
+      },
+      {
+        "label": "Author PDF",
+        "href": "publications/dreampbr/dreampbr.pdf",
+        "external": false
+      },
+      {
+        "label": "Supplementary",
+        "href": "publications/dreampbr/supplemental.pdf",
+        "external": false
+      }
+    ]
+  },
+  {
+    "slug": "unifacegan",
+    "title": "UniFaceGAN: High-Quality 3D Face Editing with a Unified Latent Space",
+    "thumbnail": {
+      "src": "publications/unifacegan/unifacegan.png",
+      "alt": "UniFaceGAN publication thumbnail"
+    },
+    "authors_html": "Jinfu Wei, Zheng Zhang, Ran Liao, and <strong>Duan Gao</strong>",
+    "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "year": 2025,
+    "links": [
+      {
+        "label": "Author PDF",
+        "href": "publications/unifacegan/unifacegan.pdf",
+        "external": false
+      },
+      {
+        "label": "IEEE",
+        "href": "https://ieeexplore.ieee.org/document/10889064",
+        "external": true
+      }
+    ]
+  },
+  {
+    "slug": "neural-gi",
+    "title": "Neural Global Illumination: Interactive Indirect Illumination Prediction under Dynamic Area Lights",
+    "thumbnail": {
+      "src": "publications/neuralGI/neuralGI.png",
+      "alt": "Neural Global Illumination publication thumbnail"
+    },
+    "authors_html": "<strong>Duan Gao</strong>, Haoyuan Mu, and <a href=\"https://cg.cs.tsinghua.edu.cn/people/~kun/\">Kun Xu</a>",
+    "venue": "IEEE Transactions on Visualization and Computer Graphics (TVCG)",
+    "year": 2022,
+    "links": [
+      {
+        "label": "Author PDF",
+        "href": "publications/neuralGI/NeuralGlobalIllumination.pdf",
+        "external": false
+      },
+      {
+        "label": "IEEE",
+        "href": "https://ieeexplore.ieee.org/document/9904431/",
+        "external": true
+      },
+      {
+        "label": "Supplementary",
+        "href": "publications/neuralGI/NeuralGlobalIllumination_supplementary.pdf",
+        "external": false
+      },
+      {
+        "label": "Video",
+        "href": "https://drive.google.com/file/d/1wem58_RQUH7uEh07NP9jsCRnx-WFvxRF/view?usp=sharing",
+        "external": true
+      },
+      {
+        "label": "BibTeX",
+        "href": "publications/neuralGI/NGI.bib",
+        "external": false
+      }
+    ]
+  },
+  {
+    "slug": "deferred-neural-lighting",
+    "title": "Deferred Neural Lighting: Free-viewpoint Relighting from Unstructured Photographs",
+    "thumbnail": {
+      "src": "publications/neuralrelighting/neuralrelighting.png",
+      "alt": "Deferred Neural Lighting publication thumbnail"
+    },
+    "authors_html": "<strong>Duan Gao</strong>, <a href=\"https://www.microsoft.com/en-us/research/people/guoch/\">Guojun Chen</a>, <a href=\"http://yuedong.shading.me/\">Yue Dong</a>, <a href=\"http://www.cs.wm.edu/~ppeers/\">Pieter Peers</a>, <a href=\"https://cg.cs.tsinghua.edu.cn/people/~kun/\">Kun Xu</a>, and <a href=\"http://www.xtong.info/\">Xin Tong</a>",
+    "venue": "ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia)",
+    "year": 2020,
+    "links": [
+      {
+        "label": "PDF (Low Resolution)",
+        "href": "publications/neuralrelighting/DeferredNeuralLighting_low_resolution.pdf",
+        "external": false
+      },
+      {
+        "label": "PDF (High Resolution)",
+        "href": "publications/neuralrelighting/DeferredNeuralLighting.pdf",
+        "external": false
+      },
+      {
+        "label": "Supplementary",
+        "href": "https://drive.google.com/file/d/19y82iGN1sQe0WbTnDiD12KOPPrYZ2UAz/view?usp=sharing",
+        "external": true
+      },
+      {
+        "label": "Video",
+        "href": "https://drive.google.com/file/d/1UxZpWgoYgAkImwp-co2Y_Gi_Hzjvbc3r/view?usp=sharing",
+        "external": true
+      },
+      {
+        "label": "Slides",
+        "href": "publications/neuralrelighting/Slides_DeferredNeuralLighting.pdf",
+        "external": false
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/msraig/DeferredNeuralLighting",
+        "external": true
+      },
+      {
+        "label": "BibTeX",
+        "href": "publications/neuralrelighting/DNL.bib",
+        "external": false
+      }
+    ]
+  },
+  {
+    "slug": "deep-inverse-rendering",
+    "title": "Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images",
+    "thumbnail": {
+      "src": "publications/mvsvbrdf/mvsvbrdf.jpg",
+      "alt": "Deep Inverse Rendering publication thumbnail"
+    },
+    "authors_html": "<strong>Duan Gao</strong>*, <a href=\"https://pableeto.github.io/\">Xiao Li</a>*, <a href=\"http://yuedong.shading.me/\">Yue Dong</a>, <a href=\"http://www.cs.wm.edu/~ppeers/\">Pieter Peers</a>, <a href=\"https://cg.cs.tsinghua.edu.cn/people/~kun/\">Kun Xu</a>, and <a href=\"http://www.xtong.info/\">Xin Tong</a> (<em>* Equal contribution</em>)",
+    "venue": "ACM Transactions on Graphics (Proceedings of SIGGRAPH)",
+    "year": 2019,
+    "links": [
+      {
+        "label": "PDF (Low Resolution)",
+        "href": "publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf",
+        "external": false
+      },
+      {
+        "label": "PDF (High Resolution)",
+        "href": "https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w",
+        "external": true
+      },
+      {
+        "label": "Supplementary",
+        "href": "https://drive.google.com/open?id=10LncNnPI5nRS-8HIgSjPea3FTNawYLWL",
+        "external": true
+      },
+      {
+        "label": "Video",
+        "href": "https://drive.google.com/open?id=1tr3U-RaOJlhfKU4bm5cbUv11pTdN7ta3",
+        "external": true
+      },
+      {
+        "label": "Slides",
+        "href": "publications/mvsvbrdf/mvsvbrdf_slide.pdf",
+        "external": false
+      },
+      {
+        "label": "Code",
+        "href": "https://github.com/msraig/DeepInverseRendering",
+        "external": true
+      },
+      {
+        "label": "BibTeX",
+        "href": "publications/mvsvbrdf/DIR.bib",
+        "external": false
+      }
+    ]
+  }
+]

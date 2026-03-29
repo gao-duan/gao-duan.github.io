@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$DESCRIPTION">
+  <meta name="google-site-verification" content="$GOOGLE_SITE_VERIFICATION">
+  <link rel="icon" type="image/x-icon" href="$FAVICON">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="stylesheet" href="assets/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <title>$TITLE</title>
+</head>
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top site-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#top">$BRAND</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#top">Home</a>
+          </li>
+$NAV_ITEMS
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-4" id="top">
+    <section class="page-section page-section--profile" id="bio">
+      <div class="row align-items-center" id="info">
+        <div class="col-md-3">
+          <img class="img-fluid rounded-circle profile-photo" src="$PROFILE_IMAGE_SRC" alt="$PROFILE_IMAGE_ALT">
+        </div>
+        <div class="col-md-8">
+          <h1 class="section-title section-title--profile">$PROFILE_NAME</h1>
+$BIO_PARAGRAPHS
+          <p class="my-3 text-large-2"><strong>Research interests:</strong> $RESEARCH_INTERESTS</p>
+          <div class="contact-links" aria-label="Primary links">
+$CONTACT_LINKS
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="publications">
+      <h2 class="section-title">Publications</h2>
+$PUBLICATIONS
+    </section>
+
+    <section class="page-section" id="thesis">
+      <h2 class="section-title">Thesis</h2>
+$THESES
+    </section>
+
+    <section class="page-section" id="experience">
+      <h2 class="section-title">Experience</h2>
+      <ul class="timeline">
+$EXPERIENCE
+      </ul>
+    </section>
+
+    <section class="page-section" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="row">
+$PROJECTS
+      </div>
+    </section>
+
+    <section class="page-section" id="misc">
+      <h2 class="section-title">Misc</h2>
+$MISC_ITEMS
+    </section>
+
+    <hr>
+    <footer class="site-footer">
+      <div class="container">
+        <p class="p-2 text-center">$FOOTER_COPYRIGHT</p>
+        <p class="p-2 text-center" id="lastModified"></p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>

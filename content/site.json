@@ -1,0 +1,47 @@
+{
+  "site": {
+    "title": "Duan Gao - Homepage",
+    "description": "Academic homepage of Duan Gao, featuring publications, experience, projects, and CV.",
+    "brand": "Homepage of Duan Gao",
+    "google_site_verification": "h3O_rO2FC1pywQ4aSji1A7UBwEntNXrQY5D3EpdDakY",
+    "favicon": "images/favicon.ico",
+    "accent_color": "#49bf9d"
+  },
+  "navigation": [
+    {
+      "label": "Bio",
+      "href": "#bio"
+    },
+    {
+      "label": "Publications",
+      "href": "#publications"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "label": "Misc",
+      "href": "#misc"
+    },
+    {
+      "label": "Blog",
+      "href": "https://gaoduan.micro.blog"
+    }
+  ],
+  "cv": {
+    "label": "CV",
+    "href": "cv/CV_duangao_2025.pdf",
+    "year": 2025
+  },
+  "footer": {
+    "start_year": 2019,
+    "end_year": 2026,
+    "owner": "Duan Gao"
+  },
+  "fallback_site": ""
+}
