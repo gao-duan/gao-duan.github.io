@@ -193,7 +193,7 @@ def render_experience(items: list[dict[str, Any]]) -> str:
         logo_html = ""
         if logo.get("src"):
             logo_html = (
-                "            <div class=\"col-md-3\">"
+                "            <div class=\"col-md-3 experience-entry__logo-wrap\">"
                 f"<img class=\"experience-logo img-thumbnail-logo\" src=\"{escape(logo['src'], quote=True)}\" alt=\"{escape(logo.get('alt', ''), quote=True)}\">"
                 "</div>"
             )
@@ -202,7 +202,8 @@ def render_experience(items: list[dict[str, Any]]) -> str:
           <p class="timeline-period">{escape(item['period'])}</p>
           <div class="row align-items-center experience-entry">
             <div class="col-md-8">
-              <h3 class="experience-title">{escape(item['role'])} @ {item['organization_html']}</h3>
+              <p class="experience-role">{escape(item['role'])}</p>
+              <h3 class="experience-title">{item['organization_html']}</h3>
               <p class="experience-description">{escape(item['description'])}</p>
             </div>
 {logo_html}
