@@ -146,10 +146,10 @@ def render_publications(publications: list[dict[str, Any]]) -> str:
         )
         chunks.append(
             f"""      <article class="row publication-card" id="publication-{escape(publication['slug'], quote=True)}">
-        <div class="col-md-3">
+        <div class="col-md-3 publication-card__media">
           <img src="{escape(publication['thumbnail']['src'], quote=True)}" class="img-thumbnail-custom publication-thumb" alt="{escape(publication['thumbnail']['alt'], quote=True)}">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 publication-card__content">
           <h3 class="publication-title">{escape(publication['title'])}</h3>
           <p class="publication-authors">{publication['authors_html']}</p>
           <p class="publication-venue"><em>{escape(publication['venue'])}, {publication['year']}</em></p>
@@ -176,7 +176,7 @@ def render_thesis_items(items: list[dict[str, Any]]) -> str:
           <h3 class="publication-title">{escape(thesis['title'])}</h3>
           <p class="publication-subtitle">{escape(thesis['subtitle'])}</p>
           <p class="publication-authors">{escape(thesis['degree'])} <em>{escape(thesis['date'])}</em></p>
-          <p class="publication-venue">Supervisor: {supervisors}</p>
+          <p class="thesis-supervisor">Supervisor: {supervisors}</p>
           <p class="publication-links">
 {links_html}
           </p>
