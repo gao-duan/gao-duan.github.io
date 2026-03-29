@@ -7,11 +7,16 @@
   --surface-color: #ffffff;
   --surface-muted: #f8fbfa;
   --shadow-color: rgba(15, 23, 42, 0.12);
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-display: "Newsreader", "Songti SC", "STSong", "Noto Serif CJK SC", serif;
 }
 
 body {
   padding-top: 72px;
   color: var(--text-color);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.72;
   background:
     radial-gradient(circle at top left, rgba(73, 191, 157, 0.12), transparent 34%),
     linear-gradient(180deg, #f9fcfb 0%, #ffffff 28%);
@@ -30,9 +35,45 @@ a:hover {
   color: var(--accent-color);
 }
 
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p,
+li,
+.nav-link,
+.btn,
+.profile-panel__role,
+.publication-authors,
+.publication-subtitle,
+.publication-venue,
+.thesis-supervisor,
+.experience-role,
+.experience-description,
+.project-description,
+.misc-inline,
+.misc-list {
+  font-family: var(--font-body);
+}
+
 .site-navbar {
   background-color: var(--accent-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-size: 1.45rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .page-section {
@@ -97,8 +138,8 @@ a:hover {
 
 .profile-panel__name {
   margin: 1.1rem 0 0.35rem;
-  font-size: 1.7rem;
-  line-height: 1.1;
+  font-size: 1.88rem;
+  line-height: 1.02;
   text-align: center;
 }
 
@@ -107,6 +148,8 @@ a:hover {
   text-align: center;
   color: var(--muted-color);
   font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .hero-copy-card {
@@ -126,7 +169,7 @@ a:hover {
   margin: 0 auto 1.75rem;
   max-width: 1040px;
   font-size: 1.85rem;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .section-title::after {
@@ -141,7 +184,8 @@ a:hover {
 }
 
 .text-large-2 {
-  font-size: 125%;
+  font-size: 1.1rem;
+  line-height: 1.85;
 }
 
 .text-large-3 {
@@ -166,9 +210,9 @@ a:hover {
 
 .research-panel__label {
   margin: 0 0 0.4rem;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-color-dark);
 }
@@ -227,6 +271,8 @@ a:hover {
   border-color: var(--accent-color);
   color: var(--accent-color-dark) !important;
   background: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .btn.myicon:hover,
@@ -266,8 +312,8 @@ a:hover {
 .experience-title,
 .project-title {
   margin-bottom: 0.7rem;
-  font-size: 1.35rem;
-  line-height: 1.28;
+  font-size: 1.48rem;
+  line-height: 1.2;
 }
 
 .publication-authors,
@@ -283,7 +329,7 @@ a:hover {
 .publication-authors {
   margin-bottom: 0.8rem;
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.72;
 }
 
 .publication-venue {
@@ -291,6 +337,7 @@ a:hover {
   margin-bottom: 0.8rem;
   padding: 0.28rem 0.7rem;
   font-size: 0.8rem;
+  font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--accent-color-dark);
   background: rgba(73, 191, 157, 0.12);
@@ -320,18 +367,21 @@ a:hover {
 
 .misc-group__title {
   margin-bottom: 0.75rem;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 .misc-list {
   margin: 0;
   padding-left: 1.25rem;
   color: var(--muted-color);
+  line-height: 1.72;
 }
 
 .misc-inline {
   margin: 0;
   color: var(--muted-color);
+  line-height: 1.72;
 }
 
 .misc-list li {
@@ -420,7 +470,7 @@ a:hover {
   margin-bottom: 0.35rem;
   font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-color-dark);
 }
@@ -521,6 +571,16 @@ a:hover {
   .section-title {
     margin-bottom: 1.35rem;
     font-size: 1.6rem;
+  }
+
+  .profile-panel__name {
+    font-size: 1.7rem;
+  }
+
+  .publication-title,
+  .experience-title,
+  .project-title {
+    font-size: 1.35rem;
   }
 
   .section-title::after {
