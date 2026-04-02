@@ -1,27 +1,22 @@
 # gao-duan.github.io
 
-Personal academic homepage published via GitHub Pages: https://gao-duan.github.io/
+Public deploy repository for `https://gao-duan.github.io/`.
 
-## Content workflow
+This repository is intended to store generated output only:
 
-The homepage is generated from structured content files under `content/`.
+- homepage publish files at the repository root
+- blog publish files under `blog/`
 
-- `content/site.json`: site metadata, navigation, footer, CV link
-- `content/home.json`: bio, contact links, misc section
-- `content/publications.json`: publications list
-- `content/thesis.json`: thesis entries
-- `content/experience.json`: experience timeline
-- `content/projects.json`: project cards
+Source content, templates, scripts, and local staging now live in the sibling source repository:
 
-## CLI
+- `/Users/duangao/Projects/BlogCli`
 
-All management commands are pure `Python 3` and use only the standard library.
+Common publish commands:
 
 ```bash
-python3 tools/site_cli.py check
-python3 tools/site_cli.py build
-python3 tools/site_cli.py format
-python3 tools/site_cli.py new publication --slug my-paper
+python3 /Users/duangao/Projects/BlogCli/tools/publish_cli.py check-all
+python3 /Users/duangao/Projects/BlogCli/tools/publish_cli.py build-all
+python3 /Users/duangao/Projects/BlogCli/tools/publish_cli.py publish-all
 ```
 
-`index.html` is generated output. Edit the JSON files instead of modifying `index.html` directly.
+After publishing, commit and push changes from this repository as usual.
