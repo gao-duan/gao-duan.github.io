@@ -4,16 +4,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="Academic homepage of Duan Gao, featuring publications, experience, projects, and CV.">
   <meta name="google-site-verification" content="h3O_rO2FC1pywQ4aSji1A7UBwEntNXrQY5D3EpdDakY">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=a6c7d26d08">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=4bdc0526e9">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-site-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/bootstrap.css?v=a6c7d26d08">
-  <link rel="stylesheet" href="assets/css/all.css?v=a6c7d26d08">
-  <link rel="stylesheet" href="assets/css/academicons.min.css?v=a6c7d26d08">
-  <link rel="stylesheet" href="assets/css/custom.css?v=a6c7d26d08">
+  <link rel="stylesheet" href="assets/css/bootstrap.css?v=4bdc0526e9">
+  <link rel="stylesheet" href="assets/css/all.css?v=4bdc0526e9">
+  <link rel="stylesheet" href="assets/css/academicons.min.css?v=4bdc0526e9">
+  <link rel="stylesheet" href="assets/css/custom.css?v=4bdc0526e9">
   <title>Duan Gao - Homepage</title>
 </head>
 <body>
@@ -34,6 +62,18 @@
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="https://gaoduan.micro.blog" target="_blank" rel="noopener noreferrer" aria-label="Blog (external link)">Blog <span class="nav-link-external-indicator" aria-hidden="true">&#8599;</span></a></li>
         </ul>
+        <div class="site-navbar__controls">
+          <div class="theme-menu theme-menu--site">
+            <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+              <span class="theme-menu__glyph" aria-hidden="true"></span>
+            </button>
+            <div class="theme-menu__panel" hidden>
+              <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+              <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+              <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -98,7 +138,7 @@
         <div class="col-md-3 publication-card__media">
           <img src="publications/controlface/controlface.png" class="img-thumbnail-custom publication-thumb" alt="ControlFace publication thumbnail">
         </div>
-        <div class="col-md-8 publication-card__content">
+        <div class="col-md-9 publication-card__content">
           <h3 class="publication-title">ControlFace: Few-Shot 3D Face Generation via a Controllable Diffusion Model Guided by Text and Images</h3>
           <p class="publication-authors">Jinfu Wei, Zheng Zhang, Qinchuan Zhang, Ran Liao, and <strong>Duan Gao</strong></p>
           <p class="publication-venue"><em>IEEE International Conference on Multimedia &amp; Expo (ICME), 2025</em></p>
@@ -114,7 +154,7 @@
         <div class="col-md-3 publication-card__media">
           <img src="publications/dreampbr/dreampbr.png" class="img-thumbnail-custom publication-thumb" alt="DreamPBR publication thumbnail">
         </div>
-        <div class="col-md-8 publication-card__content">
+        <div class="col-md-9 publication-card__content">
           <h3 class="publication-title">DreamPBR: Text-driven Generation of High-resolution SVBRDF with Multi-modal Guidance</h3>
           <p class="publication-authors">Linxuan Xin, Zheng Zhang, Zhiyi Pan, Jinfu Wei, <strong>Duan Gao</strong>, and Wei Gao</p>
           <p class="publication-venue"><em>IEEE International Conference on Multimedia &amp; Expo (ICME), 2025</em></p>
@@ -130,7 +170,7 @@
         <div class="col-md-3 publication-card__media">
           <img src="publications/unifacegan/unifacegan.png" class="img-thumbnail-custom publication-thumb" alt="UniFaceGAN publication thumbnail">
         </div>
-        <div class="col-md-8 publication-card__content">
+        <div class="col-md-9 publication-card__content">
           <h3 class="publication-title">UniFaceGAN: High-Quality 3D Face Editing with a Unified Latent Space</h3>
           <p class="publication-authors">Jinfu Wei, Zheng Zhang, Ran Liao, and <strong>Duan Gao</strong></p>
           <p class="publication-venue"><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025</em></p>
@@ -145,7 +185,7 @@
         <div class="col-md-3 publication-card__media">
           <img src="publications/neuralGI/neuralGI.png" class="img-thumbnail-custom publication-thumb" alt="Neural Global Illumination publication thumbnail">
         </div>
-        <div class="col-md-8 publication-card__content">
+        <div class="col-md-9 publication-card__content">
           <h3 class="publication-title">Neural Global Illumination: Interactive Indirect Illumination Prediction under Dynamic Area Lights</h3>
           <p class="publication-authors"><strong>Duan Gao</strong>, Haoyuan Mu, and <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a></p>
           <p class="publication-venue"><em>IEEE Transactions on Visualization and Computer Graphics (TVCG), 2022</em></p>
@@ -163,7 +203,7 @@
         <div class="col-md-3 publication-card__media">
           <img src="publications/neuralrelighting/neuralrelighting.png" class="img-thumbnail-custom publication-thumb" alt="Deferred Neural Lighting publication thumbnail">
         </div>
-        <div class="col-md-8 publication-card__content">
+        <div class="col-md-9 publication-card__content">
           <h3 class="publication-title">Deferred Neural Lighting: Free-viewpoint Relighting from Unstructured Photographs</h3>
           <p class="publication-authors"><strong>Duan Gao</strong>, <a href="https://www.microsoft.com/en-us/research/people/guoch/">Guojun Chen</a>, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, and <a href="http://www.xtong.info/">Xin Tong</a></p>
           <p class="publication-venue"><em>ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia), 2020</em></p>
@@ -183,7 +223,7 @@
         <div class="col-md-3 publication-card__media">
           <img src="publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail-custom publication-thumb" alt="Deep Inverse Rendering publication thumbnail">
         </div>
-        <div class="col-md-8 publication-card__content">
+        <div class="col-md-9 publication-card__content">
           <h3 class="publication-title">Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</h3>
           <p class="publication-authors"><strong>Duan Gao</strong>*, <a href="https://pableeto.github.io/">Xiao Li</a>*, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, and <a href="http://www.xtong.info/">Xin Tong</a> (<em>* Equal contribution</em>)</p>
           <p class="publication-venue"><em>ACM Transactions on Graphics (Proceedings of SIGGRAPH), 2019</em></p>
@@ -205,10 +245,14 @@
       <h2 class="section-title">Thesis</h2>
       <div class="section-content section-content--stack">
       <article class="row publication-card" id="thesis-phd-thesis">
-        <div class="col-md-3">
-          <img src="publications/thesis_phd/thu.png" class="img-thumbnail-logo thesis-thumb" alt="Tsinghua University logo for Ph.D. thesis">
+        <div class="col-md-3 thesis-card__media">
+          <div class="logo-frame thesis-logo-frame">
+            <div class="thesis-logo-stack" role="img" aria-label="Tsinghua University logo for Ph.D. thesis">
+              <img src="publications/thesis_phd/thu.png" class="img-thumbnail-logo thesis-thumb thesis-thumb--static" alt="" aria-hidden="true">
+            </div>
+          </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9 thesis-card__body">
           <h3 class="publication-title">Neural Rendering: Deep Learning Based Photorealistic Rendering</h3>
           <p class="publication-subtitle">基于深度学习的真实感渲染研究</p>
           <p class="publication-authors">Ph.D. <em>June 2022</em></p>
@@ -221,10 +265,14 @@
       </article>
 
       <article class="row publication-card" id="thesis-bachelor-thesis">
-        <div class="col-md-3">
-          <img src="publications/thesis_bachelor/nju.png" class="img-thumbnail-logo thesis-thumb" alt="Nanjing University logo for bachelor&#x27;s thesis">
+        <div class="col-md-3 thesis-card__media">
+          <div class="logo-frame thesis-logo-frame">
+            <div class="thesis-logo-stack" role="img" aria-label="Nanjing University logo for bachelor&#x27;s thesis">
+              <img src="publications/thesis_bachelor/nju.png" class="img-thumbnail-logo thesis-thumb thesis-thumb--static" alt="" aria-hidden="true">
+            </div>
+          </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9 thesis-card__body">
           <h3 class="publication-title">A Learning-Based Rendering Algorithm for Translucent Materials</h3>
           <p class="publication-subtitle">(基于学习的)高逼真半透明材质的渲染方法</p>
           <p class="publication-authors">Bachelor <em>June 2017</em></p>
@@ -244,67 +292,67 @@
         <li id="experience-x2robot">
           <p class="timeline-period">2025-Present</p>
           <div class="row align-items-center experience-entry">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <p class="experience-role">3D Generation Algorithm Engineer</p>
               <h3 class="experience-title"><a href="https://www.x2robot.com/en/about">X Square Robot</a></h3>
               <p class="experience-description">3D generation algorithm engineering and system development for embodied robotics applications.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/x2robot.svg" alt="X Square Robot logo"></div>
+            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="X Square Robot logo" style="--experience-logo-scale: 1.080;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/x2robot-light.svg" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/x2robot-dark.svg" alt="" aria-hidden="true"></div></div></div>
           </div>
         </li>
         <li id="experience-huawei-cloud">
           <p class="timeline-period">2022-2025</p>
           <div class="row align-items-center experience-entry">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <p class="experience-role">Principal Engineer, Top Minds (天才少年)</p>
               <h3 class="experience-title"><a href="https://www.huaweicloud.com/lab/multimedia/about.html#section-5">Huawei Cloud, Media Innovation Lab</a></h3>
               <p class="experience-description">Worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/huawei.png" alt="Huawei logo"></div>
+            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Media Innovation Lab logo" style="--experience-logo-scale: 0.920;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/media-innovation-lab-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/media-innovation-lab-dark.png" alt="" aria-hidden="true"></div></div></div>
           </div>
         </li>
         <li id="experience-msra-neural-relighting">
           <p class="timeline-period">2019.10-2020.5</p>
           <div class="row align-items-center experience-entry">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Microsoft Research Asia, Internet Graphics Group</h3>
               <p class="experience-description">Conducted research on neural relighting with Dr. Guojun Chen, Dr. Yue Dong, and Dr. Xin Tong.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/msra.png" alt="Microsoft Research Asia logo"></div>
+            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Microsoft logo" style="--experience-logo-scale: 0.940;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/msra-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/msra-dark.png" alt="" aria-hidden="true"></div></div></div>
           </div>
         </li>
         <li id="experience-tencent-ai-lab">
           <p class="timeline-period">2019.7-2019.8</p>
           <div class="row align-items-center experience-entry">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Tencent AI Lab</h3>
               <p class="experience-description">Conducted research on 3D face reconstruction with Dr. Haozhi Huang.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/tencent_ailab.png" alt="Tencent AI Lab logo"></div>
+            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Tencent AI Lab logo" style="--experience-logo-scale: 1.180;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/tencent-ai-lab-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/tencent-ai-lab-dark.png" alt="" aria-hidden="true"></div></div></div>
           </div>
         </li>
         <li id="experience-msra-appearance-modeling">
           <p class="timeline-period">2018.8-2019.5</p>
           <div class="row align-items-center experience-entry">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Microsoft Research Asia, Internet Graphics Group</h3>
               <p class="experience-description">Conducted research on appearance modeling with Dr. Yue Dong and Dr. Xin Tong.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/msra.png" alt="Microsoft Research Asia logo"></div>
+            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Microsoft logo" style="--experience-logo-scale: 0.940;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/msra-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/msra-dark.png" alt="" aria-hidden="true"></div></div></div>
           </div>
         </li>
         <li id="experience-megvii-facepp">
           <p class="timeline-period">2017.7-2017.9</p>
           <div class="row align-items-center experience-entry">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Megvii (Face++)</h3>
               <p class="experience-description">Conducted research on facial recovery and rendering with Dr. Liqian Ma.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><img class="experience-logo img-thumbnail-logo" src="images/face_plus_plus.png" alt="Megvii Face++ logo"></div>
+            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Megvii Face++ logo"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/facepp-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/facepp-dark.png" alt="" aria-hidden="true"></div></div></div>
           </div>
         </li>
         </ul>
@@ -363,9 +411,9 @@
     </footer>
   </main>
 
-  <script src="assets/js/jquery.min.js?v=a6c7d26d08"></script>
-  <script src="assets/js/bootstrap.min.js?v=a6c7d26d08"></script>
-  <script src="assets/js/custom.js?v=a6c7d26d08"></script>
+  <script src="assets/js/jquery.min.js?v=4bdc0526e9"></script>
+  <script src="assets/js/bootstrap.min.js?v=4bdc0526e9"></script>
+  <script src="assets/js/custom.js?v=4bdc0526e9"></script>
 </body>
 </html>
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="弹幕在简体中文世界还是颇受欢迎的，不仅是开始的Acfun、Bilibili，连腾讯视频、芒果TV等也陆续加入此列。 往好的方面想，弹幕增加了某种陪伴感，来自天南地北的人们跨越时间的限制可以围坐在一起互动，许是当下人们反抗孤独的一种方式。 但弹幕有很坏的一面，这里不谈戾气、骂战，毕竟这些不是弹幕所特有的。弹幕只是一面镜子，照出背后的人而已…">
   <meta property="og:title" content="弹幕 | 逆风呢喃">
   <meta property="og:description" content="弹幕在简体中文世界还是颇受欢迎的，不仅是开始的Acfun、Bilibili，连腾讯视频、芒果TV等也陆续加入此列。 往好的方面想，弹幕增加了某种陪伴感，来自天南地北的人们跨越时间的限制可以围坐在一起互动，许是当下人们反抗孤独的一种方式。 但弹幕有很坏的一面，这里不谈戾气、骂战，毕竟这些不是弹幕所特有的。弹幕只是一面镜子，照出背后的人而已…">
@@ -16,15 +17,52 @@
   <link rel="canonical" href="https://gao-duan.github.io/blog/2025/10/20/133925.html">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
-  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=5efd2f77e8">
-  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=5efd2f77e8">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=18f51d2c8f">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=18f51d2c8f">
   
   <title>弹幕 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
     <a href="/blog/" class="site-avatar-link">
-      <img src="/blog/assets/images/avatar.jpg?v=5efd2f77e8" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+      <img src="/blog/assets/images/avatar.jpg?v=18f51d2c8f" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
     </a>
     <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
     <nav class="site-nav" aria-label="Blog navigation">
@@ -74,6 +112,7 @@
       <p class="site-footer__note">A personal blog by Duan Gao.</p>
     </div>
   </footer>
+  <script src="/blog/assets/js/theme.js?v=18f51d2c8f"></script>
 </body>
 </html>
 

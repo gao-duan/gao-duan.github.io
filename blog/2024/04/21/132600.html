@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="掩耳盗铃者蒙住了眼睛 助纣为虐者戴上了眼罩 你看祂笑得多开心 夜幕低垂不见星月 三五好友齐聚 祂高唱着歌曲 纵饮着美酒 畅撸着肉串 路边经过的汽车 也不经为之躁动 应和出阵阵低鸣 你看祂生活多喜乐 寻常周末清晨 祂开着最新制程的新能源车 从市郊的80平小三房中驶出 伴着几曲上世纪末的情歌 城市公园铺展在眼前 孩童一片绿地上追闹 大人在自…">
   <meta property="og:title" content="好日子 | 逆风呢喃">
   <meta property="og:description" content="掩耳盗铃者蒙住了眼睛 助纣为虐者戴上了眼罩 你看祂笑得多开心 夜幕低垂不见星月 三五好友齐聚 祂高唱着歌曲 纵饮着美酒 畅撸着肉串 路边经过的汽车 也不经为之躁动 应和出阵阵低鸣 你看祂生活多喜乐 寻常周末清晨 祂开着最新制程的新能源车 从市郊的80平小三房中驶出 伴着几曲上世纪末的情歌 城市公园铺展在眼前 孩童一片绿地上追闹 大人在自…">
@@ -16,15 +17,52 @@
   <link rel="canonical" href="https://gao-duan.github.io/blog/2024/04/21/132600.html">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
-  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=5efd2f77e8">
-  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=5efd2f77e8">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=18f51d2c8f">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=18f51d2c8f">
   
   <title>好日子 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
     <a href="/blog/" class="site-avatar-link">
-      <img src="/blog/assets/images/avatar.jpg?v=5efd2f77e8" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+      <img src="/blog/assets/images/avatar.jpg?v=18f51d2c8f" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
     </a>
     <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
     <nav class="site-nav" aria-label="Blog navigation">
@@ -90,6 +128,7 @@
       <p class="site-footer__note">A personal blog by Duan Gao.</p>
     </div>
   </footer>
+  <script src="/blog/assets/js/theme.js?v=18f51d2c8f"></script>
 </body>
 </html>
 

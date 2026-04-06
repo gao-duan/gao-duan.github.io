@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="骨传导耳机的特点 特点1: 不入耳 特点2: 耳机音频不阻隔环境声 宣传中的好处 长时间佩戴舒适（1） 长期对听力有益（1） 开车、户外更安全（2） 不影响与他人交流（2） 耳挂稳固、运动防水（？） 不入耳只是骨传导的特点，未必是优点 佩戴舒适度与入不入耳并无必然关系 Airpods Pro 虽是入耳式，但佩戴舒适近乎无感，不开音频时经…">
   <meta property="og:title" content="鸡肋的骨传导耳机 | 逆风呢喃">
   <meta property="og:description" content="骨传导耳机的特点 特点1: 不入耳 特点2: 耳机音频不阻隔环境声 宣传中的好处 长时间佩戴舒适（1） 长期对听力有益（1） 开车、户外更安全（2） 不影响与他人交流（2） 耳挂稳固、运动防水（？） 不入耳只是骨传导的特点，未必是优点 佩戴舒适度与入不入耳并无必然关系 Airpods Pro 虽是入耳式，但佩戴舒适近乎无感，不开音频时经…">
@@ -16,15 +17,52 @@
   <link rel="canonical" href="https://gao-duan.github.io/blog/2025/12/05/155505.html">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
-  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=5efd2f77e8">
-  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=5efd2f77e8">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=18f51d2c8f">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=18f51d2c8f">
   
   <title>鸡肋的骨传导耳机 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
     <a href="/blog/" class="site-avatar-link">
-      <img src="/blog/assets/images/avatar.jpg?v=5efd2f77e8" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+      <img src="/blog/assets/images/avatar.jpg?v=18f51d2c8f" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
     </a>
     <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
     <nav class="site-nav" aria-label="Blog navigation">
@@ -96,6 +134,7 @@
       <p class="site-footer__note">A personal blog by Duan Gao.</p>
     </div>
   </footer>
+  <script src="/blog/assets/js/theme.js?v=18f51d2c8f"></script>
 </body>
 </html>
 

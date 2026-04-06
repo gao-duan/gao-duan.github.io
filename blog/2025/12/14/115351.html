@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="曹志漣，&lt;幻覺&gt; （粗体是我所加）: 心目中的焦點、想拍下來的主角，是那兩朵花口朝下的曼陀羅花。檢查照片，眼前的盡在，可花呢？放大再放大，才看兩個小白點。印象裡，花卻跳在眾生之上，鮮明，活生生，好大的兩朵。 是心的作用，幫視覺進行了局部放大。 就像對面山上的房舍，彷彿看到動靜，但寫真的紀錄是那麼遠而小，沒有期待中的細節。這顆心有如八倍長…">
   <meta property="og:title" content="心的作用 | 逆风呢喃">
   <meta property="og:description" content="曹志漣，&lt;幻覺&gt; （粗体是我所加）: 心目中的焦點、想拍下來的主角，是那兩朵花口朝下的曼陀羅花。檢查照片，眼前的盡在，可花呢？放大再放大，才看兩個小白點。印象裡，花卻跳在眾生之上，鮮明，活生生，好大的兩朵。 是心的作用，幫視覺進行了局部放大。 就像對面山上的房舍，彷彿看到動靜，但寫真的紀錄是那麼遠而小，沒有期待中的細節。這顆心有如八倍長…">
@@ -16,15 +17,52 @@
   <link rel="canonical" href="https://gao-duan.github.io/blog/2025/12/14/115351.html">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
-  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=5efd2f77e8">
-  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=5efd2f77e8">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=18f51d2c8f">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=18f51d2c8f">
   
   <title>心的作用 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
     <a href="/blog/" class="site-avatar-link">
-      <img src="/blog/assets/images/avatar.jpg?v=5efd2f77e8" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+      <img src="/blog/assets/images/avatar.jpg?v=18f51d2c8f" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
     </a>
     <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
     <nav class="site-nav" aria-label="Blog navigation">
@@ -66,6 +104,7 @@
       <p class="site-footer__note">A personal blog by Duan Gao.</p>
     </div>
   </footer>
+  <script src="/blog/assets/js/theme.js?v=18f51d2c8f"></script>
 </body>
 </html>
 
