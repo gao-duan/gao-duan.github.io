@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="从单张或多张物品照片出发，让 GPT-6 Astra 自主调用 Blender，完成六个具有交互结构的 3D 资产。">
+  <meta property="og:title" content="GPT-6 Astra 从图像到3D （一） | 逆风呢喃">
+  <meta property="og:description" content="从单张或多张物品照片出发，让 GPT-6 Astra 自主调用 Blender，完成六个具有交互结构的 3D 资产。">
+  <meta property="og:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-1/01-teaser.webp">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-1.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT-6 Astra 从图像到3D （一） | 逆风呢喃">
+  <meta name="twitter:description" content="从单张或多张物品照片出发，让 GPT-6 Astra 自主调用 Blender，完成六个具有交互结构的 3D 资产。">
+  <meta name="twitter:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-1/01-teaser.webp">
+  <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-1.html">
+  <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
+  <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=066124c3d7">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=066124c3d7">
+  
+  <title>GPT-6 Astra 从图像到3D （一） | 逆风呢喃</title>
+</head>
+<body class="page-post page-post--post">
+  <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
+    <a href="/blog/" class="site-avatar-link">
+      <img src="/blog/assets/images/avatar-microblog.jpg?v=066124c3d7" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+    </a>
+    <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
+    <nav class="site-nav" aria-label="Blog navigation">
+      <ul>
+<li><a class="nav-link" href="/blog/">Home</a></li>
+<li><a class="nav-link" href="/blog/photos/">Photos</a></li>
+<li><a class="nav-link" href="/blog/archive/">Archive</a></li>
+<li><a class="nav-link" href="/blog/about/">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="wrapper">
+<article class="post h-entry">
+  <header class="post-header">
+    <div class="post-date-wrapper">
+      <time class="dt-published" datetime="2026-09-06T15:18:28+08:00">September 6, 2026</time>
+    </div>
+    <h2 class="p-name post-title">GPT-6 Astra 从图像到3D （一）</h2>
+  </header>
+  <article class="post-content e-content with-title">
+    <p><link rel="stylesheet" href="/blog/assets/css/astra-series.css"></p>
+<div class="astra-series">
+<figure class="astra-hero">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/01-teaser.webp" target="_blank" rel="noopener" aria-label="GPT-6 Astra 从图像到3D （一）：概览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/01-teaser.webp" alt="GPT-6 Astra 从图像到3D （一）：概览" width="2400" height="1350" loading="eager" fetchpriority="high" decoding="async">
+  </a>
+</figure>
+<p>近日 OpenAI 发布了最新的 <a href="https://openai.com/index/gpt-6-astra/">GPT-6 Astra</a>, <a href="https://youtu.be/bOC3DisEOfg?t=112">YouTube 官方介绍视频</a>中提到 Astra 在 3D 建模任务上进步明显，于是尝试亲自试试效果如何。</p>
+<h2>测试介绍</h2>
+<p>测试非常简单，将物品照片交给 Astra<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>，让它调用 Blender 制作 3D 资产。我负责提出需求、提供参考图片<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>和反馈，建模过程由 Astra 自主完成。</p>
+<p>我给出的核心要求包括：</p>
+<ul>
+<li><strong>Sim-Ready</strong>：仿真动态交互，例如抽拉、转动、按压等；</li>
+<li><strong>视觉逼真</strong>：看齐近距离产品渲染品质；</li>
+<li><strong>三维一致性</strong>：脑补未拍到的区域，推测尺寸和重量，建模内部结构等。</li>
+</ul>
+<p>制作流程可参考<a href="#workflow">制作流程</a>的详细介绍，下面我们直接看几个具体的例子。</p>
+<h2>测试例子</h2>
+<h3>遥控器</h3>
+<p>遥控器我只给了一张正面图片。按键布局本身有据可依，但背面和电池仓等则需要合理补全。</p>
+<figure class="astra-figure" style="max-width:229px">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/02.webp" target="_blank" rel="noopener" aria-label="遥控器参考图，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/02.webp" alt="遥控器参考图" width="1028" height="1028" loading="lazy" decoding="async">
+  </a>
+  <figcaption>遥控器参考图</figcaption>
+</figure>
+<p>Astra 将正面拆成 45 个可以独立按压的部件；背面则补出电池仓滑盖、电池仓内壁等。</p>
+<div class="astra-gallery">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/03.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/03.webp" alt="遥控器：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/04.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/04.webp" alt="遥控器：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/05.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/05.webp" alt="遥控器：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/06.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/06.webp" alt="遥控器：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+</div>
+<h3>抽屉柜</h3>
+<p>抽屉柜也仅给了一张图片。由于图片中并没有展示柜子哪里可以活动，核心是测试交互结构和内部结构的建模。</p>
+<figure class="astra-figure" style="max-width:221px">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/07.webp" target="_blank" rel="noopener" aria-label="抽屉柜参考图，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/07.webp" alt="抽屉柜参考图" width="500" height="500" loading="lazy" decoding="async">
+  </a>
+  <figcaption>抽屉柜参考图</figcaption>
+</figure>
+<p>Astra 为它建立了完整的抽屉箱体、导轨和把手，四个脚轮各有转向与滚动轴，下抽屉另有一个随动支撑轮。导轨上还包括轴承滚珠等细节。</p>
+<div class="astra-gallery astra-gallery--three">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/08.webp" target="_blank" rel="noopener" aria-label="抽屉柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/08.webp" alt="抽屉柜：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/09.webp" target="_blank" rel="noopener" aria-label="抽屉柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/09.webp" alt="抽屉柜：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/10.webp" target="_blank" rel="noopener" aria-label="抽屉柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/10.webp" alt="抽屉柜：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+</div>
+<h3>洗地机</h3>
+<p>洗地机则给了两张参考图片，一张包含整体结构，另一张则聚焦于洗地机头部细节。</p>
+<div class="astra-reference-row">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/11.webp" target="_blank" rel="noopener" aria-label="洗地机参考图1，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/11.webp" alt="洗地机参考图1" width="800" height="1200" loading="lazy" decoding="async">
+  </a>
+  <figcaption>洗地机参考图1</figcaption>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/12.webp" target="_blank" rel="noopener" aria-label="洗地机参考图2，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/12.webp" alt="洗地机参考图2" width="1816" height="1222" loading="lazy" decoding="async">
+  </a>
+  <figcaption>洗地机参考图2</figcaption>
+</figure>
+</div>
+<p>Astra 建模了头部的俯仰、侧倾，滚刷与后轮的转动等。</p>
+<div class="astra-gallery">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/13.webp" target="_blank" rel="noopener" aria-label="洗地机：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/13.webp" alt="洗地机：生成结果" width="1400" height="1400" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/14.webp" target="_blank" rel="noopener" aria-label="洗地机：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/14.webp" alt="洗地机：生成结果" width="1400" height="1400" loading="lazy" decoding="async">
+  </a>
+</figure>
+</div>
+<h3>咖啡机</h3>
+<p>咖啡机的两张参考图中除了咖啡机外，还包含了若干干扰物体<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>（咖啡杯以及牛奶）。</p>
+<figure class="astra-figure" style="max-width:326px">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/15.webp" target="_blank" rel="noopener" aria-label="咖啡机参考图，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/15.webp" alt="咖啡机参考图" width="772" height="772" loading="lazy" decoding="async">
+  </a>
+  <figcaption>咖啡机参考图</figcaption>
+</figure>
+<p>Astra 建模了八个关节，覆盖水箱、接水盘、奶壶、出液口、豆仓盖、奶壶盖、奶嘴与屏幕。</p>
+<div class="astra-gallery">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/16.webp" target="_blank" rel="noopener" aria-label="咖啡机：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/16.webp" alt="咖啡机：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/17.webp" target="_blank" rel="noopener" aria-label="咖啡机：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/17.webp" alt="咖啡机：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+</div>
+<h3>冷冻柜</h3>
+<p>冰激凌商业冷冻柜的5张图片都来自商品介绍页面的截图。柜面上的印刷贴纸是其主要视觉特征。</p>
+<figure class="astra-figure" style="max-width:360px">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/18.webp" target="_blank" rel="noopener" aria-label="冷冻柜参考图。包装图片印在柜面上。，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/18.webp" alt="冷冻柜参考图。包装图片印在柜面上。" width="2252" height="1476" loading="lazy" decoding="async">
+  </a>
+  <figcaption>冷冻柜参考图。包装图片印在柜面上。</figcaption>
+</figure>
+<p>Astra 将柜体、玻璃、盖框、控制器与内部格栅分别建模。关闭时看到完整外形，打开时则露出内胆和分隔结构。</p>
+<p>上方的玻璃推拉门是其主要交互组件。Astra 将两扇曲面玻璃盖放在不同高度的轨道上，为交错滑动留出空间。</p>
+<p>至于包装图片，则通过调用图像生成工具，把参考中的柜贴整理成平面纹理：保留印刷内容，去掉照片里的控制器和通风口影像，补成连续背景。</p>
+<div class="astra-gallery">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/19.webp" target="_blank" rel="noopener" aria-label="冷冻柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/19.webp" alt="冷冻柜：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/20.webp" target="_blank" rel="noopener" aria-label="冷冻柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/20.webp" alt="冷冻柜：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+</div>
+<h3>电煮锅</h3>
+<p>这三张参考图来自我自己手机实拍。</p>
+<figure class="astra-figure" style="max-width:300px">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/21.webp" target="_blank" rel="noopener" aria-label="电煮锅参考图，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/21.webp" alt="电煮锅参考图" width="5846" height="5762" loading="lazy" decoding="async">
+  </a>
+  <figcaption>电煮锅参考图</figcaption>
+</figure>
+<p>Astra 建模了可提起的锅盖、锅体，以及移动调温滑杆。这里温度调节器的外凸建模和图片存在明显差异，但作为生成而非重建任务，也可以接受这种差异。</p>
+<div class="astra-gallery">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/22.webp" target="_blank" rel="noopener" aria-label="电煮锅：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/22.webp" alt="电煮锅：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/23.webp" target="_blank" rel="noopener" aria-label="电煮锅：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/23.webp" alt="电煮锅：生成结果" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+</figure>
+</div>
+<p>篇幅所限，更多细节增强、统计信息以及 Token 消耗等列在了 <a href="/blog/2026/09/06/astra-image-to-3d-2.html">GPT-6 Astra 从图像到3D （二）</a>。</p>
+<hr>
+<h2>附录一：3D 结构预览</h2>
+<p>换成灰模，从斜向视角看看这些资产的形体与结构。</p>
+<div class="astra-gallery">
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/clay-remote-v2.webp" target="_blank" rel="noopener" aria-label="遥控器：灰模预览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/clay-remote-v2.webp" alt="遥控器：灰模预览" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+  <figcaption>遥控器：灰模预览</figcaption>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/clay-ikea-v2.webp" target="_blank" rel="noopener" aria-label="抽屉柜：灰模预览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/clay-ikea-v2.webp" alt="抽屉柜：灰模预览" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+  <figcaption>抽屉柜：灰模预览</figcaption>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/clay-dyson_clean-v1.webp" target="_blank" rel="noopener" aria-label="洗地机：灰模预览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/clay-dyson_clean-v1.webp" alt="洗地机：灰模预览" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+  <figcaption>洗地机：灰模预览</figcaption>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/clay-coffee_machine-v2.webp" target="_blank" rel="noopener" aria-label="咖啡机：灰模预览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/clay-coffee_machine-v2.webp" alt="咖啡机：灰模预览" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+  <figcaption>咖啡机：灰模预览</figcaption>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/clay-commercial_freezer-v2.webp" target="_blank" rel="noopener" aria-label="冷冻柜：灰模预览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/clay-commercial_freezer-v2.webp" alt="冷冻柜：灰模预览" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+  <figcaption>冷冻柜：灰模预览</figcaption>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-1/clay-electric_pot-v2.webp" target="_blank" rel="noopener" aria-label="电煮锅：灰模预览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-1/clay-electric_pot-v2.webp" alt="电煮锅：灰模预览" width="1800" height="1800" loading="lazy" decoding="async">
+  </a>
+  <figcaption>电煮锅：灰模预览</figcaption>
+</figure>
+</div>
+<h2 id="workflow">附录二：制作流程</h2>
+<p>我要求 Astra 需要按照顺序依次完成六个物体的建模，前面积累的经验需要沉淀到后面。因而，Astra 逐渐搭起了一套共用工具<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>：基础几何、材质、零件关系和动作都有可复用的函数，每个资产再写自己的形状与结构。</p>
+<blockquote>
+<p>Astra 自己总结出的建模流程，可以概括为四步：</p>
+<ol>
+<li>读图并推断结构。
+    从轮廓、比例和可见接缝判断零件，估计尺度，再根据交互需要补出背面和内部。</li>
+<li>按活动关系分件建模。
+    壳体、盖板、抽屉和按键各自独立，建模时就安排转轴、通道与间隙。</li>
+<li>分别处理外观与碰撞。
+    精细网格表现材质和局部细节，简化几何承担碰撞，再配上质量、关节限位和驱动。</li>
+<li>自己检查，再继续修改。
+    渲染整体与近景，展开活动部件，结合图像和几何检查判断哪里需要重做。</li>
+</ol>
+</blockquote>
+</div>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>GPT-6 Astra Ultra&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>未特别说明的均来自互联网检索&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>我明确指出不需要建模这些内容，因而是干扰物体&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>尽管我特意强调不限制如何操作 Blender（可以通过 computer use 直接控制界面也可以代码），而 Astra 仍然选择了 Python 脚本&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </article>
+</article>
+<nav class="pagination-links post-navigation" aria-label="Post navigation">
+  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/06/astra-image-to-3d-2.html">← GPT-6 Astra 从图像到3D （二）</a></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/04/26/no-human-is-limited.html">No Human is Limited →</a></div>
+</nav>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="site-footer__note">由自建工具构建的网站，托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a>.</p>
+    </div>
+  </footer>
+  <script src="/blog/assets/js/theme.js?v=066124c3d7"></script>
+</body>
+</html>
+

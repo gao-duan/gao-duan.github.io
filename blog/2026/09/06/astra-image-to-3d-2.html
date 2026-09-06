@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="进一步细化六个资产的几何与材质，并汇总两个版本的几何、材质、物理信息，以及 Token 和时间开销。">
+  <meta property="og:title" content="GPT-6 Astra 从图像到3D （二） | 逆风呢喃">
+  <meta property="og:description" content="进一步细化六个资产的几何与材质，并汇总两个版本的几何、材质、物理信息，以及 Token 和时间开销。">
+  <meta property="og:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-2.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT-6 Astra 从图像到3D （二） | 逆风呢喃">
+  <meta name="twitter:description" content="进一步细化六个资产的几何与材质，并汇总两个版本的几何、材质、物理信息，以及 Token 和时间开销。">
+  <meta name="twitter:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp">
+  <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-2.html">
+  <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
+  <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=066124c3d7">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=066124c3d7">
+  
+  <title>GPT-6 Astra 从图像到3D （二） | 逆风呢喃</title>
+</head>
+<body class="page-post page-post--post">
+  <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
+    <a href="/blog/" class="site-avatar-link">
+      <img src="/blog/assets/images/avatar-microblog.jpg?v=066124c3d7" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+    </a>
+    <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
+    <nav class="site-nav" aria-label="Blog navigation">
+      <ul>
+<li><a class="nav-link" href="/blog/">Home</a></li>
+<li><a class="nav-link" href="/blog/photos/">Photos</a></li>
+<li><a class="nav-link" href="/blog/archive/">Archive</a></li>
+<li><a class="nav-link" href="/blog/about/">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="wrapper">
+<article class="post h-entry">
+  <header class="post-header">
+    <div class="post-date-wrapper">
+      <time class="dt-published" datetime="2026-09-06T15:18:29+08:00">September 6, 2026</time>
+    </div>
+    <h2 class="p-name post-title">GPT-6 Astra 从图像到3D （二）</h2>
+  </header>
+  <article class="post-content e-content with-title">
+    <p><link rel="stylesheet" href="/blog/assets/css/astra-series.css"></p>
+<div class="astra-series">
+<figure class="astra-hero">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp" target="_blank" rel="noopener" aria-label="GPT-6 Astra 从图像到3D （二）：概览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp" alt="GPT-6 Astra 从图像到3D （二）：概览" width="2400" height="1350" loading="eager" fetchpriority="high" decoding="async">
+  </a>
+</figure>
+<p>书接上回（<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一）</a>），我为每个资产生成了<code>v1</code> 和 <code>v2</code> 两个版本。<code>v2</code> 在不修改主要结构的前提下，进一步精细化了几何和表观的细节（同样也是 Astra 自动完成），代价就是面片数、材质素材的膨胀。</p>
+<h2>细节增强</h2>
+<p>具体指令如下：</p>
+<blockquote>
+<p>进一步提升6个资产的质量：提升表观细节，并保持物理交互性。可考虑的包括但不限于：引入高质量的材质贴图、精细化局部细节的建模等。</p>
+</blockquote>
+<p>以下每个资产的具体修改细节均由 Astra 自己构想并实现。</p>
+<h3>遥控器</h3>
+<ul>
+<li>圆形按键改为带支撑环线的浅弧面，印字随按键曲面贴合；补充定位触点。</li>
+<li>补充电池接触弹簧、触片、真实十字凹槽螺钉、卡扣座和模具顶针痕。</li>
+<li>引入 2K PBR 塑料、硅胶及镀镍表面，保留全部按键和电池盖交互。</li>
+</ul>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/02.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/02.webp" alt="遥控器：生成结果" width="3262" height="1692" loading="lazy" decoding="async">
+  </a>
+</figure>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/03.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/03.webp" alt="遥控器：生成结果" width="3236" height="1696" loading="lazy" decoding="async">
+  </a>
+</figure>
+<h3>抽屉柜</h3>
+<ul>
+<li>把手重建为连续圆角实体，消除原拼接处的高光断层。</li>
+<li>补充 96 颗滑轨滚珠、保持架折边、冲压加强筋、限位块和内侧紧固件。</li>
+<li>细化粉末涂层、镀锌钢、尼龙与 TPE；补充脚轮辐条、轴肩和密封圈，并平滑轮胎肩部及轴承套的圆角法线。</li>
+</ul>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/04.webp" target="_blank" rel="noopener" aria-label="抽屉柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/04.webp" alt="抽屉柜：生成结果" width="3258" height="1702" loading="lazy" decoding="async">
+  </a>
+</figure>
+<h3>洗地机</h3>
+<ul>
+<li>滚刷由锥状绒毛改为 1.8 万根带弯曲和渐细尖端的闭合纤维，底层使用校准为蓝色的 CC0 毡布微结构。</li>
+<li>细化阳极铜色金属、接头和橡胶表面；金属杆采用有物理尺度的圆柱 UV。</li>
+<li>修正铰接耳座的圆角法线，并补充凹槽紧固件、轴肩、快接密封和轮胎侧壁细节。</li>
+</ul>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/05.webp" target="_blank" rel="noopener" aria-label="洗地机：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/05.webp" alt="洗地机：生成结果" width="3252" height="1722" loading="lazy" decoding="async">
+  </a>
+</figure>
+<h3>咖啡机</h3>
+<ul>
+<li>细化不锈钢拉丝、镀铬、ABS 和弹性密封材质，保留透明容器与亮漆的光学设置。</li>
+<li>补充中空出水嘴卷边、加工环、密封圈、格栅支撑和料仓可见的进料口及加强筋。</li>
+<li>调节旋钮重建为连续滚花实体；补充真实凹槽紧固件，校正水箱刻度和型号印字的贴合位置，并平滑出水头导轨的圆角。</li>
+</ul>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/06.webp" target="_blank" rel="noopener" aria-label="咖啡机：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/06.webp" alt="咖啡机：生成结果" width="3262" height="1696" loading="lazy" decoding="async">
+  </a>
+</figure>
+<h3>冷冻柜</h3>
+<ul>
+<li>细化搪瓷、塑料、通风钢板和密封材质，保留参考印刷图及曲面玻璃。</li>
+<li>滑盖增加双层擦拭唇、端部滑块、抓握细纹和紧固件，保留双轨高度差及原行程。</li>
+<li>补充 52 片成形百叶、控制面板紧固件、玻璃刻字和脚轮细节；温控旋钮改为连续轮廓实体。</li>
+</ul>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/07.webp" target="_blank" rel="noopener" aria-label="冷冻柜：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/07.webp" alt="冷冻柜：生成结果" width="3252" height="1758" loading="lazy" decoding="async">
+  </a>
+</figure>
+<h3>电煮锅</h3>
+<ul>
+<li>细化搪瓷、ABS、酚醛手柄、不粘涂层和橡胶表面。</li>
+<li>加热盘使用专用 4K 径向加工法线与粗糙度贴图，并保留三道真实车削槽。</li>
+<li>补充中空蒸汽孔衬套、锅盖握柄下方垫圈与螺钉、加热盘固定座及滑块抓握细纹；保留锅体、盖子及温控滑块交互。</li>
+</ul>
+<figure class="astra-figure">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/08.webp" target="_blank" rel="noopener" aria-label="电煮锅：生成结果，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/08.webp" alt="电煮锅：生成结果" width="3238" height="1736" loading="lazy" decoding="async">
+  </a>
+</figure>
+<h2>统计信息</h2>
+<h3>几何</h3>
+<p>v1：</p>
+<div aria-label="几何表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align: right;">非空网格对象</th>
+<th style="text-align: right;">边数</th>
+<th style="text-align: right;">三角面</th>
+<th style="text-align: right;">四边面</th>
+<th style="text-align: right;">n 边面（&gt;4）</th>
+<th style="text-align: right;">四边面占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥控器</td>
+<td style="text-align: right;">209</td>
+<td style="text-align: right;">234,759</td>
+<td style="text-align: right;">22,749</td>
+<td style="text-align: right;">83,755</td>
+<td style="text-align: right;">276</td>
+<td style="text-align: right;">78.4%</td>
+</tr>
+<tr>
+<td>抽屉柜</td>
+<td style="text-align: right;">202</td>
+<td style="text-align: right;">66,692</td>
+<td style="text-align: right;">3,912</td>
+<td style="text-align: right;">24,192</td>
+<td style="text-align: right;">182</td>
+<td style="text-align: right;">85.5%</td>
+</tr>
+<tr>
+<td>清洁器</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">192,843</td>
+<td style="text-align: right;">97,994</td>
+<td style="text-align: right;">19,420</td>
+<td style="text-align: right;">249</td>
+<td style="text-align: right;">16.5%</td>
+</tr>
+<tr>
+<td>咖啡机</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">135,638</td>
+<td style="text-align: right;">19,876</td>
+<td style="text-align: right;">37,516</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">65.1%</td>
+</tr>
+<tr>
+<td>商用冷冻柜</td>
+<td style="text-align: right;">242</td>
+<td style="text-align: right;">52,062</td>
+<td style="text-align: right;">3,584</td>
+<td style="text-align: right;">18,080</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">82.9%</td>
+</tr>
+<tr>
+<td>电煮锅</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">103,709</td>
+<td style="text-align: right;">13,312</td>
+<td style="text-align: right;">34,276</td>
+<td style="text-align: right;">202</td>
+<td style="text-align: right;">71.7%</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;"><strong>1,014</strong></td>
+<td style="text-align: right;"><strong>785,703</strong></td>
+<td style="text-align: right;"><strong>161,427</strong></td>
+<td style="text-align: right;"><strong>217,239</strong></td>
+<td style="text-align: right;"><strong>1,309</strong></td>
+<td style="text-align: right;"><strong>57.2%</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>v2:</p>
+<div aria-label="几何表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align: right;">非空网格对象</th>
+<th style="text-align: right;">边数</th>
+<th style="text-align: right;">三角面</th>
+<th style="text-align: right;">四边面</th>
+<th style="text-align: right;">n 边面（&gt;4）</th>
+<th style="text-align: right;">四边面占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥控器</td>
+<td style="text-align: right;">242</td>
+<td style="text-align: right;">268,663</td>
+<td style="text-align: right;">23,317</td>
+<td style="text-align: right;">100,935</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: right;">81.0%</td>
+</tr>
+<tr>
+<td>抽屉柜</td>
+<td style="text-align: right;">404</td>
+<td style="text-align: right;">172,476</td>
+<td style="text-align: right;">10,056</td>
+<td style="text-align: right;">73,500</td>
+<td style="text-align: right;">158</td>
+<td style="text-align: right;">87.8%</td>
+</tr>
+<tr>
+<td>清洁器</td>
+<td style="text-align: right;">89</td>
+<td style="text-align: right;">354,843</td>
+<td style="text-align: right;">38,762</td>
+<td style="text-align: right;">145,108</td>
+<td style="text-align: right;">241</td>
+<td style="text-align: right;">78.8%</td>
+</tr>
+<tr>
+<td>咖啡机</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">155,286</td>
+<td style="text-align: right;">20,388</td>
+<td style="text-align: right;">47,086</td>
+<td style="text-align: right;">254</td>
+<td style="text-align: right;">69.5%</td>
+</tr>
+<tr>
+<td>商用冷冻柜</td>
+<td style="text-align: right;">371</td>
+<td style="text-align: right;">117,732</td>
+<td style="text-align: right;">8,660</td>
+<td style="text-align: right;">45,920</td>
+<td style="text-align: right;">164</td>
+<td style="text-align: right;">83.9%</td>
+</tr>
+<tr>
+<td>电煮锅</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">119,713</td>
+<td style="text-align: right;">13,952</td>
+<td style="text-align: right;">41,960</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">74.8%</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;"><strong>1,413</strong></td>
+<td style="text-align: right;"><strong>1,188,713</strong></td>
+<td style="text-align: right;"><strong>115,135</strong></td>
+<td style="text-align: right;"><strong>454,509</strong></td>
+<td style="text-align: right;"><strong>1,337</strong></td>
+<td style="text-align: right;"><strong>79.6%</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>材质</h3>
+<div aria-label="材质表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align: right;">V1 外观材质</th>
+<th style="text-align: right;">V2 外观材质</th>
+<th style="text-align: right;">V1 贴图</th>
+<th style="text-align: right;">V2 贴图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥控器</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td>抽屉柜</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr>
+<td>清洁器</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr>
+<td>咖啡机</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>商用冷冻柜</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr>
+<td>电煮锅</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;"><strong>73</strong></td>
+<td style="text-align: right;"><strong>74</strong></td>
+<td style="text-align: right;"><strong>25</strong></td>
+<td style="text-align: right;"><strong>114</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>V1</strong>：23 张 512 × 512 法线图；1 张 1024 × 1024 滚刷颜色图；1 张 1706 × 922 冷冻柜柜贴。</li>
+<li><strong>V2</strong>：111 张 2048 × 2048；2 张 4096 × 4096（电煮锅加热盘的法线与粗糙度）；沿用 1 张 1706 × 922 柜贴。</li>
+</ul>
+<h3>物理</h3>
+<p>以下信息 v1 和 v2 一致。</p>
+<div aria-label="物理表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align: right;">刚体</th>
+<th style="text-align: right;">关节总数</th>
+<th style="text-align: right;">滑动</th>
+<th style="text-align: right;">转动（连续）</th>
+<th style="text-align: right;">碰撞体总数</th>
+<th style="text-align: right;">盒体 / 圆柱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥控器</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">0（0）</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">21 / 33</td>
+</tr>
+<tr>
+<td>抽屉柜</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9（9）</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">28 / 13</td>
+</tr>
+<tr>
+<td>清洁器</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5（3）</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">12 / 13</td>
+</tr>
+<tr>
+<td>咖啡机</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3（0）</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">38 / 1</td>
+</tr>
+<tr>
+<td>商用冷冻柜</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">10（8）</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">48 / 13</td>
+</tr>
+<tr>
+<td>电煮锅</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0（0）</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">54 / 4</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td style="text-align: right;"><strong>95</strong></td>
+<td style="text-align: right;"><strong>89</strong></td>
+<td style="text-align: right;"><strong>62</strong></td>
+<td style="text-align: right;"><strong>27（20）</strong></td>
+<td style="text-align: right;"><strong>278</strong></td>
+<td style="text-align: right;"><strong>201 / 77</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div aria-label="物理表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align: right;">尺寸 X × Y × Z（mm）</th>
+<th style="text-align: right;">估计总质量（kg）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥控器</td>
+<td style="text-align: right;">48 × 242 × 18</td>
+<td style="text-align: right;">0.1258</td>
+</tr>
+<tr>
+<td>抽屉柜</td>
+<td style="text-align: right;">400 × 500 × 650</td>
+<td style="text-align: right;">16.0320</td>
+</tr>
+<tr>
+<td>清洁器</td>
+<td style="text-align: right;">250 × 132 × 1160</td>
+<td style="text-align: right;">1.4391</td>
+</tr>
+<tr>
+<td>咖啡机</td>
+<td style="text-align: right;">294 × 458 × 424</td>
+<td style="text-align: right;">9.1460</td>
+</tr>
+<tr>
+<td>商用冷冻柜</td>
+<td style="text-align: right;">1340 × 720 × 946</td>
+<td style="text-align: right;">64.7130</td>
+</tr>
+<tr>
+<td>电煮锅</td>
+<td style="text-align: right;">444 × 366 × 298</td>
+<td style="text-align: right;">3.3300</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>开销</h3>
+<h4>Token</h4>
+<p>这里列举了<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一）</a> 和本文任务，以及下一篇<a href="/blog/2026/09/06/astra-image-to-3d-3.html">GPT-6 Astra 从图像到3D （三）</a>中场景生成的开销。</p>
+<div aria-label="Token表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th style="text-align: right;">总量</th>
+<th style="text-align: right;">未缓存输入</th>
+<th style="text-align: right;">缓存输入</th>
+<th style="text-align: right;">输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>六个资产 V1</td>
+<td style="text-align: right;"><strong>48.36</strong></td>
+<td style="text-align: right;">1.55</td>
+<td style="text-align: right;">46.54</td>
+<td style="text-align: right;">0.27</td>
+</tr>
+<tr>
+<td>六个资产 V2</td>
+<td style="text-align: right;"><strong>57.25</strong></td>
+<td style="text-align: right;">1.85</td>
+<td style="text-align: right;">55.09</td>
+<td style="text-align: right;">0.32</td>
+</tr>
+<tr>
+<td>两个场景</td>
+<td style="text-align: right;"><strong>38.26</strong></td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">36.89</td>
+<td style="text-align: right;">0.22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>单位为百万 token (M)</li>
+<li>约 97% 的输入来自缓存。</li>
+<li>V1的消耗，大约占 ChatGPT Pro (x20) 周额度的 4% ～ 5%；按订阅费粗略摊算，约合人民币 12～16 元。</li>
+</ul>
+<h4>时间</h4>
+<div aria-label="时间表格" class="astra-table" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th style="text-align: right;">累计运行时长</th>
+<th>构成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>六个资产 V1</td>
+<td style="text-align: right;"><strong>约 3 小时 30 分钟</strong></td>
+<td>首轮制作约 2 小时 52 分钟，后续修正约 38 分钟</td>
+</tr>
+<tr>
+<td>六个资产 V2</td>
+<td style="text-align: right;"><strong>约 2 小时 51 分钟</strong></td>
+<td>包含迭代、检查与交付</td>
+</tr>
+<tr>
+<td>两个场景</td>
+<td style="text-align: right;"><strong>约 2 小时 3 分钟</strong></td>
+<td>包含厨房和工作区的制作、检查与交付</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>每轮每个物体平均约半小时</li>
+<li>每个场景平均约一小时</li>
+</ul>
+</div>
+  </article>
+</article>
+<nav class="pagination-links post-navigation" aria-label="Post navigation">
+  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/06/astra-image-to-3d-3.html">← GPT-6 Astra 从图像到3D （三）</a></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一） →</a></div>
+</nav>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="site-footer__note">由自建工具构建的网站，托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a>.</p>
+    </div>
+  </footer>
+  <script src="/blog/assets/js/theme.js?v=066124c3d7"></script>
+</body>
+</html>
+

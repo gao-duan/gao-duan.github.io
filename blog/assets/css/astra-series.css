@@ -1,0 +1,181 @@
+/* Presentation used only by the three Astra articles. */
+.astra-series {
+  min-width: 0;
+}
+
+.astra-series h2 {
+  margin-top: 2.6rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  font-size: 1.5rem;
+  line-height: 1.45;
+  scroll-margin-top: 1.5rem;
+}
+
+.astra-series h3 {
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--heading-color);
+  font-size: 1.18rem;
+}
+
+.astra-series h4 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.astra-series .astra-hero {
+  margin: 1.5rem 0 2rem;
+}
+
+.astra-series .astra-figure {
+  margin: 1.35rem auto 1.7rem;
+}
+
+.astra-series .astra-image-link {
+  display: block;
+  border: 0;
+}
+
+.astra-series .astra-image-link img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.astra-series figcaption {
+  line-height: 1.65;
+  font-size: 0.85rem;
+}
+
+.astra-series .astra-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+  margin: 1.35rem 0 1.7rem;
+}
+
+.astra-series .astra-gallery .astra-figure {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.astra-series .astra-gallery--three > :first-child {
+  grid-column: 1 / -1;
+}
+
+.astra-series .astra-reference-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.23fr);
+  align-items: start;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 1.35rem auto 1.7rem;
+}
+
+.astra-series .astra-reference-row .astra-figure {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.astra-series .astra-reference-row figcaption {
+  font-size: 0.8rem;
+}
+
+.astra-series blockquote {
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
+.astra-series blockquote > :first-child {
+  margin-top: 0;
+}
+
+.astra-series blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.astra-series .astra-table {
+  max-width: 100%;
+  margin: 1.2rem 0 1.6rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.astra-series .astra-table:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+}
+
+.astra-series table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ui-font);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+}
+
+.astra-series th,
+.astra-series td {
+  padding: 0.62rem 0.6rem;
+  border-bottom: 1px solid var(--line-color);
+  white-space: nowrap;
+}
+
+.astra-series th {
+  color: var(--heading-color);
+  background: var(--code-background);
+  font-weight: 600;
+}
+
+.astra-series th:first-child,
+.astra-series td:first-child {
+  text-align: left;
+}
+
+.astra-series ~ .footnote {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--muted-color);
+}
+
+.astra-series ~ .footnote hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+
+.astra-series ~ .footnote li {
+  scroll-margin-top: 1.5rem;
+}
+
+.astra-series sup {
+  font-size: 0.72em;
+  line-height: 0;
+}
+
+@media (max-width: 540px) {
+  .astra-series .astra-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .astra-series h2 {
+    font-size: 1.32rem;
+  }
+
+  .astra-series h3 {
+    font-size: 1.12rem;
+  }
+
+  .astra-series table {
+    font-size: 0.78rem;
+  }
+}
