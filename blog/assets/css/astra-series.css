@@ -179,3 +179,46 @@
     font-size: 0.78rem;
   }
 }
+
+/* Interaction videos above the six asset examples. */
+.astra-series .astra-video-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+  margin: 1.35rem 0 2rem;
+}
+
+.astra-series .astra-video-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.astra-series .astra-video-figure video {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0;
+  border-radius: 8px;
+  background: #262b30;
+  box-shadow: none;
+}
+
+.astra-series .astra-video-figure figcaption {
+  margin-top: 0.45rem;
+  text-align: center;
+}
+
+@media (max-width: 740px) {
+  .astra-series .astra-video-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .astra-series .astra-video-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

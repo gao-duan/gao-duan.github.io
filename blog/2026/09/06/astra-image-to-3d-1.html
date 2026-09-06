@@ -17,7 +17,7 @@
   <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-1.html">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
   <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
-  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=066124c3d7">
+  <link rel="icon" type="image/x-icon" href="/blog/assets/images/favicon.ico?v=934084b0de">
   <script>
     (function () {
       var storageKey = "duan-gao-blog-theme";
@@ -45,7 +45,7 @@
       root.setAttribute("data-theme", isDark ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=066124c3d7">
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=934084b0de">
   
   <title>GPT-6 Astra 从图像到3D （一） | 逆风呢喃</title>
 </head>
@@ -62,7 +62,7 @@
       </div>
     </div>
     <a href="/blog/" class="site-avatar-link">
-      <img src="/blog/assets/images/avatar-microblog.jpg?v=066124c3d7" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+      <img src="/blog/assets/images/avatar-microblog.jpg?v=934084b0de" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
     </a>
     <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
     <nav class="site-nav" aria-label="Blog navigation">
@@ -103,6 +103,50 @@
 </ul>
 <p>制作流程可参考<a href="#workflow">制作流程</a>的详细介绍，下面我们直接看几个具体的例子。</p>
 <h2>测试例子</h2>
+<div aria-label="六个资产的交互演示" class="astra-video-gallery" id="interaction-videos">
+<figure class="astra-video-figure">
+    <video controls muted loop playsinline preload="metadata" width="1080" height="1080" poster="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/remote-poster.jpg" aria-label="遥控器交互演示">
+      <source src="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/remote.mp4" type="video/mp4">
+      <a href="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/remote.mp4">播放遥控器交互视频</a>
+    </video>
+    <figcaption>遥控器</figcaption>
+  </figure>
+<figure class="astra-video-figure">
+    <video controls muted loop playsinline preload="metadata" width="1080" height="1080" poster="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/ikea-poster.jpg" aria-label="抽屉柜交互演示">
+      <source src="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/ikea.mp4" type="video/mp4">
+      <a href="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/ikea.mp4">播放抽屉柜交互视频</a>
+    </video>
+    <figcaption>抽屉柜</figcaption>
+  </figure>
+<figure class="astra-video-figure">
+    <video controls muted loop playsinline preload="metadata" width="1080" height="1080" poster="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/dyson_clean-poster.jpg" aria-label="洗地机交互演示">
+      <source src="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/dyson_clean.mp4" type="video/mp4">
+      <a href="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/dyson_clean.mp4">播放洗地机交互视频</a>
+    </video>
+    <figcaption>洗地机</figcaption>
+  </figure>
+<figure class="astra-video-figure">
+    <video controls muted loop playsinline preload="metadata" width="1080" height="1080" poster="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/coffee_machine-poster.jpg" aria-label="咖啡机交互演示">
+      <source src="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/coffee_machine.mp4" type="video/mp4">
+      <a href="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/coffee_machine.mp4">播放咖啡机交互视频</a>
+    </video>
+    <figcaption>咖啡机</figcaption>
+  </figure>
+<figure class="astra-video-figure">
+    <video controls muted loop playsinline preload="metadata" width="1080" height="1080" poster="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/commercial_freezer-poster.jpg" aria-label="冷冻柜交互演示">
+      <source src="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/commercial_freezer.mp4" type="video/mp4">
+      <a href="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/commercial_freezer.mp4">播放冷冻柜交互视频</a>
+    </video>
+    <figcaption>冷冻柜</figcaption>
+  </figure>
+<figure class="astra-video-figure">
+    <video controls muted loop playsinline preload="metadata" width="1080" height="1080" poster="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/electric_pot-poster.jpg" aria-label="电煮锅交互演示">
+      <source src="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/electric_pot.mp4" type="video/mp4">
+      <a href="/blog/uploads/2026/astra-image-to-3d/part-1/interaction-v2/electric_pot.mp4">播放电煮锅交互视频</a>
+    </video>
+    <figcaption>电煮锅</figcaption>
+  </figure>
+</div>
 <h3>遥控器</h3>
 <p>遥控器我只给了一张正面图片。按键布局本身有据可依，但背面和电池仓等则需要合理补全。</p>
 <figure class="astra-figure" style="max-width:229px">
@@ -343,7 +387,7 @@
       <p class="site-footer__note">由自建工具构建的网站，托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a>.</p>
     </div>
   </footer>
-  <script src="/blog/assets/js/theme.js?v=066124c3d7"></script>
+  <script src="/blog/assets/js/theme.js?v=934084b0de"></script>
 </body>
 </html>
 
