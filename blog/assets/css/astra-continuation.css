@@ -1,0 +1,70 @@
+/* Local to the Astra continuation posts; shared blog styles stay intact. */
+.astra-continuation .astra-input {
+  width: 82%;
+  max-width: 380px;
+}
+.astra-continuation .astra-input--portrait {
+  width: 68%;
+  max-width: 260px;
+}
+.astra-continuation .astra-input--prepared {
+  width: 64%;
+  max-width: 240px;
+}
+.astra-continuation .astra-input-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.393fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  width: 92%;
+  max-width: 540px;
+  margin: 1.35rem auto 1.7rem;
+}
+.astra-continuation .astra-input-pair .astra-figure {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+.astra-continuation .astra-result,
+.astra-continuation .astra-comparison {
+  width: 100%;
+}
+.astra-continuation .astra-portrait-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+  margin: 1.35rem 0 1.7rem;
+}
+.astra-continuation .astra-portrait-pair .astra-figure {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+.astra-continuation .astra-motion {
+  margin: 1.35rem 0 1.7rem;
+}
+.astra-continuation .astra-motion video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  border-radius: 8px;
+  background: #171b1e;
+}
+.astra-continuation hr {
+  margin: 2.3rem 0;
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+@media (max-width: 540px) {
+  .astra-continuation .astra-input-pair {
+    width: 100%;
+    gap: 0.6rem;
+  }
+  .astra-continuation .astra-portrait-pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
