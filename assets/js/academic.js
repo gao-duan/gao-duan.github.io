@@ -133,13 +133,18 @@ document.addEventListener("DOMContentLoaded", function () {
     pendingNavigationUpdate = false;
     var threshold = header.getBoundingClientRect().bottom + 32;
     var current = homeLink;
-    // Home and Bio can share the same scroll position on a compact header.
-    if (window.scrollY > 8 || window.location.hash === "#bio") {
-      sections.forEach(function (item) {
-        if (item.section.getBoundingClientRect().top <= threshold) {
-          current = item.link;
-        }
-      });
+    // Home covers the profile and services before the first navigation section.
+    sections.forEach(function (item) {
+      if (item.section.getBoundingClientRect().top <= threshold) {
+        current = item.link;
+      }
+    });
+    // A compact final section may not reach the header in a tall viewport.
+    var lastSection = sections[sections.length - 1];
+    if (lastSection && window.scrollY > 8 &&
+        window.scrollY + window.innerHeight >= root.scrollHeight - 2 &&
+        lastSection.section.getBoundingClientRect().top < window.innerHeight) {
+      current = lastSection.link;
     }
     navigationLinks.forEach(function (link) {
       if (link === current) {
