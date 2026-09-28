@@ -120,6 +120,20 @@ document.addEventListener("DOMContentLoaded", function () {
   applyThemePreference(currentThemePreference(), false);
   setThemeMenuOpen(false);
 
+  var lastUpdated = document.getElementById("last-updated");
+  if (lastUpdated) {
+    var modifiedDate = new Date(document.lastModified);
+    if (!Number.isNaN(modifiedDate.getTime())) {
+      var modifiedDay = modifiedDate.getFullYear() + "-" +
+        String(modifiedDate.getMonth() + 1).padStart(2, "0") + "-" +
+        String(modifiedDate.getDate()).padStart(2, "0");
+      var updatedTime = lastUpdated.querySelector("time");
+      updatedTime.dateTime = modifiedDay;
+      updatedTime.textContent = modifiedDay;
+      lastUpdated.hidden = false;
+    }
+  }
+
   var header = document.querySelector(".site-header");
   var homeLink = document.querySelector(".site-home");
   var sectionLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav__links a[href^="#"]'));
