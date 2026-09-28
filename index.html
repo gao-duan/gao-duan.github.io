@@ -7,7 +7,8 @@
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="Academic homepage of Duan Gao, featuring publications, experience, projects, and CV.">
   <meta name="google-site-verification" content="h3O_rO2FC1pywQ4aSji1A7UBwEntNXrQY5D3EpdDakY">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=3c1e6e0c8b">
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="assets/academic-icons/favicon.ico?v=d9456ad53a">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="assets/academic-icons/favicon.svg?v=d9456ad53a">
   <script>
     (function () {
       var storageKey = "duan-gao-site-theme";
@@ -35,86 +36,64 @@
       root.setAttribute("data-theme", isDark ? "dark" : "light");
     })();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/bootstrap.css?v=3c1e6e0c8b">
-  <link rel="stylesheet" href="assets/css/all.css?v=3c1e6e0c8b">
-  <link rel="stylesheet" href="assets/css/academicons.min.css?v=3c1e6e0c8b">
-  <link rel="stylesheet" href="assets/css/custom.css?v=3c1e6e0c8b">
+  <link rel="stylesheet" href="assets/css/all.css?v=d9456ad53a">
+  <link rel="stylesheet" href="assets/css/academicons.min.css?v=d9456ad53a">
+  <link rel="stylesheet" href="assets/css/academic.css?v=d9456ad53a">
   <title>Duan Gao - Homepage</title>
 </head>
-<body>
-  <nav class="navbar navbar-dark navbar-expand-lg fixed-top site-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="#top">Homepage of Duan Gao</a>
-      <div class="site-navbar__actions">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="site-navbar__controls">
-          <a class="site-navbar__blog-link" href="/blog/">Blog</a>
-          <div class="theme-menu theme-menu--site">
-            <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
-              <span class="theme-menu__glyph" aria-hidden="true"></span>
-            </button>
-            <div class="theme-menu__panel" hidden>
-              <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
-              <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
-              <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#top">Home</a>
-          </li>
+<body id="top">
+  <a class="skip-link" href="#bio">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-home" href="#top" aria-label="Homepage of Duan Gao">Home</a>
+      <ul class="site-nav__links">
           <li class="nav-item"><a class="nav-link" href="#bio">Bio</a></li>
           <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main class="container site-main mt-4" id="top">
-    <section class="page-section page-section--profile" id="bio">
-      <div class="section-content section-content--hero">
-        <div class="hero-shell" id="info">
-        <div class="hero-shell__portrait">
-          <div class="profile-panel">
-            <img class="img-fluid rounded-circle profile-photo" src="images/me3_1k.jpg" alt="Portrait of Duan Gao">
-            <h1 class="profile-panel__name">Duan Gao (高端)</h1>
-            <p class="profile-panel__role">Computer Graphics Researcher</p>
-            <div class="contact-links contact-links--portrait" aria-label="Primary links">
-            <a href="https://github.com/gao-duan" class="contact-link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
-            <a href="mailto:gaoduan0306@gmail.com" class="contact-link" aria-label="Email Duan Gao"><i class="far fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a>
-            <a href="cv/CV_DuanGao_2026.pdf" class="contact-link" aria-label="Curriculum vitae (2026)"><i class="ai ai-cv" aria-hidden="true"></i><span class="sr-only">CV 2026</span></a>
-            <a href="https://scholar.google.com/citations?user=uxqdU3AAAAAJ&amp;hl=en" class="contact-link" aria-label="Google Scholar profile" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="sr-only">Google Scholar</span></a>
-            </div>
+      </ul>
+      <div class="site-nav__controls">
+        <a class="site-navbar__blog-link" href="/blog/">Blog</a>
+        <div class="theme-menu">
+          <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-controls="theme-options">
+            <span aria-hidden="true">◐</span>
+          </button>
+          <div class="theme-menu__panel" id="theme-options" hidden>
+            <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+            <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+            <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
           </div>
         </div>
-        <div class="hero-shell__content">
-          <div class="hero-copy-card">
-          <p class="my-3 text-large-2">I am a computer graphics researcher. I received my Ph.D. in Computer Science from Tsinghua University in 2022, advised by <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>, and my bachelor's degree in Computer Science from Nanjing University in 2017.</p>
-          <p class="my-3 text-large-2">Previously, I was a Principal Engineer in the Top Minds Program at <a href="https://www.huaweicloud.com/lab/multimedia/home.html">Huawei Cloud Media Innovation Lab</a>, where I worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering. I am currently at <a href="https://www.x2robot.com/en/about">X Square Robot</a>, working on simulation, data generation, and learning algorithms for embodied AI.</p>
-            <div class="research-panel">
-              <p class="research-panel__label">Research interests</p>
-              <p class="research-panel__body">Appearance modeling, Physically based rendering, Neural rendering, Differentiable rendering, 3D generative modeling</p>
-            </div>
-            </div>
-          </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="profile-section" id="bio" aria-labelledby="profile-name" tabindex="-1">
+      <div class="profile-heading" id="info">
+        <img class="profile-photo" src="assets/academic-media/images-me3_1k-5db1aef18a.webp" alt="Portrait of Duan Gao" width="320" height="320" fetchpriority="high">
+        <h1 id="profile-name">Duan Gao (高端)</h1>
+        <p class="profile-role">Computer Graphics Researcher</p>
+        <div class="contact-links" aria-label="Primary links">
+            <a href="https://github.com/gao-duan" class="contact-link" aria-label="GitHub profile" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+            <a href="mailto:gaoduan0306@gmail.com" class="contact-link" aria-label="Email Duan Gao" title="Email"><i class="far fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a>
+            <a href="cv/CV_DuanGao_2026.pdf" class="contact-link" aria-label="Curriculum vitae (2026)" title="CV 2026"><i class="ai ai-cv" aria-hidden="true"></i><span class="sr-only">CV 2026</span></a>
+            <a href="https://scholar.google.com/citations?user=uxqdU3AAAAAJ&amp;hl=en" class="contact-link" aria-label="Google Scholar profile" title="Google Scholar" target="_blank" rel="noopener noreferrer"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5.1 12.9-3.85-3.15L12 1.25l10.75 8.5-3.85 3.15"/><circle cx="12" cy="16.25" r="6.5"/></svg><span class="sr-only">Google Scholar</span></a>
+        </div>
+      </div>
+      <div class="profile-copy">
+          <p class="bio-paragraph">I am a computer graphics researcher. I received my Ph.D. in Computer Science from Tsinghua University in 2022, advised by <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Prof. Kun Xu</a>, and my bachelor's degree in Computer Science from Nanjing University in 2017.</p>
+          <p class="bio-paragraph">Previously, I was a Principal Engineer in the Top Minds Program at <a href="https://www.huaweicloud.com/lab/multimedia/home.html">Huawei Cloud Media Innovation Lab</a>, where I worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering. I am currently at <a href="https://www.x2robot.com/en/about">X Square Robot</a>, working on simulation, data generation, and learning algorithms for embodied AI.</p>
+        <div class="research-interests">
+          <h2>Research interests</h2>
+          <p>Appearance modeling, Physically based rendering, Neural rendering, Differentiable rendering, 3D generative modeling</p>
         </div>
       </div>
     </section>
 
-    <section class="page-section page-section--stack" id="misc">
-      <h2 class="section-title">Services &amp; Awards</h2>
-      <div class="section-content section-content--services">
-        <div class="services-grid">
+    <section class="page-section" id="misc" aria-labelledby="misc-title">
+      <h2 class="section-title" id="misc-title">Services &amp; Awards</h2>
+      <div class="services-grid">
       <section class="misc-group">
         <h3 class="misc-group__title">Academic Services</h3>
         <p class="misc-inline">Reviewer for SIGGRAPH 2022/2025, SIGGRAPH Asia 2023/2025, Eurographics, Pacific Graphics, The Visual Computer, Journal of Computer-Aided Design &amp; Computer Graphics</p>
@@ -129,309 +108,300 @@
           <li>2019, Star of Tomorrow Intern Award at Microsoft Research Asia</li>
         </ul>
       </section>
-        </div>
       </div>
     </section>
 
-    <section class="page-section page-section--stack" id="publications">
-      <h2 class="section-title">Publications</h2>
-      <div class="section-content section-content--stack">
-      <article class="row publication-card" id="publication-x2real">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/x2real/x2real.png" class="img-thumbnail-custom publication-thumb" alt="X2Real simulated tabletop scene with fruit and a basket">
+    <section class="page-section" id="publications" aria-labelledby="publications-title">
+      <h2 class="section-title" id="publications-title">Publications</h2>
+      <div class="publication-list">
+      <article class="publication-card" id="publication-x2real">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-x2real-x2real-4348dba6b9.webp" loading="lazy" decoding="async" class="publication-thumb" alt="X2Real simulated tabletop scene with fruit and a basket" width="480" height="320">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">X2Real: an eXtensive simulation benchmark for real-world generalist policies</h3>
           <p class="publication-authors">Lian Ruan, Jade Yang, Sherphylan Gao, <strong>Felix Gao (Duan Gao)</strong>, …, Roy Gan, Hao Wang, and Qian Wang</p>
           <p class="publication-venue"><em>arXiv preprint arXiv:2609.27449, 2026</em></p>
           <p class="publication-links">
-              <a href="publications/x2real/X2Real_low_resolution.pdf" class="btn myicon" download="">Author PDF</a>
-              <a href="https://arxiv.org/pdf/2609.27449" class="btn myicon" target="_blank" rel="noopener noreferrer">Arxiv</a>
-              <a href="https://x2robot.com/en/pages/x2real" class="btn myicon" target="_blank" rel="noopener noreferrer">Project</a>
+              <a href="publications/x2real/X2Real_low_resolution.pdf" class="resource-link" download="">Author PDF</a>
+              <a href="https://arxiv.org/pdf/2609.27449" class="resource-link" target="_blank" rel="noopener noreferrer">Arxiv</a>
+              <a href="https://x2robot.com/en/pages/x2real" class="resource-link" target="_blank" rel="noopener noreferrer">Project</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="publication-controlface">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/controlface/controlface.png" class="img-thumbnail-custom publication-thumb" alt="ControlFace publication thumbnail">
+      <article class="publication-card" id="publication-controlface">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-controlface-controlface-9a178a1b87.webp" loading="lazy" decoding="async" class="publication-thumb" alt="ControlFace publication thumbnail" width="480" height="273">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">ControlFace: Few-Shot 3D Face Generation via a Controllable Diffusion Model Guided by Text and Images</h3>
           <p class="publication-authors">Jinfu Wei, Zheng Zhang, Qinchuan Zhang, Ran Liao, and <strong>Duan Gao</strong></p>
           <p class="publication-venue"><em>IEEE International Conference on Multimedia &amp; Expo (ICME), 2025</em></p>
           <p class="publication-links">
-              <a href="publications/controlface/controlface.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Author PDF</a>
-              <a href="publications/controlface/supplementary_material/suppl.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Supplementary</a>
-              <a href="publications/controlface/supplementary_material/rotation_relight.mp4" class="btn myicon" target="_blank" rel="noopener noreferrer">Video</a>
+              <a href="publications/controlface/controlface.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Author PDF</a>
+              <a href="publications/controlface/supplementary_material/suppl.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Supplementary</a>
+              <a href="publications/controlface/supplementary_material/rotation_relight.mp4" class="resource-link" target="_blank" rel="noopener noreferrer">Video</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="publication-dreampbr">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/dreampbr/dreampbr.png" class="img-thumbnail-custom publication-thumb" alt="DreamPBR publication thumbnail">
+      <article class="publication-card" id="publication-dreampbr">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-dreampbr-dreampbr-517afe03ce.webp" loading="lazy" decoding="async" class="publication-thumb" alt="DreamPBR publication thumbnail" width="480" height="480">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">DreamPBR: Text-driven Generation of High-resolution SVBRDF with Multi-modal Guidance</h3>
           <p class="publication-authors">Linxuan Xin, Zheng Zhang, Zhiyi Pan, Jinfu Wei, <strong>Duan Gao</strong>, and Wei Gao</p>
           <p class="publication-venue"><em>IEEE International Conference on Multimedia &amp; Expo (ICME), 2025</em></p>
           <p class="publication-links">
-              <a href="https://arxiv.org/abs/2404.14676" class="btn myicon" target="_blank" rel="noopener noreferrer">ArXiv</a>
-              <a href="publications/dreampbr/dreampbr.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Author PDF</a>
-              <a href="publications/dreampbr/supplemental.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Supplementary</a>
+              <a href="https://arxiv.org/abs/2404.14676" class="resource-link" target="_blank" rel="noopener noreferrer">ArXiv</a>
+              <a href="publications/dreampbr/dreampbr.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Author PDF</a>
+              <a href="publications/dreampbr/supplemental.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Supplementary</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="publication-unifacegan">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/unifacegan/unifacegan.png" class="img-thumbnail-custom publication-thumb" alt="UniFaceGAN publication thumbnail">
+      <article class="publication-card" id="publication-unifacegan">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-unifacegan-unifacegan-e85068cdec.webp" loading="lazy" decoding="async" class="publication-thumb" alt="UniFaceGAN publication thumbnail" width="480" height="241">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">UniFaceGAN: High-Quality 3D Face Editing with a Unified Latent Space</h3>
           <p class="publication-authors">Jinfu Wei, Zheng Zhang, Ran Liao, and <strong>Duan Gao</strong></p>
           <p class="publication-venue"><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2025</em></p>
           <p class="publication-links">
-              <a href="publications/unifacegan/unifacegan.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Author PDF</a>
-              <a href="https://ieeexplore.ieee.org/document/10889064" class="btn myicon" target="_blank" rel="noopener noreferrer">IEEE</a>
+              <a href="publications/unifacegan/unifacegan.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Author PDF</a>
+              <a href="https://ieeexplore.ieee.org/document/10889064" class="resource-link" target="_blank" rel="noopener noreferrer">IEEE</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="publication-neural-gi">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/neuralGI/neuralGI.png" class="img-thumbnail-custom publication-thumb" alt="Neural Global Illumination publication thumbnail">
+      <article class="publication-card" id="publication-neural-gi">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-neuralGI-neuralGI-5560a6412c.webp" loading="lazy" decoding="async" class="publication-thumb" alt="Neural Global Illumination publication thumbnail" width="480" height="480">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">Neural Global Illumination: Interactive Indirect Illumination Prediction under Dynamic Area Lights</h3>
           <p class="publication-authors"><strong>Duan Gao</strong>, Haoyuan Mu, and <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a></p>
           <p class="publication-venue"><em>IEEE Transactions on Visualization and Computer Graphics (TVCG), 2022</em></p>
           <p class="publication-links">
-              <a href="publications/neuralGI/NeuralGlobalIllumination.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Author PDF</a>
-              <a href="https://ieeexplore.ieee.org/document/9904431/" class="btn myicon" target="_blank" rel="noopener noreferrer">IEEE</a>
-              <a href="publications/neuralGI/NeuralGlobalIllumination_supplementary.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Supplementary</a>
-              <a href="https://drive.google.com/file/d/1wem58_RQUH7uEh07NP9jsCRnx-WFvxRF/view?usp=sharing" class="btn myicon" target="_blank" rel="noopener noreferrer">Video</a>
-              <a href="publications/neuralGI/NGI.bib" class="btn myicon" target="_blank" rel="noopener noreferrer">BibTeX</a>
+              <a href="publications/neuralGI/NeuralGlobalIllumination.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Author PDF</a>
+              <a href="https://ieeexplore.ieee.org/document/9904431/" class="resource-link" target="_blank" rel="noopener noreferrer">IEEE</a>
+              <a href="publications/neuralGI/NeuralGlobalIllumination_supplementary.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Supplementary</a>
+              <a href="https://drive.google.com/file/d/1wem58_RQUH7uEh07NP9jsCRnx-WFvxRF/view?usp=sharing" class="resource-link" target="_blank" rel="noopener noreferrer">Video</a>
+              <a href="publications/neuralGI/NGI.bib" class="resource-link" target="_blank" rel="noopener noreferrer">BibTeX</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="publication-deferred-neural-lighting">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/neuralrelighting/neuralrelighting.png" class="img-thumbnail-custom publication-thumb" alt="Deferred Neural Lighting publication thumbnail">
+      <article class="publication-card" id="publication-deferred-neural-lighting">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-neuralrelighting-neuralrelighting-7f67a8638e.webp" loading="lazy" decoding="async" class="publication-thumb" alt="Deferred Neural Lighting publication thumbnail" width="480" height="480">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">Deferred Neural Lighting: Free-viewpoint Relighting from Unstructured Photographs</h3>
           <p class="publication-authors"><strong>Duan Gao</strong>, <a href="https://www.microsoft.com/en-us/research/people/guoch/">Guojun Chen</a>, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, and <a href="http://www.xtong.info/">Xin Tong</a></p>
           <p class="publication-venue"><em>ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia), 2020</em></p>
           <p class="publication-links">
-              <a href="publications/neuralrelighting/DeferredNeuralLighting_low_resolution.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">PDF (Low Resolution)</a>
-              <a href="publications/neuralrelighting/DeferredNeuralLighting.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">PDF (High Resolution)</a>
-              <a href="https://drive.google.com/file/d/19y82iGN1sQe0WbTnDiD12KOPPrYZ2UAz/view?usp=sharing" class="btn myicon" target="_blank" rel="noopener noreferrer">Supplementary</a>
-              <a href="https://drive.google.com/file/d/1UxZpWgoYgAkImwp-co2Y_Gi_Hzjvbc3r/view?usp=sharing" class="btn myicon" target="_blank" rel="noopener noreferrer">Video</a>
-              <a href="publications/neuralrelighting/Slides_DeferredNeuralLighting.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Slides</a>
-              <a href="https://github.com/msraig/DeferredNeuralLighting" class="btn myicon" target="_blank" rel="noopener noreferrer">Code</a>
-              <a href="publications/neuralrelighting/DNL.bib" class="btn myicon" target="_blank" rel="noopener noreferrer">BibTeX</a>
+              <a href="publications/neuralrelighting/DeferredNeuralLighting_low_resolution.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF (Low Resolution)</a>
+              <a href="publications/neuralrelighting/DeferredNeuralLighting.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF (High Resolution)</a>
+              <a href="https://drive.google.com/file/d/19y82iGN1sQe0WbTnDiD12KOPPrYZ2UAz/view?usp=sharing" class="resource-link" target="_blank" rel="noopener noreferrer">Supplementary</a>
+              <a href="https://drive.google.com/file/d/1UxZpWgoYgAkImwp-co2Y_Gi_Hzjvbc3r/view?usp=sharing" class="resource-link" target="_blank" rel="noopener noreferrer">Video</a>
+              <a href="publications/neuralrelighting/Slides_DeferredNeuralLighting.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Slides</a>
+              <a href="https://github.com/msraig/DeferredNeuralLighting" class="resource-link" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="publications/neuralrelighting/DNL.bib" class="resource-link" target="_blank" rel="noopener noreferrer">BibTeX</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="publication-deep-inverse-rendering">
-        <div class="col-md-3 publication-card__media">
-          <img src="publications/mvsvbrdf/mvsvbrdf.jpg" class="img-thumbnail-custom publication-thumb" alt="Deep Inverse Rendering publication thumbnail">
+      <article class="publication-card" id="publication-deep-inverse-rendering">
+        <div class="publication-card__media">
+          <img src="assets/academic-media/publications-mvsvbrdf-mvsvbrdf-87b9caf32a.webp" loading="lazy" decoding="async" class="publication-thumb" alt="Deep Inverse Rendering publication thumbnail" width="480" height="480">
         </div>
-        <div class="col-md-9 publication-card__content">
+        <div class="publication-card__content">
           <h3 class="publication-title">Deep Inverse Rendering for High-resolution SVBRDF Estimation from an Arbitrary Number of Images</h3>
           <p class="publication-authors"><strong>Duan Gao</strong>*, <a href="https://pableeto.github.io/">Xiao Li</a>*, <a href="http://yuedong.shading.me/">Yue Dong</a>, <a href="http://www.cs.wm.edu/~ppeers/">Pieter Peers</a>, <a href="https://cg.cs.tsinghua.edu.cn/people/~kun/">Kun Xu</a>, and <a href="http://www.xtong.info/">Xin Tong</a> (<em>* Equal contribution</em>)</p>
           <p class="publication-venue"><em>ACM Transactions on Graphics (Proceedings of SIGGRAPH), 2019</em></p>
           <p class="publication-links">
-              <a href="publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">PDF (Low Resolution)</a>
-              <a href="https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w" class="btn myicon" target="_blank" rel="noopener noreferrer">PDF (High Resolution)</a>
-              <a href="https://drive.google.com/open?id=10LncNnPI5nRS-8HIgSjPea3FTNawYLWL" class="btn myicon" target="_blank" rel="noopener noreferrer">Supplementary</a>
-              <a href="https://drive.google.com/open?id=1tr3U-RaOJlhfKU4bm5cbUv11pTdN7ta3" class="btn myicon" target="_blank" rel="noopener noreferrer">Video</a>
-              <a href="publications/mvsvbrdf/mvsvbrdf_slide.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Slides</a>
-              <a href="https://github.com/msraig/DeepInverseRendering" class="btn myicon" target="_blank" rel="noopener noreferrer">Code</a>
-              <a href="publications/mvsvbrdf/DIR.bib" class="btn myicon" target="_blank" rel="noopener noreferrer">BibTeX</a>
+              <a href="publications/mvsvbrdf/mvsvbrdf_low_resolution.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF (Low Resolution)</a>
+              <a href="https://drive.google.com/open?id=12YVRHeF8_4UQU5va5un3o6nuqQJzbi9w" class="resource-link" target="_blank" rel="noopener noreferrer">PDF (High Resolution)</a>
+              <a href="https://drive.google.com/open?id=10LncNnPI5nRS-8HIgSjPea3FTNawYLWL" class="resource-link" target="_blank" rel="noopener noreferrer">Supplementary</a>
+              <a href="https://drive.google.com/open?id=1tr3U-RaOJlhfKU4bm5cbUv11pTdN7ta3" class="resource-link" target="_blank" rel="noopener noreferrer">Video</a>
+              <a href="publications/mvsvbrdf/mvsvbrdf_slide.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Slides</a>
+              <a href="https://github.com/msraig/DeepInverseRendering" class="resource-link" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="publications/mvsvbrdf/DIR.bib" class="resource-link" target="_blank" rel="noopener noreferrer">BibTeX</a>
           </p>
         </div>
       </article>
       </div>
     </section>
 
-    <section class="page-section page-section--stack" id="thesis">
-      <h2 class="section-title">Thesis</h2>
-      <div class="section-content section-content--stack">
-      <article class="row publication-card" id="thesis-phd-thesis">
-        <div class="col-md-3 thesis-card__media">
+    <section class="page-section" id="thesis" aria-labelledby="thesis-title">
+      <h2 class="section-title" id="thesis-title">Thesis</h2>
+      <div class="thesis-list">
+      <article class="publication-card" id="thesis-phd-thesis">
+        <div class="thesis-card__media">
           <div class="logo-frame thesis-logo-frame">
             <div class="thesis-logo-stack" role="img" aria-label="Tsinghua University logo for Ph.D. thesis">
-              <img src="publications/thesis_phd/thu.png" class="img-thumbnail-logo thesis-thumb thesis-thumb--static" alt="" aria-hidden="true">
+              <img src="assets/academic-media/publications-thesis_phd-thu-056b6dc608.webp" class="thesis-thumb thesis-thumb--static" alt="" aria-hidden="true" width="160" height="160">
             </div>
           </div>
         </div>
-        <div class="col-md-9 thesis-card__body">
+        <div class="thesis-card__body">
           <h3 class="publication-title">Neural Rendering: Deep Learning Based Photorealistic Rendering</h3>
           <p class="publication-subtitle">基于深度学习的真实感渲染研究</p>
           <p class="publication-authors">Ph.D. <em>June 2022</em></p>
           <p class="thesis-supervisor">Supervisor: Kun Xu</p>
           <p class="publication-links">
-              <a href="https://drive.google.com/file/d/1Ryirgjh68bO_lpESB3aFhYXdXO9RyyFD/view?usp=share_link" class="btn myicon" target="_blank" rel="noopener noreferrer">Paper</a>
-              <a href="publications/thesis_phd/dissersion_lowres.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">PDF (Low Resolution)</a>
+              <a href="https://drive.google.com/file/d/1Ryirgjh68bO_lpESB3aFhYXdXO9RyyFD/view?usp=share_link" class="resource-link" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="publications/thesis_phd/dissersion_lowres.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF (Low Resolution)</a>
           </p>
         </div>
       </article>
 
-      <article class="row publication-card" id="thesis-bachelor-thesis">
-        <div class="col-md-3 thesis-card__media">
+      <article class="publication-card" id="thesis-bachelor-thesis">
+        <div class="thesis-card__media">
           <div class="logo-frame thesis-logo-frame">
             <div class="thesis-logo-stack" role="img" aria-label="Nanjing University logo for bachelor&#x27;s thesis">
-              <img src="publications/thesis_bachelor/nju.png" class="img-thumbnail-logo thesis-thumb thesis-thumb--static" alt="" aria-hidden="true">
+              <img src="assets/academic-media/publications-thesis_bachelor-nju-f7990f1e81.webp" class="thesis-thumb thesis-thumb--static" alt="" aria-hidden="true" width="160" height="160">
             </div>
           </div>
         </div>
-        <div class="col-md-9 thesis-card__body">
+        <div class="thesis-card__body">
           <h3 class="publication-title">A Learning-Based Rendering Algorithm for Translucent Materials</h3>
           <p class="publication-subtitle">(基于学习的)高逼真半透明材质的渲染方法</p>
           <p class="publication-authors">Bachelor <em>June 2017</em></p>
           <p class="thesis-supervisor">Supervisor: Kun Xu, Jie Guo</p>
           <p class="publication-links">
-              <a href="publications/thesis_bachelor/paper.pdf" class="btn myicon" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="publications/thesis_bachelor/paper.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">Paper</a>
           </p>
         </div>
       </article>
       </div>
     </section>
 
-    <section class="page-section page-section--stack" id="experience">
-      <h2 class="section-title">Experience</h2>
-      <div class="section-content section-content--stack">
-        <ul class="timeline">
+    <section class="page-section" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <ul class="timeline">
         <li id="experience-x2robot">
           <p class="timeline-period">2025-Present</p>
-          <div class="row align-items-center experience-entry">
-            <div class="col-md-9">
+          <div class="experience-entry">
+            <div class="experience-entry__body">
               <p class="experience-role">Embodied AI Simulation Engineer</p>
               <h3 class="experience-title"><a href="https://www.x2robot.com/en/about">X Square Robot</a></h3>
               <p class="experience-description">Developing simulation data platforms for embodied AI, spanning Sim-Ready asset generation, diverse scene construction, data augmentation, data production, and algorithm optimization for embodied models.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="X Square Robot logo" style="--experience-logo-scale: 1.080;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/x2robot-light.svg" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/x2robot-dark.svg" alt="" aria-hidden="true"></div></div></div>
+            <div class="experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="X Square Robot logo" style="--experience-logo-scale: 1.080;"><img class="experience-logo experience-logo--light" src="images/experience-logos/x2robot-light.svg" alt="" aria-hidden="true" width="327" height="70"><img class="experience-logo experience-logo--dark" src="images/experience-logos/x2robot-dark.svg" alt="" aria-hidden="true" width="327" height="70"></div></div></div>
           </div>
         </li>
         <li id="experience-huawei-cloud">
           <p class="timeline-period">2022-2025</p>
-          <div class="row align-items-center experience-entry">
-            <div class="col-md-9">
+          <div class="experience-entry">
+            <div class="experience-entry__body">
               <p class="experience-role">Principal Engineer, Top Minds (天才少年)</p>
               <h3 class="experience-title"><a href="https://www.huaweicloud.com/lab/multimedia/about.html#section-5">Huawei Cloud, Media Innovation Lab</a></h3>
               <p class="experience-description">Worked on generative 3D digital humans, diffusion-based material generation, AIGC-3D, and differentiable rendering.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Media Innovation Lab logo" style="--experience-logo-scale: 0.920;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/media-innovation-lab-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/media-innovation-lab-dark.png" alt="" aria-hidden="true"></div></div></div>
+            <div class="experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Media Innovation Lab logo" style="--experience-logo-scale: 0.920;"><img class="experience-logo experience-logo--light" src="assets/academic-media/images-experience-logos-media-innovation-lab-light-1ae5b60043.webp" alt="" aria-hidden="true" width="256" height="63"><img class="experience-logo experience-logo--dark" src="assets/academic-media/images-experience-logos-media-innovation-lab-dark-92b22f536f.webp" alt="" aria-hidden="true" width="256" height="63"></div></div></div>
           </div>
         </li>
         <li id="experience-msra-neural-relighting">
           <p class="timeline-period">2019.10-2020.5</p>
-          <div class="row align-items-center experience-entry">
-            <div class="col-md-9">
+          <div class="experience-entry">
+            <div class="experience-entry__body">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Microsoft Research Asia, Internet Graphics Group</h3>
               <p class="experience-description">Conducted research on neural relighting with Dr. Guojun Chen, Dr. Yue Dong, and Dr. Xin Tong.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Microsoft logo" style="--experience-logo-scale: 0.940;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/msra-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/msra-dark.png" alt="" aria-hidden="true"></div></div></div>
+            <div class="experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Microsoft logo" style="--experience-logo-scale: 0.940;"><img class="experience-logo experience-logo--light" src="assets/academic-media/images-experience-logos-msra-light-73da08cd96.webp" alt="" aria-hidden="true" width="256" height="81"><img class="experience-logo experience-logo--dark" src="assets/academic-media/images-experience-logos-msra-dark-1e1fa8a768.webp" alt="" aria-hidden="true" width="256" height="81"></div></div></div>
           </div>
         </li>
         <li id="experience-tencent-ai-lab">
           <p class="timeline-period">2019.7-2019.8</p>
-          <div class="row align-items-center experience-entry">
-            <div class="col-md-9">
+          <div class="experience-entry">
+            <div class="experience-entry__body">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Tencent AI Lab</h3>
               <p class="experience-description">Conducted research on 3D face reconstruction with Dr. Haozhi Huang.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Tencent AI Lab logo" style="--experience-logo-scale: 1.180;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/tencent-ai-lab-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/tencent-ai-lab-dark.png" alt="" aria-hidden="true"></div></div></div>
+            <div class="experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Tencent AI Lab logo" style="--experience-logo-scale: 1.180;"><img class="experience-logo experience-logo--light" src="assets/academic-media/images-experience-logos-tencent-ai-lab-light-027dff58c1.webp" alt="" aria-hidden="true" width="256" height="143"><img class="experience-logo experience-logo--dark" src="assets/academic-media/images-experience-logos-tencent-ai-lab-dark-027dff58c1.webp" alt="" aria-hidden="true" width="256" height="143"></div></div></div>
           </div>
         </li>
         <li id="experience-msra-appearance-modeling">
           <p class="timeline-period">2018.8-2019.5</p>
-          <div class="row align-items-center experience-entry">
-            <div class="col-md-9">
+          <div class="experience-entry">
+            <div class="experience-entry__body">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Microsoft Research Asia, Internet Graphics Group</h3>
               <p class="experience-description">Conducted research on appearance modeling with Dr. Yue Dong and Dr. Xin Tong.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Microsoft logo" style="--experience-logo-scale: 0.940;"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/msra-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/msra-dark.png" alt="" aria-hidden="true"></div></div></div>
+            <div class="experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Microsoft logo" style="--experience-logo-scale: 0.940;"><img class="experience-logo experience-logo--light" src="assets/academic-media/images-experience-logos-msra-light-73da08cd96.webp" alt="" aria-hidden="true" width="256" height="81"><img class="experience-logo experience-logo--dark" src="assets/academic-media/images-experience-logos-msra-dark-1e1fa8a768.webp" alt="" aria-hidden="true" width="256" height="81"></div></div></div>
           </div>
         </li>
         <li id="experience-megvii-facepp">
           <p class="timeline-period">2017.7-2017.9</p>
-          <div class="row align-items-center experience-entry">
-            <div class="col-md-9">
+          <div class="experience-entry">
+            <div class="experience-entry__body">
               <p class="experience-role">Research Intern</p>
               <h3 class="experience-title">Megvii (Face++)</h3>
               <p class="experience-description">Conducted research on facial recovery and rendering with Dr. Liqian Ma.</p>
             </div>
-            <div class="col-md-3 experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Megvii Face++ logo"><img class="experience-logo experience-logo--light img-thumbnail-logo" src="images/experience-logos/facepp-light.png" alt="" aria-hidden="true"><img class="experience-logo experience-logo--dark img-thumbnail-logo" src="images/experience-logos/facepp-dark.png" alt="" aria-hidden="true"></div></div></div>
+            <div class="experience-entry__logo-wrap"><div class="logo-frame experience-logo-frame"><div class="experience-logo-stack" role="img" aria-label="Megvii Face++ logo"><img class="experience-logo experience-logo--light" src="assets/academic-media/images-experience-logos-facepp-light-4bf13b89a5.webp" alt="" aria-hidden="true" width="256" height="104"><img class="experience-logo experience-logo--dark" src="assets/academic-media/images-experience-logos-facepp-dark-01c1c45b18.webp" alt="" aria-hidden="true" width="256" height="104"></div></div></div>
           </div>
         </li>
-        </ul>
-      </div>
+      </ul>
     </section>
 
-    <section class="page-section page-section--projects" id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="section-content section-content--projects">
-        <div class="row">
-        <article class="col-sm-6 col-lg-4 project-card" id="project-elegans-renderer">
+    <section class="page-section" id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
+      <div class="project-grid">
+        <article class="project-card" id="project-elegans-renderer">
           <div class="project-card__inner">
-            <img src="images/elegans_logo.png" class="img-thumbnail-custom project-thumb" alt="Elegans Renderer logo">
+            <img src="assets/academic-media/images-elegans_logo-f4b8e50d36.webp" loading="lazy" decoding="async" class="project-thumb" alt="Elegans Renderer logo" width="500" height="500">
             <h3 class="project-title"><a href="https://github.com/gao-duan/Elegans" target="_blank" rel="noopener noreferrer">Elegans Renderer</a><span class="project-status">Coming soon</span></h3>
             <p class="project-description">Physically based renderer.</p>
           </div>
         </article>
-        <article class="col-sm-6 col-lg-4 project-card" id="project-smoke-simulation">
+        <article class="project-card" id="project-smoke-simulation">
           <div class="project-card__inner">
-            <img src="images/smoke.gif" class="img-thumbnail-custom project-thumb" alt="Smoke Simulation preview">
+            <div class="project-media" style="aspect-ratio: 600 / 600"><video class="project-thumb project-video" width="600" height="600" poster="assets/academic-media/images-smoke-87bf127903.webp" preload="none" controls="" playsinline="" muted="" aria-label="Smoke Simulation preview"><source src="assets/academic-media/images-smoke-87bf127903.mp4" type="video/mp4"></video><img class="project-poster" src="assets/academic-media/images-smoke-87bf127903.webp" width="600" height="600" alt="" aria-hidden="true" loading="lazy" hidden=""><button class="project-play" type="button" hidden="" aria-label="Play Smoke Simulation preview" title="Play animation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l11 7-11 7z"/></svg></button></div>
             <h3 class="project-title"><a href="https://github.com/gao-duan/SmokeSimulation" target="_blank" rel="noopener noreferrer">Smoke Simulation</a></h3>
             <p class="project-description">Smoke simulation based on the paper &quot;Visual Simulation of Smoke.&quot;</p>
           </div>
         </article>
-        <article class="col-sm-6 col-lg-4 project-card" id="project-face-relighting">
+        <article class="project-card" id="project-face-relighting">
           <div class="project-card__inner">
-            <img src="images/relit.gif" class="img-thumbnail-custom project-thumb" alt="Face Relighting preview">
+            <div class="project-media" style="aspect-ratio: 600 / 600"><video class="project-thumb project-video" width="600" height="600" poster="assets/academic-media/images-relit-5a2d05d638.webp" preload="none" controls="" playsinline="" muted="" aria-label="Face Relighting preview"><source src="assets/academic-media/images-relit-5a2d05d638.mp4" type="video/mp4"></video><img class="project-poster" src="assets/academic-media/images-relit-5a2d05d638.webp" width="600" height="600" alt="" aria-hidden="true" loading="lazy" hidden=""><button class="project-play" type="button" hidden="" aria-label="Play Face Relighting preview" title="Play animation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l11 7-11 7z"/></svg></button></div>
             <h3 class="project-title"><a href="https://github.com/gao-duan/FaceRelighting" target="_blank" rel="noopener noreferrer">Face Relighting</a></h3>
             <p class="project-description">3D face reconstruction from a single image and face relighting.</p>
           </div>
         </article>
-        <article class="col-sm-6 col-lg-4 project-card" id="project-blue-noise-generator">
+        <article class="project-card" id="project-blue-noise-generator">
           <div class="project-card__inner">
-            <img src="images/blue_noise.png" class="img-thumbnail-custom project-thumb" alt="BlueNoise Generator preview">
+            <img src="assets/academic-media/images-blue_noise-ff0e9e936c.webp" loading="lazy" decoding="async" class="project-thumb" alt="BlueNoise Generator preview" width="600" height="600">
             <h3 class="project-title"><a href="https://github.com/gao-duan/BlueNoise" target="_blank" rel="noopener noreferrer">BlueNoise Generator</a></h3>
             <p class="project-description">Generate blue noise images.</p>
           </div>
         </article>
-        <article class="col-sm-6 col-lg-4 project-card" id="project-knitting">
+        <article class="project-card" id="project-knitting">
           <div class="project-card__inner">
-            <img src="images/knitting.gif" class="img-thumbnail-custom project-thumb" alt="Knitting project preview">
+            <div class="project-media" style="aspect-ratio: 600 / 600"><video class="project-thumb project-video" width="600" height="600" poster="assets/academic-media/images-knitting-9928b11089.webp" preload="none" controls="" playsinline="" muted="" aria-label="Knitting project preview"><source src="assets/academic-media/images-knitting-9928b11089.mp4" type="video/mp4"></video><img class="project-poster" src="assets/academic-media/images-knitting-9928b11089.webp" width="600" height="600" alt="" aria-hidden="true" loading="lazy" hidden=""><button class="project-play" type="button" hidden="" aria-label="Play Knitting project preview" title="Play animation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l11 7-11 7z"/></svg></button></div>
             <h3 class="project-title"><a href="https://github.com/gao-duan/knitting" target="_blank" rel="noopener noreferrer">Knitting</a></h3>
             <p class="project-description">Toy project: knitting by code.</p>
           </div>
         </article>
-        </div>
       </div>
     </section>
-
-    <hr>
-    <footer class="site-footer">
-      <div class="container">
-        <p class="p-2 text-center">Copyright © Duan Gao (2019-2026)</p>
-        <p class="p-2 text-center" id="lastModified"></p>
-      </div>
-    </footer>
   </main>
 
-  <script src="assets/js/jquery.min.js?v=3c1e6e0c8b"></script>
-  <script src="assets/js/bootstrap.min.js?v=3c1e6e0c8b"></script>
-  <script src="assets/js/custom.js?v=3c1e6e0c8b"></script>
+  <footer class="site-footer">
+    <p>Copyright © Duan Gao (2019-2026)</p>
+    <p>Content updated <time datetime="2026-09-24">2026-09-24</time></p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="assets/js/academic.js?v=d9456ad53a" defer></script>
   <!-- Cloudflare Web Analytics -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "10222f58d8ac409e985f5afc29048bd8"}'></script>
   <!-- End Cloudflare Web Analytics -->
