@@ -1,22 +1,10 @@
 # gao-duan.github.io
 
-Public deploy repository for `https://gao-duan.github.io/`.
+Published files for [Duan Gao’s academic homepage](https://gao-duan.github.io/)
+and [blog](https://gao-duan.github.io/blog/).
 
-This repository is intended to store generated output only:
+The site includes:
 
-- homepage publish files at the repository root
-- blog publish files under `blog/`
-
-Source content, templates, scripts, and local staging now live in the sibling source repository:
-
-- `/Users/duangao/Projects/BlogCli`
-
-Common publish commands:
-
-```bash
-python3 /Users/duangao/Projects/BlogCli/tools/publish_cli.py check-all
-python3 /Users/duangao/Projects/BlogCli/tools/publish_cli.py build-all
-python3 /Users/duangao/Projects/BlogCli/tools/publish_cli.py publish-all
-```
-
-After publishing, commit and push changes from this repository as usual.
+- Academic profile, publications, experience and projects at the root.
+- Blog posts under `blog/` and archived posts under `old-blogs/`.
+- Public CV and research materials under `cv/` and `publications/`.
