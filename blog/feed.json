@@ -7,6 +7,14 @@
   "icon": "https://gao-duan.github.io/blog/assets/images/avatar-microblog.jpg",
   "items": [
     {
+      "id": "https://gao-duan.github.io/blog/2026/10/13/shebao.html",
+      "url": "https://gao-duan.github.io/blog/2026/10/13/shebao.html",
+      "title": "社保",
+      "content_html": "<p>近日<a href=\"http://beijing.chinatax.gov.cn/bjswj/c104667/202610/5ff15c5e6fcc4511b21fb1f89f3c8f2f.shtml\">社保纳入税务处罚</a>，人社部副部长表示要「通过各种方式把没参保的人找出来」。</p>\n<p>关于社保，在社会福利、公平正义方面长久以来已有诸多深入批评反思，只可惜历久仍弥新，反倒有愈演愈烈之势。</p>\n<p>今天只浅谈一点：当下社保基数下限一般远高于当地最低工资标准，实际上也应该高于很多人工资。</p>\n<table>\n<thead>\n<tr>\n<th>城市</th>\n<th>基数下限</th>\n<th>基数上限</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>上海</td>\n<td>7546</td>\n<td>37731</td>\n</tr>\n<tr>\n<td>北京</td>\n<td>7270</td>\n<td>36348</td>\n</tr>\n<tr>\n<td>深圳-医保</td>\n<td>6727</td>\n<td>33633</td>\n</tr>\n<tr>\n<td>深圳-养老</td>\n<td>5521</td>\n<td>27603</td>\n</tr>\n<tr>\n<td>太原</td>\n<td>4244</td>\n<td>21219</td>\n</tr>\n</tbody>\n</table>\n<p>如果你的工资低于基数下限，仍要按照更高的基数缴纳。</p>\n<p>而如果工资高于上限，那么只需要按上限部分缴纳。</p>\n<p>那如果收入大部分来自收租、投资、分红，也可能不需要缴纳。</p>\n<p>最后，如果是「自己人」，还可以「视同缴纳」。</p>\n<p>看到一则评论：\n<strong>穷则兼济天下，达则独善其身。</strong></p>",
+      "date_published": "2026-10-13T20:04:25+08:00",
+      "summary": "近日社保纳入税务处罚，人社部副部长表示要「通过各种方式把没参保的人找出来」。 关于社保，在社会福利、公平正义方面长久以来已有诸多深入批评反思，只可惜历久仍弥新，反倒有愈演愈烈之势。 今天只浅谈一点：当下社保基数下限一般远高于当地最低工资标准，实际上也应该高于很多人工资。 城市 基数下限 基数上限 上海 7546 37731 北京 727…"
+    },
+    {
       "id": "https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-6.html",
       "url": "https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-6.html",
       "title": "GPT-6 Astra 从图像到3D （六）—— 一点碎碎念",

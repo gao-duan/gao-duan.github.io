@@ -5,7 +5,51 @@
     <link>https://gao-duan.github.io/blog/</link>
     <description>长跑、图形学、读书、写作与科技。随口聊聊，认真记录。</description>
     <language>zh-cn</language>
-    <item><title>GPT-6 Astra 从图像到3D （六）—— 一点碎碎念</title><link>https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-6.html</link><guid>https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-6.html</guid><pubDate>Sun, 13 Sep 2026 16:32:08 +0800</pubDate><description><![CDATA[<p><link rel="stylesheet" href="/blog/assets/css/astra-series.css">
+    <item><title>社保</title><link>https://gao-duan.github.io/blog/2026/10/13/shebao.html</link><guid>https://gao-duan.github.io/blog/2026/10/13/shebao.html</guid><pubDate>Tue, 13 Oct 2026 20:04:25 +0800</pubDate><description><![CDATA[<p>近日<a href="http://beijing.chinatax.gov.cn/bjswj/c104667/202610/5ff15c5e6fcc4511b21fb1f89f3c8f2f.shtml">社保纳入税务处罚</a>，人社部副部长表示要「通过各种方式把没参保的人找出来」。</p>
+<p>关于社保，在社会福利、公平正义方面长久以来已有诸多深入批评反思，只可惜历久仍弥新，反倒有愈演愈烈之势。</p>
+<p>今天只浅谈一点：当下社保基数下限一般远高于当地最低工资标准，实际上也应该高于很多人工资。</p>
+<table>
+<thead>
+<tr>
+<th>城市</th>
+<th>基数下限</th>
+<th>基数上限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上海</td>
+<td>7546</td>
+<td>37731</td>
+</tr>
+<tr>
+<td>北京</td>
+<td>7270</td>
+<td>36348</td>
+</tr>
+<tr>
+<td>深圳-医保</td>
+<td>6727</td>
+<td>33633</td>
+</tr>
+<tr>
+<td>深圳-养老</td>
+<td>5521</td>
+<td>27603</td>
+</tr>
+<tr>
+<td>太原</td>
+<td>4244</td>
+<td>21219</td>
+</tr>
+</tbody>
+</table>
+<p>如果你的工资低于基数下限，仍要按照更高的基数缴纳。</p>
+<p>而如果工资高于上限，那么只需要按上限部分缴纳。</p>
+<p>那如果收入大部分来自收租、投资、分红，也可能不需要缴纳。</p>
+<p>最后，如果是「自己人」，还可以「视同缴纳」。</p>
+<p>看到一则评论：
+<strong>穷则兼济天下，达则独善其身。</strong></p>]]></description></item> <item><title>GPT-6 Astra 从图像到3D （六）—— 一点碎碎念</title><link>https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-6.html</link><guid>https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-6.html</guid><pubDate>Sun, 13 Sep 2026 16:32:08 +0800</pubDate><description><![CDATA[<p><link rel="stylesheet" href="/blog/assets/css/astra-series.css">
 <link rel="stylesheet" href="/blog/assets/css/astra-continuation.css"></p>
 <div class="astra-series astra-continuation">
 <p>在 AI 频繁出现「天翻地覆」变革的今天，什么是难的、什么是平凡的？什么才是真正的稀缺智能？值得我们重新思考。</p>
