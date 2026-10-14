@@ -414,6 +414,39 @@ html[data-theme-preference="dark"] .theme-menu__glyph::before {
   margin-bottom: 0.35rem;
 }
 
+/* Keep shared table defaults easy for series-specific styles to override. */
+:where(.post-content, .e-content) table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ui-font);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* Wrapped tables manage their spacing in the wrapper. */
+:where(.post-content, .e-content) > table {
+  margin: 1.2rem 0 1.6rem;
+}
+
+:where(.post-content, .e-content) th,
+:where(.post-content, .e-content) td {
+  padding: 0.62rem 0.6rem;
+  border-bottom: 1px solid var(--line-color);
+}
+
+:where(.post-content, .e-content) th {
+  color: var(--heading-color);
+  background: var(--code-background);
+  font-weight: 600;
+}
+
+:where(.post-content, .e-content) th:first-child,
+:where(.post-content, .e-content) td:first-child {
+  text-align: left;
+}
+
 .article-break {
   width: min(640px, calc(100% - 40px));
   height: 1px;
