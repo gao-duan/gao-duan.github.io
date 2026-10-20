@@ -7,6 +7,17 @@
   "icon": "https://gao-duan.github.io/blog/assets/images/avatar-microblog.jpg",
   "items": [
     {
+      "id": "https://gao-duan.github.io/blog/2026/10/20/ningbo-shiying.html",
+      "url": "https://gao-duan.github.io/blog/2026/10/20/ningbo-shiying.html",
+      "title": "宁波拾影",
+      "content_html": "<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8487.jpg\" alt=\"宁波拾影，第 1 张\" width=\"2461\" height=\"2562\" loading=\"eager\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8399.jpeg\" alt=\"宁波拾影，第 2 张\" width=\"2709\" height=\"1930\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8388.jpeg\" alt=\"宁波拾影，第 3 张\" width=\"3711\" height=\"3024\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8387.jpeg\" alt=\"宁波拾影，第 4 张\" width=\"2458\" height=\"2771\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8378.jpg\" alt=\"宁波拾影，第 5 张\" width=\"3848\" height=\"2886\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8304.jpg\" alt=\"宁波拾影，第 6 张\" width=\"2112\" height=\"2983\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8244.jpg\" alt=\"宁波拾影，第 7 张\" width=\"4032\" height=\"3024\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8440.jpg\" alt=\"宁波拾影，第 8 张\" width=\"5374\" height=\"4032\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8232.jpg\" alt=\"宁波拾影，第 9 张\" width=\"3333\" height=\"2833\" loading=\"lazy\" decoding=\"async\"></p>\n<p><img src=\"/blog/uploads/2026/ningbo-shiying/IMG_8528.jpg\" alt=\"宁波拾影，第 10 张\" width=\"1838\" height=\"2364\" loading=\"lazy\" decoding=\"async\"></p>",
+      "date_published": "2026-10-20T20:54:41+08:00",
+      "tags": [
+        "Photos"
+      ],
+      "image": "https://gao-duan.github.io/blog/uploads/2026/ningbo-shiying/IMG_8487.jpg"
+    },
+    {
       "id": "https://gao-duan.github.io/blog/2026/10/13/shebao.html",
       "url": "https://gao-duan.github.io/blog/2026/10/13/shebao.html",
       "title": "社保",

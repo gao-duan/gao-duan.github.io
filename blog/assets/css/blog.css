@@ -621,6 +621,31 @@ html[data-theme-preference="dark"] .theme-menu__glyph::before {
   background: transparent;
 }
 
+.photo-gallery--masonry {
+  column-count: 2;
+  column-gap: 10px;
+}
+
+.photo-gallery__item {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 10px;
+  border: none;
+  break-inside: avoid;
+  vertical-align: top;
+}
+
+.photo-gallery__item img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.photo-gallery__item:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+}
+
 .about-connect {
   margin-top: 2.2rem;
 }
@@ -870,10 +895,6 @@ html[data-theme-preference="dark"] .theme-menu__glyph::before {
 
   .post-title {
     font-size: 1.55rem;
-  }
-
-  .photos-grid {
-    column-count: 1;
   }
 
   .pagination-links {
