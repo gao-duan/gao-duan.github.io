@@ -7,6 +7,14 @@
   "icon": "https://gao-duan.github.io/blog/assets/images/avatar-microblog.jpg",
   "items": [
     {
+      "id": "https://gao-duan.github.io/blog/2026/10/23/iphone-duo.html",
+      "url": "https://gao-duan.github.io/blog/2026/10/23/iphone-duo.html",
+      "title": "iPhone Duo 评测推荐",
+      "content_html": "<p>我并未预购 iPhone Duo，也不打算购买。但有趣的 iPhone 已多年未见，只看看 Tech 评测也很是有趣。</p>\n<p><a href=\"https://daringfireball.net/2026/10/the_iphone_duo\">John Gruber</a>:</p>\n<blockquote>\n<p>The Duo name is perfect. It truly is like having two devices in one. The outer device is, by far, the worst iPhone Apple has ever made. […] The inner device is a splendid, joyful, beautiful tablet, […] , it’s my favorite tablet experience ever.</p>\n</blockquote>\n<p>深入、鲜活的体验评测，非常值得一读。铺面而来的不是客观、专业，而是当下稀缺的主观、真实。</p>\n<p>Gruber 提出一个非常有趣的比喻（非原文直译，大意转写）：</p>\n<blockquote>\n<p>Duo 是iPhone 和 iPad 二合一，是最好的 iPad，也是最差的 iPhone。就像变形金刚玩具，汽车和机器人二合一，充满两种形态的妥协和对抗。折叠后的汽车形态，有明显的接缝、玩耍容易散架。变形金刚不是汽车玩具，而是乔装打扮的机器人。Duo 不是一台手机，而是乔装打扮的平板。</p>\n</blockquote>\n<p>Gruber 的另一个有趣观点（非原文直译，大意转写）：</p>\n<blockquote>\n<p>每次拿起 Duo 准备使用，都会面临两种形态的抉择：费力展开使用内屏？偷懒忍着用外屏？这种拉扯会导致潜意识做出第三种选择：宁愿把它在口袋里不用。</p>\n</blockquote>\n<hr style=\"margin: 2rem 0;\">\n\n<p><a href=\"https://youtu.be/bxDTWuL9GxY?si=pts79-ulAgZ7qmlp\">Joanna Stern</a> 的视频评测同样鲜活而有趣。折叠 3 万次的验证穿插在测评的不同章节中间作为转场：屏幕、相机、应用、发热… 每一部分准确、好玩、富有个性。</p>\n<p>有趣不等同于 fancy 的动画。</p>\n<p>准确不等同于满屏数字图表。</p>",
+      "date_published": "2026-10-23T10:14:44+08:00",
+      "summary": "我并未预购 iPhone Duo，也不打算购买。但有趣的 iPhone 已多年未见，只看看 Tech 评测也很是有趣。 John Gruber: The Duo name is perfect. It truly is like having two devices in one. The outer device is, by far…"
+    },
+    {
       "id": "https://gao-duan.github.io/blog/2026/10/20/ningbo-shiying.html",
       "url": "https://gao-duan.github.io/blog/2026/10/20/ningbo-shiying.html",
       "title": "宁波拾影",
