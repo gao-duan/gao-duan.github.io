@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="从单个物体扩展到厨房和工作区，尝试让 GPT-6 Astra 根据稀疏图片组织布局、补全物体并处理相互关系。">
-  <meta property="og:title" content="GPT-6 Astra 从图像到3D （三） | 逆风呢喃">
+  <meta property="og:title" content="GPT-6 Astra 3D 建模（三） 场景初探 | 逆风呢喃">
   <meta property="og:description" content="从单个物体扩展到厨房和工作区，尝试让 GPT-6 Astra 根据稀疏图片组织布局、补全物体并处理相互关系。">
   <meta property="og:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-3/01-teaser.webp">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-3.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GPT-6 Astra 从图像到3D （三） | 逆风呢喃">
+  <meta name="twitter:title" content="GPT-6 Astra 3D 建模（三） 场景初探 | 逆风呢喃">
   <meta name="twitter:description" content="从单个物体扩展到厨房和工作区，尝试让 GPT-6 Astra 根据稀疏图片组织布局、补全物体并处理相互关系。">
   <meta name="twitter:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-3/01-teaser.webp">
   <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-3.html">
@@ -48,7 +48,7 @@
   </script>
   <link rel="stylesheet" href="/blog/assets/css/blog.css?v=9779ea7a8a">
   
-  <title>GPT-6 Astra 从图像到3D （三） | 逆风呢喃</title>
+  <title>GPT-6 Astra 3D 建模（三） 场景初探 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
@@ -83,22 +83,22 @@
     <div class="post-date-wrapper">
       <time class="dt-published" datetime="2026-09-06T15:18:30+08:00">September 6, 2026</time>
     </div>
-    <h2 class="p-name post-title">GPT-6 Astra 从图像到3D （三）</h2>
+    <h2 class="p-name post-title">GPT-6 Astra 3D 建模（三） 场景初探</h2>
   </header>
   <article class="post-content e-content with-title">
     <p><link rel="stylesheet" href="/blog/assets/css/astra-series.css"></p>
 <div class="astra-series">
 <figure class="astra-hero">
-  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/01-teaser.webp" target="_blank" rel="noopener" aria-label="GPT-6 Astra 从图像到3D （三）：概览，打开大图">
-    <img src="/blog/uploads/2026/astra-image-to-3d/part-3/01-teaser.webp" alt="GPT-6 Astra 从图像到3D （三）：概览" width="2400" height="1020" loading="eager" fetchpriority="high" decoding="async">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/01-teaser.webp" target="_blank" rel="noopener" aria-label="GPT-6 Astra 3D 建模（三） 场景初探：概览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-3/01-teaser.webp" alt="GPT-6 Astra 3D 建模（三） 场景初探：概览" width="2400" height="1020" loading="eager" fetchpriority="high" decoding="async">
   </a>
 </figure>
-<p>之前两篇 （<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一）</a>、<a href="/blog/2026/09/06/astra-image-to-3d-2.html">GPT-6 Astra 从图像到3D （二）</a>）介绍了单物体生成的尝试。很自然的扩展就是生成场景。</p>
-<p>输入仍然是稀疏图片（厨房角落两张图片、工作区单张图片）。</p>
-<p>要求 GPT-6 Astra 创建完整场景，同时其中每个物体可以单独取出使用。照片没拍到的部分可以补全，柜门、抽屉和灯具等代表性结构保留交互。</p>
-<h2>厨房场景：两图融合</h2>
-<p>厨房的两张图来自互联网检索，接近平视和俯视，前者能看清白色主柜、开放层架和蓝色壁柜的比例；后者补充了台面、冰箱与踏凳的位置。</p>
-<p>需要说明的是，两张图片并非严格的同一场景多视角图像，餐具在两张图中的摆放还有些不同。</p>
+<p>之前两篇 （<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 3D 建模（一） 单物体初探</a>、<a href="/blog/2026/09/06/astra-image-to-3d-2.html">GPT-6 Astra 3D 建模（二） 细节补充</a>）介绍了单物体生成。下一步很自然的扩展就是多物体场景。</p>
+<p>输入仍然是稀疏图片（厨房两张图片、工作区单张图片）。</p>
+<p>要求 GPT-6 Astra 创建完整场景，每个物体可以单独使用。照片没拍到的部分需要合理补全，柜门、抽屉和灯具等代表性结构保留交互能力。</p>
+<h2>厨房场景</h2>
+<p>两张输入图片来自互联网检索，分别是平视和俯视视角，前者中可以看清白色主柜、开放层架和蓝色壁柜的比例；后者补充了台面、冰箱与踏凳的位置。</p>
+<p>需要说明的是，两张图片并非严格同一场景的多视角图像，例如餐具在两张图中的摆放存在不同。</p>
 <figure class="astra-figure" style="max-width:374px">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/02.webp" target="_blank" rel="noopener" aria-label="厨房参考图1，平视视角。，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-3/02.webp" alt="厨房参考图1，平视视角。" width="1518" height="1746" loading="lazy" decoding="async">
@@ -111,13 +111,12 @@
   </a>
   <figcaption>厨房参考图2，俯视视角。</figcaption>
 </figure>
-<p>Astra 建模中以主柜和台面估计尺度，先统一固定家具，再采用俯视图中较完整的餐具摆放。将两个图片的信息组织为一套布局。</p>
+<p>Astra 建模以主柜和台面来估计尺度，先统一固定家具（主柜、蓝壁柜、微波炉和冰箱），再参考俯视图进行小物件摆放，将砧板、杯盘、瓶罐和挂件等填入其中。厨房场景最终有 73 个独立物体。</p>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/04.webp" target="_blank" rel="noopener" aria-label="厨房场景：两图融合：生成结果，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-3/04.webp" alt="厨房场景：两图融合：生成结果" width="1440" height="1700" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>主柜、蓝壁柜、微波炉和冰箱确定了主要区域，砧板、杯盘、瓶罐和挂件再填入其中。厨房场景最终有 73 个独立物体。</p>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/05.webp" target="_blank" rel="noopener" aria-label="水槽内腔、碗架与台面餐具。，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-3/05.webp" alt="水槽内腔、碗架与台面餐具。" width="1600" height="1150" loading="lazy" decoding="async">
@@ -137,22 +136,21 @@
   </a>
   <figcaption>厨房场景：灰模预览</figcaption>
 </figure>
-<h2>工作区：单图生成</h2>
-<p>工作区只给了一张参考图片，场景中塞满了小物件：洞洞板、透明挂盒、剪刀、线圈、矿石、两盏灯，以及桌上的手机和平板。部分内容被遮挡，桌椅也没有全部拍进来。</p>
+<h2>工作区</h2>
+<p>工作区场景只给了一张参考图片，场景中塞满了各种小物件：洞洞板、透明挂盒、剪刀、线圈、矿石、两盏灯，以及桌上的手机和平板。部分内容被遮挡，桌椅也没有全部拍进来。</p>
 <figure class="astra-figure" style="max-width:380px">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/07.webp" target="_blank" rel="noopener" aria-label="工作区参考图。，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-3/07.webp" alt="工作区参考图。" width="1776" height="1000" loading="lazy" decoding="async">
   </a>
   <figcaption>工作区参考图。</figcaption>
 </figure>
-<p>Astra 建模过程先定位桌面、洞洞板和柜架，再补入各处物件。照片外的桌腿、椅子和下层空间由它补全；洞洞板做出实际孔洞，透明挂盒保留厚度，绳环与矿石则分别处理形状和材质。</p>
+<p>Astra 建模过程先定位桌面、洞洞板和柜架，再补入各处物件。照片外的桌腿、椅子和下层空间也进行补全。</p>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/08.webp" target="_blank" rel="noopener" aria-label="生成的桌面、洞洞板与收纳区。，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-3/08.webp" alt="生成的桌面、洞洞板与收纳区。" width="1776" height="1000" loading="lazy" decoding="async">
   </a>
   <figcaption>生成的桌面、洞洞板与收纳区。</figcaption>
 </figure>
-<p>由于场景包含很多相互依附的物件（最终有 94 个独立物体），建模过程中遇到一个通用难题就是物件位置的调整。Astra 注意到这里的移动并非各自独立：手机依附于夹架，夹架与灯架相连；平板靠在木支架上，木支架落在桌面上。支撑物下降，依附其上的物体也要跟着走。</p>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-3/09.webp" target="_blank" rel="noopener" aria-label="键盘、灯座、平板支架与水晶球的摆放关系。，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-3/09.webp" alt="键盘、灯座、平板支架与水晶球的摆放关系。" width="1600" height="1100" loading="lazy" decoding="async">
@@ -174,8 +172,8 @@
 <h2>如何从物体到场景</h2>
 <p>在我要求先安排布局、再渲染比对的基础上，Astra 将任务组织为：</p>
 <blockquote>
-<p>用物体规格表管理家具与道具，把每件东西自身的几何、材质和活动结构，与它在场景里的位置分开记录。</p>
-<p>在这个基础上，安排了三层工作：</p>
+<p>用物体规格表管理家具与道具，把每件物品自身的几何、材质和活动结构，与它在场景里的位置分开记录。</p>
+<p>在此基础上，安排了三层工作：</p>
 <ol>
 <li><strong>先定大关系。</strong> 用主要家具估计尺度，确定墙面、桌面和柜体的位置；多张图里出现的同一处空间，需要统一起来。</li>
 <li><strong>再填入独立物体。</strong> 依次补上器具、摆件和挂件，为遮挡部分建立完整形状，并将具体交互分配到主要物体上。</li>
@@ -184,13 +182,13 @@
 </blockquote>
 <h2>下一步</h2>
 <p>目前的流程尚且粗糙，不论是输入本身、流程设计、验收标准，还是与现有 3D vision、AIG3D 的融合，都可以并值得继续探索和深挖。</p>
-<p>但另一方面，我们也应该重新思考那些我们习以为常的体系，哪些只是知识，哪些才是智能？而哪些又是「迫不得已」的拙劣手法？</p>
+<p>但另一方面，<strong>我们也应该重新思考那些我们习以为常的体系，哪些只是知识，哪些才是智能？而哪些又是「迫不得已」的拙劣手法？</strong></p>
 </div>
   </article>
 </article>
 <nav class="pagination-links post-navigation" aria-label="Post navigation">
-  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/13/astra-image-to-3d-4.html">← GPT-6 Astra 从图像到3D （四）—— 离优秀建模师的距离</a></div>
-  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-2.html">GPT-6 Astra 从图像到3D （二） →</a></div>
+  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/13/astra-image-to-3d-4.html">← GPT-6 Astra 3D 建模（四） 离优秀建模师的距离</a></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-2.html">GPT-6 Astra 3D 建模（二） 细节补充 →</a></div>
 </nav>
     </div>
   </div>

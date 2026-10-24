@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="以跑车、怪物和哈利波特手办为例，看看 Astra 的生成结果与优秀建模师的作品还有多大差距。">
-  <meta property="og:title" content="GPT-6 Astra 从图像到3D （四）—— 离优秀建模师的距离 | 逆风呢喃">
+  <meta property="og:title" content="GPT-6 Astra 3D 建模（四） 离优秀建模师的距离 | 逆风呢喃">
   <meta property="og:description" content="以跑车、怪物和哈利波特手办为例，看看 Astra 的生成结果与优秀建模师的作品还有多大差距。">
   <meta property="og:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-4/teaser.webp">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-4.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GPT-6 Astra 从图像到3D （四）—— 离优秀建模师的距离 | 逆风呢喃">
+  <meta name="twitter:title" content="GPT-6 Astra 3D 建模（四） 离优秀建模师的距离 | 逆风呢喃">
   <meta name="twitter:description" content="以跑车、怪物和哈利波特手办为例，看看 Astra 的生成结果与优秀建模师的作品还有多大差距。">
   <meta name="twitter:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-4/teaser.webp">
   <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-4.html">
@@ -48,7 +48,7 @@
   </script>
   <link rel="stylesheet" href="/blog/assets/css/blog.css?v=9779ea7a8a">
   
-  <title>GPT-6 Astra 从图像到3D （四）—— 离优秀建模师的距离 | 逆风呢喃</title>
+  <title>GPT-6 Astra 3D 建模（四） 离优秀建模师的距离 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
@@ -83,7 +83,7 @@
     <div class="post-date-wrapper">
       <time class="dt-published" datetime="2026-09-13T16:32:06+08:00">September 13, 2026</time>
     </div>
-    <h2 class="p-name post-title">GPT-6 Astra 从图像到3D （四）—— 离优秀建模师的距离</h2>
+    <h2 class="p-name post-title">GPT-6 Astra 3D 建模（四） 离优秀建模师的距离</h2>
   </header>
   <article class="post-content e-content with-title">
     <p><link rel="stylesheet" href="/blog/assets/css/astra-series.css">
@@ -94,8 +94,8 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/teaser.webp" alt="跑车、怪物与手办的局部对照；每组左为输入参考，右为 Astra 生成结果" width="2880" height="1800" loading="eager" decoding="async" fetchpriority="high">
   </a>
 </figure>
-<p>前面三篇里（<a href="/blog/2026/09/06/astra-image-to-3d-1.html">一</a>、<a href="/blog/2026/09/06/astra-image-to-3d-2.html">二</a>、<a href="/blog/2026/09/06/astra-image-to-3d-3.html">三</a>）， GPT-6 Astra 在空间理解和工业品建模上的表现相当不错；然而，大家也慢慢发现，Astra 对于造型或细节比较复杂的物体，效果常常「一言难尽」。</p>
-<p>我选了<code>跑车</code>、<code>怪物</code>、<code>哈利波特手办</code>三个例子进行测试，前两个例子以  ArtStation 3D 艺术家们的建模作品的渲染图作为参考（因此本身不存在 Sim-to-Real Gap），手办则使用本人拍摄的照片。</p>
+<p>从前文（<a href="/blog/2026/09/06/astra-image-to-3d-1.html">一</a>、<a href="/blog/2026/09/06/astra-image-to-3d-2.html">二</a>、<a href="/blog/2026/09/06/astra-image-to-3d-3.html">三</a>）中可以看出，GPT-6 Astra 在 3D 空间理解和工业品建模上，表现得相当不错；本文继续测试其在造型或细节复杂物体上的建模能力。</p>
+<p>这里选了<code>跑车</code>、<code>怪物</code>、<code>哈利波特手办</code>三个例子，前两个例子以 ArtStation 上 3D 艺术家们的建模作品的渲染图作为参考（因此不存在 Sim-to-Real Gap），手办则是本人拍摄的照片。</p>
 <h2>跑车</h2>
 <p>输入参考图来自 3D 艺术家 <a href="https://www.artstation.com/artwork/kwl3lz">Santiago Avril</a> 创作的 Porsche 911 GT3 模型。</p>
 <div aria-label="跑车的两张输入参考" class="astra-input-pair" role="group">
@@ -110,7 +110,13 @@
   </a>
 </figure>
 </div>
-<p>生成模型的预览结果：</p>
+<p>Astra 建模结果：</p>
+<figure class="astra-motion" data-media="car-preview">
+<video aria-label="跑车三维预览" controls height="1080" loop muted playsinline poster="/blog/uploads/2026/astra-image-to-3d/part-4/car-preview-poster.jpg" preload="metadata" width="1920">
+    <source src="/blog/uploads/2026/astra-image-to-3d/part-4/car-preview.mp4" type="video/mp4">
+    <a href="/blog/uploads/2026/astra-image-to-3d/part-4/car-preview.mp4">播放跑车三维预览</a>
+  </video>
+</figure>
 <figure class="astra-figure astra-result" data-media="car-hero">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-4/car-hero.webp" target="_blank" rel="noopener" aria-label="跑车生成结果：前侧视角，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/car-hero.webp" alt="跑车生成结果：前侧视角" width="2400" height="1600" loading="lazy" decoding="async">
@@ -121,20 +127,20 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/car-rear.webp" alt="跑车生成结果：后侧视角" width="2400" height="1600" loading="lazy" decoding="async">
   </a>
 </figure>
-<figure class="astra-motion" data-media="car-preview">
-<video aria-label="跑车三维预览" controls height="1080" loop muted playsinline poster="/blog/uploads/2026/astra-image-to-3d/part-4/car-preview-poster.jpg" preload="metadata" width="1920">
-    <source src="/blog/uploads/2026/astra-image-to-3d/part-4/car-preview.mp4" type="video/mp4">
-    <a href="/blog/uploads/2026/astra-image-to-3d/part-4/car-preview.mp4">播放跑车三维预览</a>
-  </video>
-</figure>
 <h2>怪物</h2>
-<p>输入参考图<sup id="fnref:astra-4-1"><a class="footnote-ref" href="#fn:astra-4-1">1</a></sup>来自 3D 艺术家 <a href="https://www.artstation.com/artwork/lx4Gek">Andrea Di Natale</a> 创作的系列怪物中的一个。</p>
+<p>输入参考图<sup id="fnref:astra-4-1"><a class="footnote-ref" href="#fn:astra-4-1">1</a></sup>来自 3D 艺术家 <a href="https://www.artstation.com/artwork/lx4Gek">Andrea Di Natale</a> 所创作的系列怪物中的一个。</p>
 <figure class="astra-figure astra-input" data-media="monster-reference">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-4/monster-reference.webp" target="_blank" rel="noopener" aria-label="怪物输入参考：艺术家作品灰模，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/monster-reference.webp" alt="怪物输入参考：艺术家作品灰模" width="1600" height="910" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>生成模型的预览结果：</p>
+<p>Astra 建模结果：</p>
+<figure class="astra-motion" data-media="monster-preview">
+<video aria-label="怪物三维预览" controls height="1080" loop muted playsinline poster="/blog/uploads/2026/astra-image-to-3d/part-4/monster-preview-poster.jpg" preload="metadata" width="1920">
+    <source src="/blog/uploads/2026/astra-image-to-3d/part-4/monster-preview.mp4" type="video/mp4">
+    <a href="/blog/uploads/2026/astra-image-to-3d/part-4/monster-preview.mp4">播放怪物三维预览</a>
+  </video>
+</figure>
 <figure class="astra-figure astra-result" data-media="monster-hero">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-4/monster-hero.webp" target="_blank" rel="noopener" aria-label="怪物生成结果：正面视角，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/monster-hero.webp" alt="怪物生成结果：正面视角" width="2400" height="2400" loading="lazy" decoding="async">
@@ -145,21 +151,16 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/monster-side.webp" alt="怪物生成结果：侧面视角" width="2400" height="2400" loading="lazy" decoding="async">
   </a>
 </figure>
-<figure class="astra-motion" data-media="monster-preview">
-<video aria-label="怪物三维预览" controls height="1080" loop muted playsinline poster="/blog/uploads/2026/astra-image-to-3d/part-4/monster-preview-poster.jpg" preload="metadata" width="1920">
-    <source src="/blog/uploads/2026/astra-image-to-3d/part-4/monster-preview.mp4" type="video/mp4">
-    <a href="/blog/uploads/2026/astra-image-to-3d/part-4/monster-preview.mp4">播放怪物三维预览</a>
-  </video>
-</figure>
 <h2>手办</h2>
-<p>鉴于以上两个例子展示出的显著差距，最后一个例子放弃了原计划的数字人建模（也是华为期间的<a href="https://gao-duan.github.io/publications/controlface/controlface.pdf">老本行</a>了，顺便强烈推荐 3D 艺术家 <a href="https://www.artstation.com/artwork/d81LzX">Şefki Ibrahim</a>），转向相对简单的手办。</p>
-<p>输入图片来自本人手机拍摄：</p>
+<p>最后一个例子原计划是超写实数字人建模，也是之前在华为的<a href="https://gao-duan.github.io/publications/controlface/controlface.pdf">老本行</a>了。顺便强烈推荐 3D 艺术家 <a href="https://www.artstation.com/artwork/d81LzX">Şefki Ibrahim</a> 的作品和教程。</p>
+<p>第三个例子只能转向相对简单的手办。</p>
+<p>输入图片来自我手机拍摄：</p>
 <figure class="astra-figure astra-input astra-input--portrait" data-media="figurine-reference">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-4/figurine-reference.webp" target="_blank" rel="noopener" aria-label="哈利波特手办输入参考，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-4/figurine-reference.webp" alt="哈利波特手办输入参考" width="1200" height="1600" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>建模结果：</p>
+<p>建模结果同样「一言难尽」：</p>
 <div aria-label="手办的正面与背面" class="astra-portrait-pair" role="group">
 <figure class="astra-figure astra-result" data-media="figurine-front">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-4/figurine-front.webp" target="_blank" rel="noopener" aria-label="手办生成结果：正面，打开大图">
@@ -173,21 +174,21 @@
 </figure>
 </div>
 <h2>小结</h2>
-<p>Astra 虽然有了极强的空间理解和建模能力，但精细建模能力仍然存在较大问题。<a href="/blog/2026/09/13/astra-image-to-3d-5.html">下一篇</a>会尝试让 Agent 自动调用图生 3D 模型的能力，尝试补齐短板。</p>
+<p>Astra 虽然有了极强的空间理解和建模能力，但精细建模能力仍然存在较大问题。<a href="/blog/2026/09/13/astra-image-to-3d-5.html">下一篇</a>会尝试让 Agent 自动调用图生 3D 模型的能力，补齐短板。</p>
 </div>
 <div class="footnote">
 <hr>
 <ol>
 <li id="fn:astra-4-1">
-<p>白模&#160;<a class="footnote-backref" href="#fnref:astra-4-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>原作者模型为白模&#160;<a class="footnote-backref" href="#fnref:astra-4-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
   </article>
 </article>
 <nav class="pagination-links post-navigation" aria-label="Post navigation">
-  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/13/astra-image-to-3d-5.html">← GPT-6 Astra 从图像到3D （五）—— Blender 之外：Agent 场景建模</a></div>
-  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-3.html">GPT-6 Astra 从图像到3D （三） →</a></div>
+  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/13/astra-image-to-3d-5.html">← GPT-6 Astra 3D 建模（五） Agent 场景建模</a></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-3.html">GPT-6 Astra 3D 建模（三） 场景初探 →</a></div>
 </nav>
     </div>
   </div>

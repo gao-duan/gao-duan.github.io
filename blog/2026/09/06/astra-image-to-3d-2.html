@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="进一步细化六个资产的几何与材质，并汇总两个版本的几何、材质、物理信息，以及 Token 和时间开销。">
-  <meta property="og:title" content="GPT-6 Astra 从图像到3D （二） | 逆风呢喃">
+  <meta property="og:title" content="GPT-6 Astra 3D 建模（二） 细节补充 | 逆风呢喃">
   <meta property="og:description" content="进一步细化六个资产的几何与材质，并汇总两个版本的几何、材质、物理信息，以及 Token 和时间开销。">
   <meta property="og:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-2.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GPT-6 Astra 从图像到3D （二） | 逆风呢喃">
+  <meta name="twitter:title" content="GPT-6 Astra 3D 建模（二） 细节补充 | 逆风呢喃">
   <meta name="twitter:description" content="进一步细化六个资产的几何与材质，并汇总两个版本的几何、材质、物理信息，以及 Token 和时间开销。">
   <meta name="twitter:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp">
   <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/06/astra-image-to-3d-2.html">
@@ -48,7 +48,7 @@
   </script>
   <link rel="stylesheet" href="/blog/assets/css/blog.css?v=9779ea7a8a">
   
-  <title>GPT-6 Astra 从图像到3D （二） | 逆风呢喃</title>
+  <title>GPT-6 Astra 3D 建模（二） 细节补充 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
@@ -83,28 +83,29 @@
     <div class="post-date-wrapper">
       <time class="dt-published" datetime="2026-09-06T15:18:29+08:00">September 6, 2026</time>
     </div>
-    <h2 class="p-name post-title">GPT-6 Astra 从图像到3D （二）</h2>
+    <h2 class="p-name post-title">GPT-6 Astra 3D 建模（二） 细节补充</h2>
   </header>
   <article class="post-content e-content with-title">
     <p><link rel="stylesheet" href="/blog/assets/css/astra-series.css"></p>
 <div class="astra-series">
 <figure class="astra-hero">
-  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp" target="_blank" rel="noopener" aria-label="GPT-6 Astra 从图像到3D （二）：概览，打开大图">
-    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp" alt="GPT-6 Astra 从图像到3D （二）：概览" width="2400" height="1350" loading="eager" fetchpriority="high" decoding="async">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp" target="_blank" rel="noopener" aria-label="GPT-6 Astra 3D 建模（二） 细节补充：概览，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-2/01-teaser.webp" alt="GPT-6 Astra 3D 建模（二） 细节补充：概览" width="2400" height="1350" loading="eager" fetchpriority="high" decoding="async">
   </a>
 </figure>
-<p>书接上回（<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一）</a>），我为每个资产生成了<code>v1</code> 和 <code>v2</code> 两个版本。<code>v2</code> 在不修改主要结构的前提下，进一步精细化了几何和表观的细节（同样也是 Astra 自动完成），代价就是面片数、材质素材的膨胀。</p>
+<p>书接上回（<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 3D 建模（一） 单物体初探</a>），每个资产实际上生成了 <code>v1</code> 和 <code>v2</code> 两个版本。
+<code>v2</code> 不修改主要结构，添加了更多几何和表观细节（同样也是交由 Astra 完成）。<a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">没有免费的午餐</a>，增添细节的代价就是三角面片数、材质贴图等的膨胀。</p>
 <h2>细节增强</h2>
 <p>具体指令如下：</p>
 <blockquote>
-<p>进一步提升6个资产的质量：提升表观细节，并保持物理交互性。可考虑的包括但不限于：引入高质量的材质贴图、精细化局部细节的建模等。</p>
+<p>进一步提升资产质量：着重提升表观细节，并保持物理交互性。可考虑的方向包括但不限于：引入高质量的材质贴图、精细化局部细节建模等。</p>
 </blockquote>
-<p>以下每个资产的具体修改细节均由 Astra 自己构想并实现。</p>
+<p>每个资产的具体修改方向均由 Astra 自己构想并实现。</p>
 <h3>遥控器</h3>
 <ul>
-<li>圆形按键改为带支撑环线的浅弧面，印字随按键曲面贴合；补充定位触点。</li>
-<li>补充电池接触弹簧、触片、真实十字凹槽螺钉、卡扣座和模具顶针痕。</li>
-<li>引入 2K PBR 塑料、硅胶及镀镍表面，保留全部按键和电池盖交互。</li>
+<li>圆形按键改为浅弧面，印字随按键曲面贴合；补充定位触点（见按键 <code>5</code>）。</li>
+<li>补充电池接触弹簧、真实十字凹槽螺钉、卡扣座和模具顶针痕。</li>
+<li>引入 2K PBR 塑料、硅胶及镀镍材质贴图。</li>
 </ul>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/02.webp" target="_blank" rel="noopener" aria-label="遥控器：生成结果，打开大图">
@@ -119,8 +120,9 @@
 <h3>抽屉柜</h3>
 <ul>
 <li>把手重建为连续圆角实体，消除原拼接处的高光断层。</li>
-<li>补充 96 颗滑轨滚珠、保持架折边、冲压加强筋、限位块和内侧紧固件。</li>
-<li>细化粉末涂层、镀锌钢、尼龙与 TPE；补充脚轮辐条、轴肩和密封圈，并平滑轮胎肩部及轴承套的圆角法线。</li>
+<li>补充滑轨滚珠、保持架折边、冲压加强筋、限位块和内侧紧固件。</li>
+<li>细化粉末涂层、镀锌钢、尼龙与 TPE。</li>
+<li>补充脚轮辐条、轴肩和密封圈，并平滑轮胎肩部及轴承套的圆角法线。</li>
 </ul>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/04.webp" target="_blank" rel="noopener" aria-label="抽屉柜：生成结果，打开大图">
@@ -140,7 +142,7 @@
 </figure>
 <h3>咖啡机</h3>
 <ul>
-<li>细化不锈钢拉丝、镀铬、ABS 和弹性密封材质，保留透明容器与亮漆的光学设置。</li>
+<li>细化不锈钢拉丝、镀铬、ABS 和弹性密封材质。</li>
 <li>补充中空出水嘴卷边、加工环、密封圈、格栅支撑和料仓可见的进料口及加强筋。</li>
 <li>调节旋钮重建为连续滚花实体；补充真实凹槽紧固件，校正水箱刻度和型号印字的贴合位置，并平滑出水头导轨的圆角。</li>
 </ul>
@@ -151,9 +153,10 @@
 </figure>
 <h3>冷冻柜</h3>
 <ul>
-<li>细化搪瓷、塑料、通风钢板和密封材质，保留参考印刷图及曲面玻璃。</li>
-<li>滑盖增加双层擦拭唇、端部滑块、抓握细纹和紧固件，保留双轨高度差及原行程。</li>
-<li>补充 52 片成形百叶、控制面板紧固件、玻璃刻字和脚轮细节；温控旋钮改为连续轮廓实体。</li>
+<li>细化搪瓷、塑料、通风钢板和密封材质。</li>
+<li>滑盖增加双层擦拭唇、端部滑块、抓握细纹和紧固件。</li>
+<li>补充成形百叶、控制面板紧固件、玻璃刻字和脚轮细节。</li>
+<li>温控旋钮改为连续轮廓实体。</li>
 </ul>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/07.webp" target="_blank" rel="noopener" aria-label="冷冻柜：生成结果，打开大图">
@@ -163,8 +166,8 @@
 <h3>电煮锅</h3>
 <ul>
 <li>细化搪瓷、ABS、酚醛手柄、不粘涂层和橡胶表面。</li>
-<li>加热盘使用专用 4K 径向加工法线与粗糙度贴图，并保留三道真实车削槽。</li>
-<li>补充中空蒸汽孔衬套、锅盖握柄下方垫圈与螺钉、加热盘固定座及滑块抓握细纹；保留锅体、盖子及温控滑块交互。</li>
+<li>加热盘使用专用 4K 径向加工法线与粗糙度贴图。</li>
+<li>补充中空蒸汽孔衬套、锅盖握柄下方垫圈与螺钉、加热盘固定座及滑块抓握细纹。</li>
 </ul>
 <figure class="astra-figure">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-2/08.webp" target="_blank" rel="noopener" aria-label="电煮锅：生成结果，打开大图">
@@ -531,7 +534,7 @@
 </div>
 <h3>开销</h3>
 <h4>Token</h4>
-<p>这里列举了<a href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一）</a> 和本文任务，以及下一篇<a href="/blog/2026/09/06/astra-image-to-3d-3.html">GPT-6 Astra 从图像到3D （三）</a>中场景生成的开销。</p>
+<p>这里列举了本文介绍的 6 个物体生成，以及下一篇<a href="/blog/2026/09/06/astra-image-to-3d-3.html">GPT-6 Astra 3D 建模（三） 场景初探</a> 的开销。</p>
 <div aria-label="Token表格" class="astra-table" role="region" tabindex="0">
 <table>
 <thead>
@@ -545,21 +548,21 @@
 </thead>
 <tbody>
 <tr>
-<td>六个资产 V1</td>
+<td>六物体 V1</td>
 <td style="text-align: right;"><strong>48.36</strong></td>
 <td style="text-align: right;">1.55</td>
 <td style="text-align: right;">46.54</td>
 <td style="text-align: right;">0.27</td>
 </tr>
 <tr>
-<td>六个资产 V2</td>
+<td>六物体 V2</td>
 <td style="text-align: right;"><strong>57.25</strong></td>
 <td style="text-align: right;">1.85</td>
 <td style="text-align: right;">55.09</td>
 <td style="text-align: right;">0.32</td>
 </tr>
 <tr>
-<td>两个场景</td>
+<td>两场景</td>
 <td style="text-align: right;"><strong>38.26</strong></td>
 <td style="text-align: right;">1.15</td>
 <td style="text-align: right;">36.89</td>
@@ -585,17 +588,17 @@
 </thead>
 <tbody>
 <tr>
-<td>六个资产 V1</td>
+<td>六物体  V1</td>
 <td style="text-align: right;"><strong>约 3 小时 30 分钟</strong></td>
 <td>首轮制作约 2 小时 52 分钟，后续修正约 38 分钟</td>
 </tr>
 <tr>
-<td>六个资产 V2</td>
+<td>六物体  V2</td>
 <td style="text-align: right;"><strong>约 2 小时 51 分钟</strong></td>
 <td>包含迭代、检查与交付</td>
 </tr>
 <tr>
-<td>两个场景</td>
+<td>两场景</td>
 <td style="text-align: right;"><strong>约 2 小时 3 分钟</strong></td>
 <td>包含厨房和工作区的制作、检查与交付</td>
 </tr>
@@ -610,8 +613,8 @@
   </article>
 </article>
 <nav class="pagination-links post-navigation" aria-label="Post navigation">
-  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/06/astra-image-to-3d-3.html">← GPT-6 Astra 从图像到3D （三）</a></div>
-  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 从图像到3D （一） →</a></div>
+  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/06/astra-image-to-3d-3.html">← GPT-6 Astra 3D 建模（三） 场景初探</a></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/06/astra-image-to-3d-1.html">GPT-6 Astra 3D 建模（一） 单物体初探 →</a></div>
 </nav>
     </div>
   </div>

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="让 Astra 自主选择困难物体、准备图生 3D 输入，再把不同路线的结果组织进五个场景。">
-  <meta property="og:title" content="GPT-6 Astra 从图像到3D （五）—— Blender 之外：Agent 场景建模 | 逆风呢喃">
+  <meta property="og:title" content="GPT-6 Astra 3D 建模（五） Agent 场景建模 | 逆风呢喃">
   <meta property="og:description" content="让 Astra 自主选择困难物体、准备图生 3D 输入，再把不同路线的结果组织进五个场景。">
   <meta property="og:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-5/teaser.webp">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-5.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GPT-6 Astra 从图像到3D （五）—— Blender 之外：Agent 场景建模 | 逆风呢喃">
+  <meta name="twitter:title" content="GPT-6 Astra 3D 建模（五） Agent 场景建模 | 逆风呢喃">
   <meta name="twitter:description" content="让 Astra 自主选择困难物体、准备图生 3D 输入，再把不同路线的结果组织进五个场景。">
   <meta name="twitter:image" content="https://gao-duan.github.io/blog/uploads/2026/astra-image-to-3d/part-5/teaser.webp">
   <link rel="canonical" href="https://gao-duan.github.io/blog/2026/09/13/astra-image-to-3d-5.html">
@@ -48,7 +48,7 @@
   </script>
   <link rel="stylesheet" href="/blog/assets/css/blog.css?v=9779ea7a8a">
   
-  <title>GPT-6 Astra 从图像到3D （五）—— Blender 之外：Agent 场景建模 | 逆风呢喃</title>
+  <title>GPT-6 Astra 3D 建模（五） Agent 场景建模 | 逆风呢喃</title>
 </head>
 <body class="page-post page-post--post">
   <header class="site-header">
@@ -83,7 +83,7 @@
     <div class="post-date-wrapper">
       <time class="dt-published" datetime="2026-09-13T16:32:07+08:00">September 13, 2026</time>
     </div>
-    <h2 class="p-name post-title">GPT-6 Astra 从图像到3D （五）—— Blender 之外：Agent 场景建模</h2>
+    <h2 class="p-name post-title">GPT-6 Astra 3D 建模（五） Agent 场景建模</h2>
   </header>
   <article class="post-content e-content with-title">
     <p><link rel="stylesheet" href="/blog/assets/css/astra-series.css">
@@ -94,28 +94,32 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/teaser.webp" alt="五个场景的生成结果概览" width="2400" height="1512" loading="eager" decoding="async" fetchpriority="high">
   </a>
 </figure>
-<p>既然 <a href="/blog/2026/09/13/astra-image-to-3d-4.html">Astra 并不擅长复杂物体建模</a>，那么与其仅让它调用 Blender，一个更加自然的想法是：将图生 3D 模型的能力交给 Astra Agent。</p>
-<p>让 <strong>Agent 自己</strong>来找到复杂到需要借助外力帮助的物体，将 3D 理解、Blender 3D 建模、图生 3D 模型等能力<strong>自动串成一套制作流程</strong>：</p>
+<p>既然 <a href="/blog/2026/09/13/astra-image-to-3d-4.html">Astra 并不擅长复杂物体建模</a>，那么一个更加自然的思路就是：将图生 3D 生成模型（例如：Trellis 2，hunyuan 3D，Meshy 等）作为一项 Skill 交给 Astra。</p>
+<p>以 Astra 加持下的 Codex 作为 Agent，让 Agent 自己识别难以建模的困难物体，将空间理解、Blender 3D 建模、图生 3D 生成模型等能力<strong>自动串成一套制作流程</strong>：</p>
 <ul>
 <li>Agent 决定哪些物体使用 Blender 建模（如桌子、水杯），哪些交给专门的生成模型（如手办）；</li>
-<li>Agent 调用图片生成能力为图生 3D 准备输入参考图（涉及抠图、遮挡补全、视角矫正、分辨率提升等）；</li>
-<li>最后，Agent 需要将不同路径建模的物体组织整合成同一个场景。</li>
+<li>Agent 调用 imagegen 为图生 3D 模型准备合适的输入参考图（涉及抠图、遮挡补全、视角矫正、超分辨率等）；</li>
+<li>最后，Agent 需要将不同路径建模的物体组织整合到一个场景中。</li>
 </ul>
+<p><br></p>
 <p>以下几个场景示例中全程我仅输入文字（包括场景图片描述以及建模任务）：</p>
 <ol>
 <li>文字描述场景需求。由最新的 GPT Image 2.5 模型为每个场景生成 1 张图片。</li>
-<li>以上图片作为 3D 场景建模的参考，由 AI 自己组织场景建模流程。特别地，需要合理调用图生 3D 工具，要求每个场景分别使用两条路线对照：<ul>
+<li>
+<p>以上图片作为 3D 场景建模的参考，由 AI 自己组织场景建模流程。</p>
+<p>特别地，需要合理调用图生 3D 生成模型，每个场景分别使用两条路线对照：</p>
+<ul>
 <li>路线 A：全部基于 Blender 完成建模（允许使用图像生成制作纹理），作为对比基线。</li>
 <li>路线 B：在 A 的基础上，可引入图生 3D，自主完成物体选择、物体建模和场景整合。</li>
 </ul>
 </li>
 </ol>
-<h2>办公桌：手办交由图生 3D</h2>
+<h2>办公桌：手办</h2>
 <figure class="astra-figure astra-input" data-media="office-reference">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/office-reference.webp" target="_blank" rel="noopener" aria-label="办公桌输入参考，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/office-reference.webp" alt="办公桌输入参考" width="1448" height="1086" loading="lazy" decoding="async">
   </a>
-  <figcaption>办公桌输入图，由 GPT Image 2.5 生成。</figcaption>
+  <figcaption>办公桌输入图，由 GPT Image 2.5 生成。手办为识别到的困难物体。</figcaption>
 </figure>
 <p>路线 B 建模结果：</p>
 <figure class="astra-figure astra-result" data-media="office-result">
@@ -128,26 +132,19 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/office-overview.webp" alt="办公桌路线 B 三维场景总览" width="2400" height="1800" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>以上结果中手办是 Agent 识别到的「困难」物体。从以下对比中也可以发现，路线 A 的手办建模虽然包含了完整的结构（底座、人物、头发等），但整体建模生硬。</p>
+<p>路线 A 的手办结构虽然完整，但建模相当生硬。</p>
 <figure class="astra-figure astra-comparison" data-media="office-comparison">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/office-comparison.webp" target="_blank" rel="noopener" aria-label="办公桌手办对比：左为路线 A，右为路线 B，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/office-comparison.webp" alt="办公桌手办对比：左为路线 A，右为路线 B" width="1800" height="1240" loading="lazy" decoding="async">
   </a>
   <figcaption>人物局部：左为 A，右为 B。</figcaption>
 </figure>
-<p>为了调用图生 3D 工具生成以上手办模型，它先调用 imagegen 工具生成出独立、完整的人物正面参考图片，再送入图生 3D 。</p>
-<figure class="astra-figure astra-input astra-input--prepared" data-media="office-prepared-reference">
-  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/office-prepared-reference.webp" target="_blank" rel="noopener" aria-label="Astra 为图生 3D 准备的人物参考，打开大图">
-    <img src="/blog/uploads/2026/astra-image-to-3d/part-5/office-prepared-reference.webp" alt="Astra 为图生 3D 准备的人物参考" width="1086" height="1448" loading="lazy" decoding="async">
-  </a>
-  <figcaption>Astra 准备的独立人物参考，用作图生 3D 输入。</figcaption>
-</figure>
-<h2>工作台：遥控玩具车</h2>
+<h2>工作台：玩具车</h2>
 <figure class="astra-figure astra-input" data-media="workshop-reference">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-reference.webp" target="_blank" rel="noopener" aria-label="工作台输入参考，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-reference.webp" alt="工作台输入参考" width="1448" height="1086" loading="lazy" decoding="async">
   </a>
-  <figcaption>工作台输入图，由 GPT Image 2.5 生成。</figcaption>
+  <figcaption>工作台输入图，由 GPT Image 2.5 生成。玩具车为困难物体。</figcaption>
 </figure>
 <p>路线 B 建模结果：</p>
 <figure class="astra-figure astra-result" data-media="workshop-result">
@@ -155,14 +152,14 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-result.webp" alt="工作台路线 B 生成结果" width="2400" height="1800" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>该例子中，Astra 将遥控玩具越野车交给图生 3D 建模。从对比图中可以看出，路线 A 也可以建模出相对复杂的结构（轮胎、悬架、尾翼等），但复杂的车身轮廓、印花和精细结构仍存在差距。</p>
+<p>路线 A 建模效果其实也相当不错，但路线 B 在复杂的车身轮廓、印花和精细结构上仍然更好。</p>
 <figure class="astra-figure astra-comparison" data-media="workshop-comparison">
-  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-comparison.webp" target="_blank" rel="noopener" aria-label="遥控玩具车对比：左为路线 A，右为路线 B，打开大图">
-    <img src="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-comparison.webp" alt="遥控玩具车对比：左为路线 A，右为路线 B" width="1800" height="600" loading="lazy" decoding="async">
+  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-comparison.webp" target="_blank" rel="noopener" aria-label="玩具车对比：左为路线 A，右为路线 B，打开大图">
+    <img src="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-comparison.webp" alt="玩具车对比：左为路线 A，右为路线 B" width="1800" height="600" loading="lazy" decoding="async">
   </a>
   <figcaption>车辆局部：左为 A，右为 B。</figcaption>
 </figure>
-<p>这个例子还有一处有趣的细节，蓝色零件箱内独立建模出168 件五金件（132颗螺栓、18个螺母和18个垫圈）并完成排布和穿插检查。</p>
+<p>这个例子还有一处有趣的细节，蓝色零件箱内包含了168个独立的五金件模型（132颗螺栓、18个螺母和18个垫圈）。</p>
 <figure class="astra-figure astra-result" data-media="workshop-hardware">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-hardware.webp" target="_blank" rel="noopener" aria-label="工作台零件箱与五金件细节，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/workshop-hardware.webp" alt="工作台零件箱与五金件细节" width="2400" height="1800" loading="lazy" decoding="async">
@@ -174,7 +171,7 @@
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/kitchen-reference.webp" target="_blank" rel="noopener" aria-label="厨房餐桌输入参考，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/kitchen-reference.webp" alt="厨房餐桌输入参考" width="1448" height="1086" loading="lazy" decoding="async">
   </a>
-  <figcaption>输入参考图</figcaption>
+  <figcaption>输入参考图。机器人 WALL·E 为困难物体。</figcaption>
 </figure>
 <p>建模结果：</p>
 <figure class="astra-figure astra-result" data-media="kitchen-result">
@@ -187,7 +184,7 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/kitchen-interaction.webp" alt="厨房餐桌路线 B 交互结构展示" width="2400" height="1800" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>困难物体选择的是机器人 WALL·E。本例子中，实际上路线 A 的机械细节更加真实、丰富，但路线 B 的整体造型更加还原。</p>
+<p>路线 A 的结果也具有非常真实的机械细节，当然路线 B 的造型更加忠实于原图。</p>
 <figure class="astra-figure astra-comparison" data-media="kitchen-comparison">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/kitchen-comparison.webp" target="_blank" rel="noopener" aria-label="WALL·E 对比：左为路线 A，右为路线 B，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/kitchen-comparison.webp" alt="WALL·E 对比：左为路线 A，右为路线 B" width="1600" height="1115" loading="lazy" decoding="async">
@@ -201,17 +198,12 @@
   <figcaption>客厅茶几输入图。</figcaption>
 </figure>
 <p>路线 B 生成结果：</p>
-<figure class="astra-figure astra-result" data-media="livingroom-result">
-  <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/livingroom-result.webp" target="_blank" rel="noopener" aria-label="客厅茶几路线 B 生成结果，打开大图">
-    <img src="/blog/uploads/2026/astra-image-to-3d/part-5/livingroom-result.webp" alt="客厅茶几路线 B 生成结果" width="2400" height="1800" loading="lazy" decoding="async">
-  </a>
-</figure>
 <figure class="astra-figure astra-result" data-media="livingroom-detail">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/livingroom-detail.webp" target="_blank" rel="noopener" aria-label="客厅茶几路线 B 局部细节，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/livingroom-detail.webp" alt="客厅茶几路线 B 局部细节" width="2400" height="1800" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>本例子中，困难物体是高达模型。</p>
+<p>两种路线对比：</p>
 <figure class="astra-figure astra-comparison" data-media="livingroom-comparison">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/livingroom-comparison.webp" target="_blank" rel="noopener" aria-label="高达模型对比：左为路线 A，右为路线 B，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/livingroom-comparison.webp" alt="高达模型对比：左为路线 A，右为路线 B" width="1800" height="1060" loading="lazy" decoding="async">
@@ -235,7 +227,7 @@
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/stationery-interaction.webp" alt="文具桌面路线 B 开合结构展示" width="2400" height="1800" loading="lazy" decoding="async">
   </a>
 </figure>
-<p>同样，与办公桌的例子类似，手办也被选做困难物体单独建模。</p>
+<p>意料之中，两种路线对于手办的建模差距仍然明显：</p>
 <figure class="astra-figure astra-comparison" data-media="stationery-comparison">
   <a class="astra-image-link" href="/blog/uploads/2026/astra-image-to-3d/part-5/stationery-comparison.webp" target="_blank" rel="noopener" aria-label="文具桌面手办对比：左为路线 A，右为路线 B，打开大图">
     <img src="/blog/uploads/2026/astra-image-to-3d/part-5/stationery-comparison.webp" alt="文具桌面手办对比：左为路线 A，右为路线 B" width="1600" height="1115" loading="lazy" decoding="async">
@@ -245,8 +237,8 @@
   </article>
 </article>
 <nav class="pagination-links post-navigation" aria-label="Post navigation">
-  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/13/astra-image-to-3d-6.html">← GPT-6 Astra 从图像到3D （六）—— 一点碎碎念</a></div>
-  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/13/astra-image-to-3d-4.html">GPT-6 Astra 从图像到3D （四）—— 离优秀建模师的距离 →</a></div>
+  <div class="post-navigation__slot post-navigation__slot--left"><a class="pagination-link pagination-link--newer" href="/blog/2026/09/13/astra-image-to-3d-6.html">← GPT-6 Astra 3D 建模（六） 和技术无关的碎碎念</a></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/09/13/astra-image-to-3d-4.html">GPT-6 Astra 3D 建模（四） 离优秀建模师的距离 →</a></div>
 </nav>
     </div>
   </div>
