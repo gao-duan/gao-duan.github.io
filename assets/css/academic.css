@@ -9,8 +9,8 @@
   --link-border: #d6d6d6;
   --subtle-background: #f6f6f6;
   --header-height: 67px;
-  --body-font: Georgia, "Times New Roman", "Songti SC", "STSong", serif;
-  --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+  --body-font: "BlogCli Latin", "BlogCli Han", "Songti SC", "STSong", serif;
+  --ui-font: var(--body-font);
   color-scheme: light;
 }
 html[data-theme="dark"] {
@@ -205,4 +205,36 @@ html[data-theme="dark"] .thesis-thumb--static { background: #f2ede5; border-radi
   .publication-card, .timeline > li, .project-card { break-inside: avoid; }
   .project-video, .project-play { display: none !important; }
   .project-poster { display: block !important; }
+}
+
+/* Accepted Source Serif 4 + Source Han pairing, shared with the blog. */
+body { font-kerning: normal; font-optical-sizing: auto; }
+h1, h2, h3 { font-weight: 600; }
+.profile-heading h1 { font-weight: 700; letter-spacing: -.025em; }
+.section-title { font-weight: 600; letter-spacing: -.015em; }
+.publication-title { font-weight: 600; line-height: 1.42; letter-spacing: 0; }
+.publication-title a { border: 0; }
+.publication-title a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.paper-ending { white-space: nowrap; }
+.paper-format { display: inline-block; margin-left: 8px; color: var(--muted-color); font-size: 11px; font-weight: 400; letter-spacing: .04em; vertical-align: middle; }
+.publication-authors { font-size: 14px; line-height: 1.65; }
+.publication-venue { font-size: 14px; line-height: 1.6; }
+.publication-links { font-size: 13px; }
+.profile-role { font-size: 14px; }
+.site-nav { font-size: 14px; }
+.project-title { font-weight: 400; }
+@media (max-width: 700px) { .site-nav { font-size: 12px; } }
+@media (max-width: 480px) { .publication-authors { font-size: 13px; } .publication-thumb { width: 230px; max-width: 80%; } }
+
+/* Approved original-pixel publication crops; captions share the site font. */
+.paper-pair { display: flex; gap: 5px; background: #fff; }
+.paper-pair figure { display: flex; flex: 1; flex-direction: column; min-width: 0; margin: 0; }
+.paper-cutout { display: block; width: 100%; height: auto; overflow: hidden; }
+.paper-window { background: #fff; }
+.paper-pair figcaption { font: 11px/1.4 "BlogCli Latin", serif; text-align: center; white-space: nowrap; background: #fff; color: #555; padding-top: 4px; }
+.paper-pair--cutout, .paper-pair--cutout figcaption { background: transparent; }
+.paper-pair--cutout figcaption { color: inherit; opacity: .75; }
+.publication-card__media .paper-pair { width: 190px; max-width: 100%; }
+@media (max-width: 480px) {
+  .publication-card__media .paper-pair { width: 230px; max-width: 80%; margin: auto; }
 }

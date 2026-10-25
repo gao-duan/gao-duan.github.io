@@ -691,6 +691,17 @@ body :is(.post-content, .e-content) table {
   outline-offset: 3px;
 }
 
+/* About owns one reading gutter; the outer wrapper already pads the page. */
+.page-about .page {
+  max-width: 640px;
+  padding-inline: 0;
+}
+
+.page-about .post-content {
+  max-width: none;
+  padding-inline: 0;
+}
+
 .about-connect {
   margin-top: 2.2rem;
 }
@@ -807,6 +818,12 @@ body :is(.post-content, .e-content) table {
 }
 
 @media (max-width: 540px) {
+  .page-about .about-line {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.1rem;
+    margin-block: 1.2rem;
+  }
+
   body {
     font-size: 17px;
   }
