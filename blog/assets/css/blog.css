@@ -828,13 +828,6 @@ body :is(.post-content, .e-content) table {
     font-size: 17px;
   }
 
-  /* The outer wrapper adds 20px; keep a total reading gutter of 26px. */
-  .page-post--post .post-header,
-  .page-post--post .post-content,
-  .page-post--post .post-navigation {
-    padding-inline: 6px;
-  }
-
   /* Keep paragraph and list line filling consistent in mobile WebKit. */
   .page-post--post .post-content p {
     text-wrap: wrap;
