@@ -835,6 +835,11 @@ body :is(.post-content, .e-content) table {
     padding-inline: 6px;
   }
 
+  /* Keep paragraph and list line filling consistent in mobile WebKit. */
+  .page-post--post .post-content p {
+    text-wrap: wrap;
+  }
+
   .site-header {
     margin-top: 34px;
     margin-bottom: 32px;
