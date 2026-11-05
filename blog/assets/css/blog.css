@@ -828,6 +828,13 @@ body :is(.post-content, .e-content) table {
     font-size: 17px;
   }
 
+  /* The outer wrapper adds 20px; keep a total reading gutter of 26px. */
+  .page-post--post .post-header,
+  .page-post--post .post-content,
+  .page-post--post .post-navigation {
+    padding-inline: 6px;
+  }
+
   .site-header {
     margin-top: 34px;
     margin-bottom: 32px;
