@@ -5,7 +5,31 @@
     <link>https://gao-duan.github.io/blog/</link>
     <description>长跑、图形学、读书、写作与科技。随口聊聊，认真记录。</description>
     <language>zh-cn</language>
-    <item><title>打补丁</title><link>https://gao-duan.github.io/blog/2026/11/05/patches.html</link><guid>https://gao-duan.github.io/blog/2026/11/05/patches.html</guid><pubDate>Thu, 05 Nov 2026 14:38:16 +0800</pubDate><description><![CDATA[<p>针对苹果液态玻璃可读性问题，<a href="https://gao-duan.github.io/blog/2025/10/16/195301.html">当时提到</a>：</p>
+    <item><title>谈论 AI 对 xx 的影响之前</title><link>https://gao-duan.github.io/blog/2026/11/05/before-discussing-ai.html</link><guid>https://gao-duan.github.io/blog/2026/11/05/before-discussing-ai.html</guid><pubDate>Thu, 05 Nov 2026 15:50:33 +0800</pubDate><description><![CDATA[<p><a href="https://blog.yitianshijie.net/2026/01/19/5928/">李如一</a>：</p>
+<blockquote>
+<p>在不談及 AI 的條件下談創作兩小時。能做到這點，方可談 AI 對創作的影響。</p>
+</blockquote>
+<p>AI 与技术亦然。不使用 AI 也懂 CG（Computer Graphics）的人，方可一起好好谈 GPT-6 Astra 对 CG 的影响<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。</p>
+<p>否则，不如让 AI 们直接对谈，要这些传声筒在中间转述做什么？</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>这句话可以扩展下去：</p>
+<ul>
+<li>不使用 AI 也懂三维建模的人，方可谈 AI 对 CAD、DCC 的影响。</li>
+<li>不使用 AI 也懂渲染的人，方可谈基于 AI 的神经渲染。</li>
+<li>不使用 AI 也懂科研设计、论文写作的人，方可谈 AI 对科研的影响。</li>
+<li>…</li>
+</ul>
+<p>甚至可以去掉 AI：</p>
+<ul>
+<li>不使用<strong>搜索引擎</strong>也能写出 rendering equation、Cook-Torrance model、Path tracer 的人，或者至少看得懂这几个词语的人，方可谈渲染。</li>
+</ul>
+<p><a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>]]></description></item> <item><title>打补丁</title><link>https://gao-duan.github.io/blog/2026/11/05/patches.html</link><guid>https://gao-duan.github.io/blog/2026/11/05/patches.html</guid><pubDate>Thu, 05 Nov 2026 14:38:16 +0800</pubDate><description><![CDATA[<p>针对苹果液态玻璃可读性问题，<a href="https://gao-duan.github.io/blog/2025/10/16/195301.html">当时提到</a>：</p>
 <blockquote>
 <p>液态玻璃最为人诟病的还是透明导致的可读性问题，面对这个问题，很多人期待苹果可以增加一个「toggle」或「slider」让用户自由开关或调节透明度。我期待苹果可以「固执」一些，硬着头皮往前走，在设计和技术的幽暗之地摸索出解决之道。</p>
 <p>毕竟打一堆丑陋的补丁是谁都能立马想到的解法，而每个人在几秒钟内都能想到的设计不可能是好设计。</p>

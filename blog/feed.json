@@ -7,6 +7,14 @@
   "icon": "https://gao-duan.github.io/blog/assets/images/avatar-microblog.jpg",
   "items": [
     {
+      "id": "https://gao-duan.github.io/blog/2026/11/05/before-discussing-ai.html",
+      "url": "https://gao-duan.github.io/blog/2026/11/05/before-discussing-ai.html",
+      "title": "谈论 AI 对 xx 的影响之前",
+      "content_html": "<p><a href=\"https://blog.yitianshijie.net/2026/01/19/5928/\">李如一</a>：</p>\n<blockquote>\n<p>在不談及 AI 的條件下談創作兩小時。能做到這點，方可談 AI 對創作的影響。</p>\n</blockquote>\n<p>AI 与技术亦然。不使用 AI 也懂 CG（Computer Graphics）的人，方可一起好好谈 GPT-6 Astra 对 CG 的影响<sup id=\"fnref:1\"><a class=\"footnote-ref\" href=\"#fn:1\">1</a></sup>。</p>\n<p>否则，不如让 AI 们直接对谈，要这些传声筒在中间转述做什么？</p>\n<div class=\"footnote\">\n<hr>\n<ol>\n<li id=\"fn:1\">\n<p>这句话可以扩展下去：</p>\n<ul>\n<li>不使用 AI 也懂三维建模的人，方可谈 AI 对 CAD、DCC 的影响。</li>\n<li>不使用 AI 也懂渲染的人，方可谈基于 AI 的神经渲染。</li>\n<li>不使用 AI 也懂科研设计、论文写作的人，方可谈 AI 对科研的影响。</li>\n<li>…</li>\n</ul>\n<p>甚至可以去掉 AI：</p>\n<ul>\n<li>不使用<strong>搜索引擎</strong>也能写出 rendering equation、Cook-Torrance model、Path tracer 的人，或者至少看得懂这几个词语的人，方可谈渲染。</li>\n</ul>\n<p><a class=\"footnote-backref\" href=\"#fnref:1\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>",
+      "date_published": "2026-11-05T15:50:33+08:00",
+      "summary": "AI 与技术亦然。不使用 AI 也懂 CG（Computer Graphics）的人，方可一起好好谈 GPT-6 Astra 对 CG 的影响。 否则，不如让 AI 们直接对谈，要这些传声筒在中间转述做什么？"
+    },
+    {
       "id": "https://gao-duan.github.io/blog/2026/11/05/patches.html",
       "url": "https://gao-duan.github.io/blog/2026/11/05/patches.html",
       "title": "打补丁",
