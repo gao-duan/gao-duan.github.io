@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="针对苹果液态玻璃可读性问题，当时提到： 液态玻璃最为人诟病的还是透明导致的可读性问题，面对这个问题，很多人期待苹果可以增加一个「toggle」或「slider」让用户自由开关或调节透明度。我期待苹果可以「固执」一些，硬着头皮往前走，在设计和技术的幽暗之地摸索出解决之道。 毕竟打一堆丑陋的补丁是谁都能立马想到的解法，而每个人在几秒钟内都能…">
+  <meta property="og:title" content="打补丁 | 逆风呢喃">
+  <meta property="og:description" content="针对苹果液态玻璃可读性问题，当时提到： 液态玻璃最为人诟病的还是透明导致的可读性问题，面对这个问题，很多人期待苹果可以增加一个「toggle」或「slider」让用户自由开关或调节透明度。我期待苹果可以「固执」一些，硬着头皮往前走，在设计和技术的幽暗之地摸索出解决之道。 毕竟打一堆丑陋的补丁是谁都能立马想到的解法，而每个人在几秒钟内都能…">
+  <meta property="og:image" content="https://gao-duan.github.io/blog/assets/images/avatar-microblog.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gao-duan.github.io/blog/2026/11/05/patches.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="打补丁 | 逆风呢喃">
+  <meta name="twitter:description" content="针对苹果液态玻璃可读性问题，当时提到： 液态玻璃最为人诟病的还是透明导致的可读性问题，面对这个问题，很多人期待苹果可以增加一个「toggle」或「slider」让用户自由开关或调节透明度。我期待苹果可以「固执」一些，硬着头皮往前走，在设计和技术的幽暗之地摸索出解决之道。 毕竟打一堆丑陋的补丁是谁都能立马想到的解法，而每个人在几秒钟内都能…">
+  <meta name="twitter:image" content="https://gao-duan.github.io/blog/assets/images/avatar-microblog.jpg">
+  <link rel="canonical" href="https://gao-duan.github.io/blog/2026/11/05/patches.html">
+  <link rel="alternate" href="https://gao-duan.github.io/blog/feed.xml" type="application/rss+xml" title="逆风呢喃">
+  <link rel="alternate" href="https://gao-duan.github.io/blog/feed.json" type="application/feed+json" title="逆风呢喃">
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/assets/site-icons/favicon.ico?v=c1c16d1ab0">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/site-icons/favicon.svg?v=c1c16d1ab0">
+  <script>
+    (function () {
+      var storageKey = "duan-gao-blog-theme";
+      var preference = "auto";
+      try {
+        preference = localStorage.getItem(storageKey) || "auto";
+      } catch (error) {
+        preference = "auto";
+      }
+      if (
+        preference !== "auto" &&
+        preference !== "light" &&
+        preference !== "dark"
+      ) {
+        preference = "auto";
+      }
+      var isDark = false;
+      if (preference === "dark") {
+        isDark = true;
+      } else if (preference === "auto" && window.matchMedia) {
+        isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+      var root = document.documentElement;
+      root.setAttribute("data-theme-preference", preference);
+      root.setAttribute("data-theme", isDark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="/blog/assets/css/blog.css?v=8e79e13f81">
+  
+  <title>打补丁 | 逆风呢喃</title>
+</head>
+<body class="page-post page-post--post">
+  <header class="site-header">
+    <div class="theme-menu">
+      <button class="theme-menu__trigger" type="button" aria-label="Theme menu" aria-expanded="false" aria-haspopup="true">
+        <span class="theme-menu__glyph" aria-hidden="true"></span>
+      </button>
+      <div class="theme-menu__panel" hidden>
+        <button class="theme-toggle__button" type="button" data-theme-choice="auto">Auto</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="light">Light</button>
+        <button class="theme-toggle__button" type="button" data-theme-choice="dark">Dark</button>
+      </div>
+    </div>
+    <a href="/blog/" class="site-avatar-link">
+      <img src="/blog/assets/images/avatar-microblog.jpg?v=8e79e13f81" alt="逆风呢喃 avatar" class="site-avatar" width="80" height="80">
+    </a>
+    <h1><a class="site-title" href="/blog/">逆风呢喃</a></h1>
+    <nav class="site-nav" aria-label="Blog navigation">
+      <ul>
+<li><a class="nav-link" href="/blog/">Home</a></li>
+<li><a class="nav-link" href="/blog/photos/">Photos</a></li>
+<li><a class="nav-link" href="/blog/archive/">Archive</a></li>
+<li><a class="nav-link" href="/blog/about/">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="wrapper">
+<article class="post h-entry">
+  <header class="post-header">
+    <div class="post-date-wrapper">
+      <time class="dt-published" datetime="2026-11-05T14:38:16+08:00">November 5, 2026</time>
+    </div>
+    <h2 class="p-name post-title">打补丁</h2>
+  </header>
+  <article class="post-content e-content with-title">
+    <p>针对苹果液态玻璃可读性问题，<a href="https://gao-duan.github.io/blog/2025/10/16/195301.html">当时提到</a>：</p>
+<blockquote>
+<p>液态玻璃最为人诟病的还是透明导致的可读性问题，面对这个问题，很多人期待苹果可以增加一个「toggle」或「slider」让用户自由开关或调节透明度。我期待苹果可以「固执」一些，硬着头皮往前走，在设计和技术的幽暗之地摸索出解决之道。</p>
+<p>毕竟打一堆丑陋的补丁是谁都能立马想到的解法，而每个人在几秒钟内都能想到的设计不可能是好设计。</p>
+</blockquote>
+<p>不幸的是，苹果随后陆续引入了<a href="https://gao-duan.github.io/blog/2025/10/22/liquid-pbr.html">「toggle」</a>、<a href="https://9to5mac.com/2026/06/08/apple-updates-liquid-glass-ui-in-ios-27-with-new-slider-to-customize-how-it-looks/">「slider」</a>。</p>
+  </article>
+</article>
+<nav class="pagination-links post-navigation" aria-label="Post navigation">
+  <div class="post-navigation__slot post-navigation__slot--left"></div>
+  <div class="post-navigation__slot post-navigation__slot--right"><a class="pagination-link pagination-link--older" href="/blog/2026/11/01/until-the-t-shirt-dries.html">观《直到 T 恤干了为止》 →</a></div>
+</nav>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="site-footer__note">由自建工具构建的网站，托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a>.</p>
+    </div>
+  </footer>
+  <script src="/blog/assets/js/theme.js?v=8e79e13f81"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "10222f58d8ac409e985f5afc29048bd8"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
+
